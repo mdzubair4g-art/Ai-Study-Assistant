@@ -30,3 +30,4 @@ dist-ssr
 # Extra folders not part of the project
 Ai notes simplifier/
 ai-study-assistant/
+.vercel
