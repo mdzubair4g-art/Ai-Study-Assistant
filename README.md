@@ -1,16 +1,76 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# AI Study Assistant
 
-Currently, two official plugins are available:
+An AI-powered study platform designed to help students simplify notes, generate summaries, create quizzes and flashcards, and organize their study routine.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **AI Notes Simplifier:** Simplifies complex study notes.
+- **Summary Generator:** Creates short, medium, and detailed summaries.
+- **MCQ Generator:** Generates multiple-choice questions with answers and explanations.
+- **Flashcards:** Creates interactive flashcards for revision.
+- **AI Podcast:** Generates study content for listening.
+- **Study Planner:** Organizes tasks and includes a Pomodoro timer.
+- **AI Study Chatbot:** Answers questions about study topics and uploaded PDF documents.
+- **Student Dashboard:** Displays study progress and activity.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technologies Used
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- JavaScript
+- CSS
+- Ollama
+- Qwen 3 (0.6B)
+- jsPDF
+- PDF.js
+- Browser Speech APIs
+- Local Storage
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Requirements
+
+- Node.js and npm
+- Ollama
+
+## Installation and Setup
+
+1. Clone or download this repository.
+2. Open the project folder in VS Code.
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Download the AI model:
+
+   ```bash
+   ollama pull qwen3:0.6b
+   ```
+
+5. Start Ollama on your computer.
+6. Start the application:
+
+   ```bash
+   npm run dev
+   ```
+
+7. Open the local URL shown in the terminal.
+
+## Important Note
+
+AI features use Ollama running locally on your computer. Ollama must be running for those features to work.
+
+## Production Build
+
+To create a production build, run:
+
+```bash
+npm run build
+```
+
+The generated production files are saved in the `dist` folder.
+
+## Author
+
+AI Study Assistant Project
