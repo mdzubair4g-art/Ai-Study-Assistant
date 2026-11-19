@@ -118,6 +118,7 @@ async function handleGenerate(request, response) {
       headers: {
         "Content-Type": "application/json",
         "x-goog-api-key": apiKey,
+        "Api-Revision": "2026-05-20",
       },
       signal: AbortSignal.timeout(180000),
       body: JSON.stringify({
