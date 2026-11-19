@@ -820,7 +820,7 @@ Assistant:
   ];
 
   return (
-    <div className= tool-page tool-page-chatbot"min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen bg-gray-950 text-white tool-page tool-page-chatbot">
       <Navbar />
 
       <main className="max-w-5xl mx-auto px-5 py-10">
