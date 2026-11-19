@@ -87,7 +87,19 @@ A successful response returns JSON containing `"ok": true`, the provider name an
 
 ## Production deployment
 
-The local Vite proxy is for development only. For a deployed website, deploy the Node.js backend separately (or use a serverless backend), configure `GROQ_API_KEY` as a server-side environment variable in the hosting provider, and point the frontend `/api` requests to that backend. Never deploy the API key in frontend environment variables.
+### GitHub Pages (frontend)
+
+The frontend is configured for GitHub Pages at:
+
+`https://mdzubair4g-art.github.io/Ai-notes-simplifier/`
+
+The `.github/workflows/deploy.yml` workflow builds the Vite app and deploys the `dist` folder whenever changes are pushed to `main`. In the repository, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**.
+
+GitHub Pages hosts static files only. The site's Groq-powered features call the Node.js API and will not work on GitHub Pages by themselves.
+
+### Backend requirement
+
+The local Vite proxy is for development only. To enable AI generation on the public website, deploy the Node.js backend separately (or use a serverless backend), configure `GROQ_API_KEY` as a server-side environment variable at that backend host, and point the frontend `/api` requests to that backend. Never deploy the API key in frontend environment variables.
 
 ## Production build
 
