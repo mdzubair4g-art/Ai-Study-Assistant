@@ -81,14 +81,13 @@ ${notes}
 
     try {
       const response = await fetch(
-        "http://127.0.0.1:11434/api/generate",
+        "/api/generate",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            model: "qwen3:0.6b",
             prompt,
             stream: false,
           }),
