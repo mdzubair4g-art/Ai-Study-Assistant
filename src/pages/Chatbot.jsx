@@ -484,7 +484,7 @@ ${pdfText.slice(0, 18000)}
     setQuizError("");
   };
 
-  // Send question to Ollama
+  // Send question to the Groq AI backend
   const sendQuestion = async (question) => {
     const cleanQuestion = question.trim();
 
@@ -595,7 +595,7 @@ Assistant:
       }
     } catch (err) {
       setError(
-        "Unable to connect to Ollama. Please make sure it is running."
+        "Unable to connect to Groq. Make sure the AI backend is running with npm run ai:server."
       );
     } finally {
       setLoading(false);
@@ -1322,7 +1322,7 @@ Assistant:
         </section>
 
         <p className="text-center text-gray-500 text-xs mt-5">
-          Powered by Ollama AI and Mozilla PDF.js.
+          Powered by Groq AI and Mozilla PDF.js.
           Quiz answers are generated from the uploaded document.
         </p>
 
