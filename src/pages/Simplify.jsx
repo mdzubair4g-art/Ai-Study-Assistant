@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import { jsPDF } from "jspdf";
+import { readStudySource, saveStudySource } from "../studyWorkflow";
 
 const LANGUAGES = [
   { name: "English", code: "en-US" },
@@ -12,7 +13,7 @@ const LANGUAGES = [
 ];
 
 function Simplify() {
-  const [notes, setNotes] = useState("");
+  const [notes, setNotes] = useState(() => readStudySource());
   const [simplifiedText, setSimplifiedText] = useState("");
   const [language, setLanguage] = useState("English");
   const [loading, setLoading] = useState(false);
@@ -274,7 +275,7 @@ ${notes}
 
           <textarea
             value={notes}
-            onChange={(event) => setNotes(event.target.value)}
+            onChange={(event) => { setNotes(event.target.value); saveStudySource(event.target.value); }}
             placeholder="Paste your textbook content, class notes or difficult study material here..."
             className="w-full min-h-64 rounded-xl bg-gray-800 border border-gray-700 p-5 text-white outline-none focus:border-blue-500 resize-y"
           />

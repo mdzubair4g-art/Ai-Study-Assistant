@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import { jsPDF } from "jspdf";
+import { readStudySource, saveStudySource } from "../studyWorkflow";
 
 const LANGUAGES = [
   "English",
@@ -12,7 +13,7 @@ const LANGUAGES = [
 ];
 
 function MCQ() {
-  const [notes, setNotes] = useState("");
+  const [notes, setNotes] = useState(() => readStudySource());
   const [questions, setQuestions] = useState([]);
   const [answers, setAnswers] = useState({});
   const [questionCount, setQuestionCount] = useState("5");
@@ -488,7 +489,7 @@ ${notes}
 
             <textarea
               value={notes}
-              onChange={(event) => setNotes(event.target.value)}
+              onChange={(event) => { setNotes(event.target.value); saveStudySource(event.target.value); }}
               placeholder="Paste your textbook content, lecture notes or important study topics here..."
               className="w-full min-h-64 bg-gray-800 border border-gray-700 rounded-xl p-5 text-white outline-none focus:border-blue-500 resize-y"
             />

@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
+import { readStudySource, saveStudySource } from "../studyWorkflow";
 
 const LANGUAGES = [
   { name: "English", code: "en-US" },
@@ -21,7 +22,7 @@ const MODEL = "openai/gpt-oss-120b";
 const AI_GENERATE_URL = "/api/generate";
 
 function Podcast() {
-  const [notes, setNotes] = useState("");
+  const [notes, setNotes] = useState(() => readStudySource());
   const [podcast, setPodcast] = useState("");
   const [language, setLanguage] = useState("en-US");
   const [voices, setVoices] = useState([]);
@@ -272,7 +273,7 @@ ${podcast}
 
           <textarea
             value={notes}
-            onChange={(e) => setNotes(e.target.value)}
+            onChange={(e) => { setNotes(e.target.value); saveStudySource(e.target.value); }}
             placeholder="Paste your college notes here..."
             className="w-full h-56 border border-gray-300 rounded-xl p-4 outline-none focus:ring-2 focus:ring-blue-500 resize-y"
           />
