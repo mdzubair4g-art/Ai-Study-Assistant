@@ -2810,3 +2810,15 @@ body::before {
     radial-gradient(ellipse at 92% 0%, rgba(112, 80, 223, .32), transparent 41%),
     linear-gradient(125deg, #ffd16a, #cbb5ff 62%, #ffd2b7);
 }
+
+/* Slightly larger names on the eight homepage tool cards. */
+.developer-feature-card .feature-title {
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+@media (max-width: 640px) {
+  .developer-feature-card .feature-title {
+    font-size: 15px;
+  }
+}
