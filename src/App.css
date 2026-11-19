@@ -1111,3 +1111,157 @@ input, textarea, select { color-scheme: light; }
     animation: none !important;
   }
 }
+
+
+/* =========================================================
+   MOTION PASS — refined navigation and page interactions
+   ========================================================= */
+@keyframes navDropIn {
+  from { opacity: 0; transform: translateY(-9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes navLinkPop {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.developer-nav {
+  animation: navDropIn .5s cubic-bezier(.2,.7,.2,1) both;
+}
+.nav-links .nav-link {
+  position: relative;
+  isolation: isolate;
+}
+.nav-links .nav-link::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 12px;
+  right: 12px;
+  bottom: 5px;
+  height: 2px;
+  border-radius: 4px;
+  background: #ff795e;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .22s ease;
+}
+.nav-links .nav-link:not(.active):hover::after {
+  transform: scaleX(1);
+}
+.nav-links .nav-link.active::after {
+  display: none;
+}
+.nav-cta, .mobile-nav-cta {
+  transition: transform .22s cubic-bezier(.2,.75,.25,1), box-shadow .22s ease, background-color .22s ease;
+}
+.nav-cta:hover, .mobile-nav-cta:hover {
+  transform: translateY(-2px) rotate(-.5deg);
+  box-shadow: 0 12px 26px rgba(222,164,40,.23);
+}
+.nav-mobile-button {
+  transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+}
+.nav-mobile-button:hover {
+  transform: rotate(-4deg);
+  background: #fff8e9;
+}
+
+/* Mobile menu opens as a soft drop-down instead of appearing abruptly. */
+@media (max-width: 1040px) {
+  .nav-mobile-menu {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    padding-top: 0;
+    padding-bottom: 0;
+    transition:
+      max-height .32s ease,
+      opacity .22s ease,
+      transform .28s ease,
+      padding .28s ease,
+      visibility .28s ease;
+  }
+  .nav-mobile-menu.open {
+    display: grid;
+    max-height: 440px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    padding-top: 0;
+    padding-bottom: 18px;
+  }
+  .nav-mobile-menu.open .nav-link,
+  .nav-mobile-menu.open .mobile-nav-cta {
+    animation: navLinkPop .28s both;
+  }
+  .nav-mobile-menu.open .nav-link:nth-child(2) { animation-delay: .025s; }
+  .nav-mobile-menu.open .nav-link:nth-child(3) { animation-delay: .05s; }
+  .nav-mobile-menu.open .nav-link:nth-child(4) { animation-delay: .075s; }
+  .nav-mobile-menu.open .nav-link:nth-child(5) { animation-delay: .10s; }
+  .nav-mobile-menu.open .nav-link:nth-child(6) { animation-delay: .125s; }
+  .nav-mobile-menu.open .nav-link:nth-child(7) { animation-delay: .15s; }
+  .nav-mobile-menu.open .nav-link:nth-child(8) { animation-delay: .175s; }
+  .nav-mobile-menu.open .nav-link:nth-child(9) { animation-delay: .20s; }
+  .nav-mobile-menu.open .mobile-nav-cta { animation-delay: .225s; }
+}
+@media (max-width: 700px) {
+  .nav-mobile-menu {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .nav-mobile-menu.open {
+    max-height: 560px;
+  }
+}
+
+/* Subtle motion cues for feature illustrations and clickable tiles. */
+.feature-icon, .brand-icon, .footer-brand-mark {
+  transition: transform .24s cubic-bezier(.2,.75,.25,1), box-shadow .24s ease;
+}
+.brand-link:hover .brand-icon {
+  transform: rotate(4deg) scale(1.06);
+}
+.developer-feature-card:focus-visible {
+  outline: 3px solid rgba(121,96,232,.35);
+  outline-offset: 4px;
+}
+.creative-hero .hero-button-primary,
+.creative-cta .hero-button-primary {
+  position: relative;
+  overflow: hidden;
+}
+.creative-hero .hero-button-primary::after,
+.creative-cta .hero-button-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 20%, rgba(255,255,255,.38) 48%, transparent 72%);
+  transform: translateX(-120%);
+  transition: transform .55s ease;
+}
+.creative-hero .hero-button-primary:hover::after,
+.creative-cta .hero-button-primary:hover::after {
+  transform: translateX(120%);
+}
+
+/* Avoid forced movement for people who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .developer-nav,
+  .nav-mobile-menu.open .nav-link,
+  .nav-mobile-menu.open .mobile-nav-cta {
+    animation: none !important;
+  }
+  .nav-mobile-menu,
+  .nav-mobile-button,
+  .nav-cta,
+  .mobile-nav-cta,
+  .feature-icon,
+  .brand-icon,
+  .footer-brand-mark {
+    transition: none !important;
+  }
+}
