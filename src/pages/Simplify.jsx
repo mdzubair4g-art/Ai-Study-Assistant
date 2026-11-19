@@ -85,7 +85,7 @@ ${notes}
       if (!response.ok) {
         throw new Error(
           data.error ||
-          `Gemini request failed (HTTP ${response.status}). Check the AI backend terminal for details.`
+          `AI request failed (HTTP ${response.status}). Check the Groq backend terminal for details.`
         );
       }
 
@@ -94,14 +94,14 @@ ${notes}
         .trim();
 
       if (!result) {
-        throw new Error("Gemini returned an empty response. Please try again with shorter notes.");
+        throw new Error("The AI returned an empty response. Please try again with shorter notes.");
       }
 
       setSimplifiedText(result);
     } catch (err) {
       setError(
         err?.message ||
-        "Could not reach Gemini. Make sure the AI backend is running with npm run ai:server."
+        "Could not reach Groq. Make sure the AI backend is running with npm run ai:server."
       );
     } finally {
       setLoading(false);
