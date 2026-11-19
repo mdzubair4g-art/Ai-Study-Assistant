@@ -85,30 +85,27 @@ A successful response returns JSON containing `"ok": true`, the provider name an
 - **Model access error:** Confirm that `openai/gpt-oss-120b` is listed as available in your Groq account.
 - **429 rate-limit response:** Wait for the reset shown in Groq's response headers or account limits page.
 
-## Production deployment
+## Production deployment (Vercel)
 
-### GitHub Pages (frontend)
+This project is configured for Vercel:
 
-The frontend is configured for GitHub Pages at:
+- Framework preset: **Vite**
+- Install command: `npm ci`
+- Build command: `npm run build`
+- Output directory: `dist`
+- API function: `api/generate.js`
+- React Router routes are rewritten to `index.html`; `/api/*` remains available for the serverless API.
 
-`https://mdzubair4g-art.github.io/Ai-notes-simplifier/`
+After importing this repository into Vercel, add these **server-side** environment variables in **Project → Settings → Environment Variables**:
 
-The `.github/workflows/deploy.yml` workflow builds the Vite app and deploys the `dist` folder whenever changes are pushed to `main`. In the repository, open **Settings → Pages** and set **Build and deployment → Source** to **GitHub Actions**.
-
-GitHub Pages hosts static files only. The site's Groq-powered features call the Node.js API and will not work on GitHub Pages by themselves.
-
-### Backend requirement
-
-The local Vite proxy is for development only. To enable AI generation on the public website, deploy the Node.js backend separately (or use a serverless backend), configure `GROQ_API_KEY` as a server-side environment variable at that backend host, and point the frontend `/api` requests to that backend. Never deploy the API key in frontend environment variables.
-
-## Production build
-
-```bash
-npm run build
+```env
+GROQ_API_KEY=your_real_groq_key
+GROQ_MODEL=openai/gpt-oss-120b
 ```
 
-The generated website files are saved in `dist`.
+Add them to the Production environment (and Preview too if you want preview deployments to use AI), then redeploy. Never use a `VITE_` prefix for the API key and never put the key in frontend code or commit it to Git.
 
+The `api/generate.js` function calls Groq securely from Vercel. The local `ai-server.mjs` is only for local development; Vercel does not need a long-running local Node server.
 
 ## Connected study workflow
 
