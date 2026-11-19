@@ -181,6 +181,7 @@ async function handleGenerate(request, response) {
 
     return sendJson(response, 200, {
       text: text.trim(),
+      response: text.trim(),
       model: data.model || GROQ_MODEL,
     });
   } catch (error) {
