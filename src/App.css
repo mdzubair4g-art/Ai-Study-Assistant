@@ -1265,3 +1265,162 @@ input, textarea, select { color-scheme: light; }
     transition: none !important;
   }
 }
+
+
+/* =========================================================
+   MOBILE POLISH — shared responsive layout for every tool
+   ========================================================= */
+html, body, #root {
+  width: 100%;
+  min-height: 100%;
+}
+body {
+  overflow-x: hidden;
+}
+img, video, canvas, svg {
+  max-width: 100%;
+}
+.min-h-screen {
+  min-height: 100svh;
+}
+.min-h-screen main {
+  width: 100%;
+  min-width: 0;
+}
+.min-h-screen main > * {
+  min-width: 0;
+}
+.min-h-screen main button,
+.min-h-screen main a {
+  -webkit-tap-highlight-color: transparent;
+}
+.min-h-screen main button {
+  touch-action: manipulation;
+}
+.min-h-screen main textarea {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.min-h-screen main pre,
+.min-h-screen main code {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.min-h-screen main [class~="whitespace-pre-wrap"] {
+  overflow-wrap: anywhere;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .min-h-screen main {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+  .min-h-screen main [class~="grid-cols-3"],
+  .min-h-screen main [class~="lg:grid-cols-4"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .min-h-screen main {
+    padding: 28px 16px 44px !important;
+  }
+  .min-h-screen main > section {
+    margin-bottom: 22px;
+  }
+  .min-h-screen main [class~="p-12"] { padding: 24px !important; }
+  .min-h-screen main [class~="p-10"] { padding: 22px !important; }
+  .min-h-screen main [class~="p-8"] { padding: 20px !important; }
+  .min-h-screen main [class~="p-6"] { padding: 17px !important; }
+
+  .min-h-screen main h1 {
+    font-size: clamp(1.8rem, 8vw, 2.35rem);
+    line-height: 1.08;
+  }
+  .min-h-screen main h2 {
+    font-size: clamp(1.2rem, 5.6vw, 1.65rem);
+    line-height: 1.18;
+  }
+  .min-h-screen main p {
+    line-height: 1.65;
+  }
+
+  .min-h-screen main [class~="grid-cols-4"],
+  .min-h-screen main [class~="sm:grid-cols-4"],
+  .min-h-screen main [class~="lg:grid-cols-4"],
+  .min-h-screen main [class~="grid-cols-3"],
+  .min-h-screen main [class~="sm:grid-cols-3"],
+  .min-h-screen main [class~="md:grid-cols-3"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .min-h-screen main [class~="grid-cols-7"] {
+    gap: 6px;
+  }
+  .min-h-screen main [class~="grid-cols-7"] > div {
+    min-width: 0;
+  }
+
+  .min-h-screen main button {
+    min-height: 42px;
+    max-width: 100%;
+    white-space: normal;
+  }
+  .min-h-screen main textarea {
+    min-height: 138px;
+    padding: 13px !important;
+    font-size: 14px;
+  }
+  .min-h-screen main input:not([type="checkbox"]):not([type="radio"]),
+  .min-h-screen main select {
+    min-height: 44px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Keep the chatbot conversation usable without stretching the page. */
+  .min-h-screen main [class~="h-[450px]"] {
+    height: min(58svh, 450px);
+    min-height: 280px;
+  }
+  .min-h-screen main [class~="overflow-y-auto"] {
+    overscroll-behavior: contain;
+  }
+
+  /* Long toolbars and action groups wrap cleanly on narrow screens. */
+  .min-h-screen main [class~="flex-wrap"] {
+    row-gap: 12px;
+  }
+  .min-h-screen main [class~="flex-col"] > button,
+  .min-h-screen main [class~="grid-cols-2"] > button {
+    min-width: 0;
+  }
+}
+
+/* Very narrow phones */
+@media (max-width: 380px) {
+  .min-h-screen main {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  .min-h-screen main [class~="grid-cols-2"],
+  .min-h-screen main [class~="sm:grid-cols-2"],
+  .min-h-screen main [class~="md:grid-cols-2"] {
+    grid-template-columns: 1fr;
+  }
+  .nav-inner {
+    gap: 10px;
+  }
+  .brand-title {
+    font-size: 13px;
+  }
+}
+
+/* Mobile layout keeps the visual system stable even when motion is reduced. */
+@media (prefers-reduced-motion: reduce) {
+  .min-h-screen main *,
+  .nav-mobile-menu * {
+    scroll-behavior: auto !important;
+  }
+}
