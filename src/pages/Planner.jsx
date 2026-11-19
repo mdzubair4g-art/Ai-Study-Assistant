@@ -236,7 +236,7 @@ function Planner() {
   });
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
+    <div className= tool-page tool-page-planner"min-h-screen bg-gray-950 text-white">
       <Navbar />
 
       <main className="max-w-6xl mx-auto px-6 py-12">
