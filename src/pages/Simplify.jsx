@@ -80,24 +80,28 @@ ${notes}
         }
       );
 
+      const data = await response.json().catch(() => ({}));
+
       if (!response.ok) {
-        throw new Error("The AI model could not process your notes.");
+        throw new Error(
+          data.error ||
+          `Gemini request failed (HTTP ${response.status}). Check the AI backend terminal for details.`
+        );
       }
 
-      const data = await response.json();
-
-      const result = (data.response || "")
+      const result = (data.response || data.text || "")
         .replace(/<think>[\s\S]*?<\/think>/gi, "")
         .trim();
 
       if (!result) {
-        throw new Error("The AI returned an empty response. Please try again.");
+        throw new Error("Gemini returned an empty response. Please try again with shorter notes.");
       }
 
       setSimplifiedText(result);
     } catch (err) {
       setError(
-        "Unable to connect to Ollama. Please make sure Ollama is running on your computer."
+        err?.message ||
+        "Could not reach Gemini. Make sure the AI backend is running with npm run ai:server."
       );
     } finally {
       setLoading(false);
