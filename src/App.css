@@ -2671,3 +2671,44 @@ body::before {
     radial-gradient(ellipse at 92% 0%, rgba(121, 96, 232, .20), transparent 39%),
     linear-gradient(125deg, #ffe2a4, #e2d6ff 62%, #ffe9d7);
 }
+
+/* Extra-bold intensity for the existing cream, yellow, lavender and coral palette.
+   This changes colour strength only; layout, sizing and motion stay untouched. */
+body::before {
+  background:
+    radial-gradient(ellipse at 7% 2%, rgba(121, 96, 232, .30), transparent 37%),
+    radial-gradient(ellipse at 97% 14%, rgba(255, 121, 94, .34), transparent 34%),
+    radial-gradient(ellipse at 55% 100%, rgba(76, 169, 214, .09), transparent 38%),
+    #fff8ed;
+}
+
+.creative-hero {
+  background:
+    radial-gradient(ellipse at 88% 8%, rgba(255, 121, 94, .40), transparent 33%),
+    radial-gradient(ellipse at 52% 100%, rgba(121, 96, 232, .32), transparent 46%),
+    linear-gradient(128deg, #fff8df 0%, #ffe7b4 54%, #ded0ff 100%);
+  border-color: rgba(121, 96, 232, .30);
+}
+
+.hero-kicker {
+  background: rgba(255, 211, 79, .48);
+  border-color: rgba(222, 164, 40, .78);
+}
+
+.developer-feature-card:nth-child(4n+1) {
+  background: linear-gradient(145deg, #ffd46d, #ffe8a8);
+}
+.developer-feature-card:nth-child(4n+2) {
+  background: linear-gradient(145deg, #c9b5ff, #e5d9ff);
+}
+.developer-feature-card:nth-child(4n+4) {
+  background: linear-gradient(145deg, #ffb9a5, #ffddd1);
+}
+
+.creative-cta {
+  background:
+    radial-gradient(ellipse at 50% 120%, rgba(255, 121, 94, .38), transparent 55%),
+    radial-gradient(ellipse at 92% 0%, rgba(121, 96, 232, .27), transparent 40%),
+    linear-gradient(125deg, #ffda86, #d6c5ff 62%, #ffdfca);
+  border-color: rgba(222, 164, 40, .52);
+}
