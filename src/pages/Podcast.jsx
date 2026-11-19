@@ -18,7 +18,7 @@ const LANGUAGES = [
 ];
 
 const MODEL = "openai/gpt-oss-120b";
-const OLLAMA_URL = "http://127.0.0.1:11434/api/generate";
+const AI_GENERATE_URL = "/api/generate";
 
 function Podcast() {
   const [notes, setNotes] = useState("");
@@ -69,7 +69,7 @@ function Podcast() {
   };
 
   const generateWithAI = async (prompt) => {
-    const response = await fetch(OLLAMA_URL, {
+    const response = await fetch(AI_GENERATE_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
