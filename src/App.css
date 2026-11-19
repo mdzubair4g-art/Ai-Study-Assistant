@@ -2752,3 +2752,61 @@ body::before {
     linear-gradient(125deg, #ffd16a, #cbb5ff 62%, #ffd2b7);
   border-color: rgba(222, 164, 40, .62);
 }
+
+/* Stronger accents across the existing palette; retain the warm cream canvas. */
+:root {
+  --yellow: #ffc629;
+  --orange: #ff684f;
+  --purple: #7050df;
+}
+
+body::before {
+  background:
+    radial-gradient(ellipse at 7% 2%, rgba(112, 80, 223, .30), transparent 37%),
+    radial-gradient(ellipse at 97% 14%, rgba(255, 104, 79, .34), transparent 34%),
+    radial-gradient(ellipse at 55% 100%, rgba(76, 169, 214, .09), transparent 38%),
+    #fff8ed;
+}
+
+.creative-hero {
+  background:
+    radial-gradient(ellipse at 88% 8%, rgba(255, 104, 79, .46), transparent 34%),
+    radial-gradient(ellipse at 52% 100%, rgba(112, 80, 223, .34), transparent 47%),
+    linear-gradient(128deg, #fff4d0 0%, #ffdf96 53%, #d2c0ff 100%);
+  border-color: rgba(112, 80, 223, .38);
+}
+
+.hero-heading-highlight,
+.creative-cta h2 span {
+  color: #df5b43;
+}
+
+.section-heading span {
+  color: #7050df;
+}
+
+.hero-kicker,
+.tools-heading-sticker {
+  border-color: rgba(208, 145, 20, .78);
+}
+
+.hero-kicker {
+  background: rgba(255, 198, 41, .42);
+}
+
+.developer-feature-card:nth-child(4n+1) {
+  background: linear-gradient(145deg, #ffca4d, #ffe18b);
+}
+.developer-feature-card:nth-child(4n+2) {
+  background: linear-gradient(145deg, #bba2ff, #ddceff);
+}
+.developer-feature-card:nth-child(4n+4) {
+  background: linear-gradient(145deg, #ffa88e, #ffd0c0);
+}
+
+.creative-cta {
+  background:
+    radial-gradient(ellipse at 50% 120%, rgba(255, 104, 79, .43), transparent 56%),
+    radial-gradient(ellipse at 92% 0%, rgba(112, 80, 223, .32), transparent 41%),
+    linear-gradient(125deg, #ffd16a, #cbb5ff 62%, #ffd2b7);
+}
