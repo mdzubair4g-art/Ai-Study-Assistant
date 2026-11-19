@@ -2362,3 +2362,38 @@ textarea:focus-visible, select:focus-visible {
     transition-duration: .01ms !important;
   }
 }
+
+
+/* Final theme refinements for components that use gradient utility classes */
+.min-h-screen [class~="bg-gradient-to-r"][class~="from-blue-950"] {
+  border-color: #e6dcf4 !important;
+  background: linear-gradient(115deg, #f0ecff 0%, #fffaf2 58%, #f9eff8 100%) !important;
+}
+.min-h-screen [class~="bg-gradient-to-br"][class~="from-blue-950"] {
+  border-color: #e2dcf0 !important;
+  background: linear-gradient(140deg, #f0edff, #fffaf3) !important;
+}
+.min-h-screen [class~="bg-gradient-to-br"][class~="from-gray-900"] {
+  border-color: #e7dfd9 !important;
+  background: linear-gradient(140deg, #fffefa, #f4f0ff) !important;
+}
+.min-h-screen [class~="bg-gradient-to-br"][class~="from-gray-900"][class~="to-purple-950/30"] {
+  border-color: #e7def7 !important;
+  background: linear-gradient(140deg, #faf7ff, #f5f0ff) !important;
+}
+.min-h-screen [class~="bg-orange-950/20"] { background: #fff1e7 !important; }
+.min-h-screen [class~="border-orange-800/50"] { border-color: #f0d8c9 !important; }
+.min-h-screen [class~="border-blue-800"] { border-color: #dce2fa !important; }
+.min-h-screen [class~="border-purple-800/50"] { border-color: #e6def5 !important; }
+.min-h-screen .text-blue-300 { color: #5964b7 !important; }
+.min-h-screen .text-purple-300 { color: #8065c4 !important; }
+.min-h-screen .text-cyan-300 { color: #377f91 !important; }
+.min-h-screen .text-orange-300 { color: #b66c43 !important; }
+.min-h-screen .text-yellow-300 { color: #9c741d !important; }
+
+@media (max-width: 640px) {
+  .home-page main .hero-heading { font-size: clamp(39px, 10vw, 58px); }
+  .home-page main .section-heading { font-size: clamp(29px, 8vw, 38px); }
+  .home-page main .sample-copy .section-heading,
+  .home-page main .capabilities-heading .section-heading { font-size: clamp(32px, 8.5vw, 42px); }
+}

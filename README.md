@@ -96,3 +96,12 @@ npm run build
 ```
 
 The generated website files are saved in `dist`.
+
+
+## Connected study workflow
+
+The Simplify, Summary, MCQ, Flashcards and Podcast tools share the current study source in browser local storage. Enter or edit notes in one of these tools, then open another tool to continue with the same material. Clearing the text field also clears the shared source. This handoff is local to the browser profile and does not upload notes on its own.
+
+Use **Ctrl + K** (or **Cmd + K** on macOS) from any page to open Quick Navigation and jump to a study tool.
+
+The homepage product preview is labelled as sample content. It is an illustration, not a live AI generation.
