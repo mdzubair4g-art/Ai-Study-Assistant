@@ -2588,3 +2588,41 @@ textarea:focus-visible, select:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .route-loading-spinner { animation: none; border-top-color: #7960e8; }
 }
+
+/* Slightly stronger intensity for the existing cream, yellow, lavender and coral palette.
+   Keep the same palette and all layout, spacing and motion unchanged. */
+body::before {
+  background:
+    radial-gradient(ellipse at 8% 0%, rgba(121, 96, 232, .16), transparent 34%),
+    radial-gradient(ellipse at 96% 16%, rgba(255, 121, 94, .19), transparent 31%),
+    radial-gradient(ellipse at 55% 100%, rgba(76, 169, 214, .09), transparent 38%),
+    #fff8ed;
+}
+
+.creative-hero {
+  background:
+    radial-gradient(ellipse at 88% 8%, rgba(255, 121, 94, .25), transparent 31%),
+    radial-gradient(ellipse at 53% 100%, rgba(121, 96, 232, .19), transparent 44%),
+    linear-gradient(128deg, #fffdf7 0%, #fff3df 57%, #eee7ff 100%);
+}
+
+.hero-kicker {
+  background: rgba(255, 211, 79, .30);
+  border-color: rgba(222, 164, 40, .55);
+}
+
+.developer-feature-card:nth-child(4n+1) {
+  background: linear-gradient(145deg, #ffe9b9, #fff5df);
+}
+.developer-feature-card:nth-child(4n+2) {
+  background: linear-gradient(145deg, #e7ddff, #f5f1ff);
+}
+.developer-feature-card:nth-child(4n+4) {
+  background: linear-gradient(145deg, #ffddd3, #fff1eb);
+}
+
+.creative-cta {
+  background:
+    radial-gradient(ellipse at 50% 120%, rgba(255, 121, 94, .24), transparent 52%),
+    linear-gradient(125deg, #ffe9c0, #e9e0ff 62%, #fff1df);
+}
