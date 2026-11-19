@@ -227,7 +227,7 @@ function Dashboard() {
   const recentDueCards = dueCards.slice(0, 4);
 
   return (
-    <div className= tool-page tool-page-dashboard"min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen bg-gray-950 text-white tool-page tool-page-dashboard">
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-6 py-12">
