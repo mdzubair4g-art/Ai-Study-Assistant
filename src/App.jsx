@@ -27,7 +27,7 @@ function RouteLoading() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Suspense fallback={<RouteLoading />}>
         <Routes>
           <Route path="/" element={<Home />} />
