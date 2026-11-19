@@ -10,8 +10,7 @@ const aiProxy = {
 }
 
 export default defineConfig({
-  // This repository is published at https://mdzubair4g-art.github.io/Ai-notes-simplifier/
-  base: '/Ai-notes-simplifier/',
+  base: '/',
   plugins: [react(), tailwindcss()],
   server: {
     proxy: aiProxy,
