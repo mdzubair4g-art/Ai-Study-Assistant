@@ -2,8 +2,6 @@ import http from "node:http";
 import { readFileSync } from "node:fs";
 import { existsSync } from "node:fs";
 
-const PORT = Number(process.env.AI_SERVER_PORT || 3001);
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
 const GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/interactions";
 const MAX_BODY_BYTES = 2 * 1024 * 1024;
 
@@ -27,6 +25,9 @@ function loadLocalEnv() {
 }
 
 loadLocalEnv();
+
+const PORT = Number(process.env.AI_SERVER_PORT || 3001);
+const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
 
 function sendJson(response, status, payload) {
   response.writeHead(status, {
