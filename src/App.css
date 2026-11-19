@@ -2822,3 +2822,321 @@ body::before {
     font-size: 15px;
   }
 }
+
+/* =========================================================
+   MOBILE EXPERIENCE POLISH — all eight study tools
+   Keeps desktop layout, existing colors and features intact.
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .home-main,
+  .tool-page main {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tool-page main {
+    padding-left: clamp(18px, 3.5vw, 28px) !important;
+    padding-right: clamp(18px, 3.5vw, 28px) !important;
+  }
+
+  .tool-page main > *,
+  .tool-page main > * > * {
+    min-width: 0;
+  }
+
+  .tool-page main img,
+  .tool-page main video,
+  .tool-page main canvas {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  html,
+  body,
+  #root {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body {
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  .home-page,
+  .tool-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  /* Compact, readable page headers and comfortable phone gutters. */
+  .tool-page main {
+    padding: 22px 14px 48px !important;
+  }
+
+  .tool-page main > section,
+  .tool-page-podcast main > div.bg-white {
+    border-radius: 18px;
+  }
+
+  .tool-page main h1 {
+    font-size: clamp(24px, 7vw, 32px) !important;
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+
+  .tool-page main h2 {
+    font-size: clamp(18px, 5.2vw, 23px);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .tool-page main p,
+  .tool-page main label,
+  .tool-page main span {
+    overflow-wrap: anywhere;
+  }
+
+  .tool-page main [class~="p-8"],
+  .tool-page main [class~="p-6"] {
+    padding: 16px !important;
+  }
+
+  .tool-page main [class~="p-12"],
+  .tool-page main [class~="p-10"] {
+    padding: 20px !important;
+  }
+
+  .tool-page main textarea {
+    min-height: 150px;
+    padding: 13px !important;
+    font-size: 16px !important;
+    line-height: 1.6;
+  }
+
+  .tool-page main input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+  .tool-page main select {
+    min-height: 44px;
+    padding: 11px 12px !important;
+    font-size: 16px !important;
+  }
+
+  .tool-page main button {
+    min-height: 42px;
+    max-width: 100%;
+    white-space: normal;
+    line-height: 1.35;
+  }
+
+  .tool-page main .flex.items-end,
+  .tool-page main form.flex {
+    flex-wrap: wrap;
+  }
+
+  .tool-page main button[class~="flex-1"] {
+    flex: 1 1 100%;
+  }
+
+  .tool-page main [class~="sm:grid-cols-2"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  /* Homepage hero and bento cards stay inside narrow screens. */
+  .home-main {
+    width: 100%;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .creative-hero {
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 25px 17px 20px;
+    border-radius: 21px;
+  }
+
+  .hero-heading {
+    font-size: clamp(38px, 10.5vw, 56px);
+    overflow-wrap: anywhere;
+  }
+
+  .hero-art {
+    width: 100%;
+    min-width: 0;
+    min-height: 315px;
+  }
+
+  .study-sheet {
+    max-width: 78%;
+  }
+
+  .developer-feature-grid,
+  .flow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .developer-feature-card {
+    min-width: 0;
+    padding: 14px;
+  }
+
+  .developer-feature-card .feature-title {
+    font-size: 15px;
+  }
+
+  .feature-description {
+    overflow-wrap: anywhere;
+  }
+
+  .flow-step {
+    min-width: 0;
+    padding: 14px;
+  }
+
+  .sample-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+    padding: 19px 14px;
+  }
+
+  .sample-board {
+    min-width: 0;
+    padding: 13px;
+  }
+
+  .sample-output-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .capabilities-section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  /* Dashboard stats and seven-day chart. */
+  .tool-page-dashboard main > section:nth-of-type(2) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tool-page-dashboard main [class~="grid-cols-7"] {
+    height: 150px;
+    gap: 4px;
+  }
+
+  .tool-page-dashboard main [class~="grid-cols-7"] span {
+    font-size: 10px;
+  }
+
+  /* Planner: keep the focus timer and controls legible. */
+  .tool-page-planner main > section:nth-of-type(2) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tool-page-planner main .text-7xl,
+  .tool-page-planner main .md\:text-8xl {
+    font-size: clamp(42px, 13vw, 60px) !important;
+    letter-spacing: -.045em;
+  }
+
+  .tool-page-planner main > section:nth-of-type(3) {
+    padding: 18px !important;
+  }
+
+  /* Chat: scroll the conversation inside its panel, not the page. */
+  .tool-page-chatbot main [class~="h-[450px]"] {
+    height: min(56svh, 390px);
+    min-height: 260px;
+    padding: 12px !important;
+  }
+
+  .tool-page-chatbot main [class*="max-w-[85%]"] {
+    max-width: 94%;
+    padding: 12px;
+  }
+
+  .tool-page-chatbot main form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tool-page-chatbot main form button {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .tool-page-chatbot main textarea {
+    width: 100%;
+    min-height: 94px;
+  }
+
+  .tool-page-chatbot main section {
+    min-width: 0;
+  }
+
+  /* Podcast player controls and generated script. */
+  .tool-page-podcast main .grid.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .tool-page-podcast main audio {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tool-page-podcast main .whitespace-pre-wrap {
+    overflow-wrap: anywhere;
+  }
+
+  /* Reduce the chance of long filenames, URLs or generated tokens overflowing. */
+  .tool-page main pre,
+  .tool-page main code,
+  .tool-page main .whitespace-pre-wrap,
+  .tool-page main [class*="break-"] {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .tool-page main table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-main,
+  .tool-page main {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .developer-feature-grid,
+  .flow-grid,
+  .tool-page-dashboard main > section:nth-of-type(2),
+  .tool-page-planner main > section:nth-of-type(2) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-art {
+    min-height: 280px;
+  }
+
+  .floating-note {
+    max-width: 42%;
+  }
+
+  .sample-output-grid,
+  .tool-page-podcast main .grid.grid-cols-2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tool-page-chatbot main [class~="h-[450px]"] {
+    min-height: 230px;
+  }
+}
