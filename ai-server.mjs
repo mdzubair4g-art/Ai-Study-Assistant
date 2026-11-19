@@ -3,8 +3,8 @@ import { readFileSync, existsSync } from "node:fs";
 
 function loadLocalEnv() {
   if (!existsSync(".env")) return;
-  const raw = readFileSync(".env", "utf8");
 
+  const raw = readFileSync(".env", "utf8");
   for (const line of raw.split(/\r?\n/)) {
     const match = line.match(/^\s*(?:export\s+)?([A-Z][A-Z0-9_]*)\s*=\s*(.*)\s*$/);
     if (!match || process.env[match[1]] !== undefined) continue;
@@ -22,14 +22,15 @@ function loadLocalEnv() {
 loadLocalEnv();
 
 const PORT = Number(process.env.AI_SERVER_PORT || 3001);
-const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
-const GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models";
+const GROQ_MODEL = process.env.GROQ_MODEL || "openai/gpt-oss-120b";
+const GROQ_BASE_URL = "https://api.groq.com/openai/v1";
 const MAX_BODY_BYTES = 2 * 1024 * 1024;
 
-function sendJson(response, status, payload) {
+function sendJson(response, status, payload, extraHeaders = {}) {
   response.writeHead(status, {
     "Content-Type": "application/json; charset=utf-8",
     "Cache-Control": "no-store",
+    ...extraHeaders,
   });
   response.end(JSON.stringify(payload));
 }
@@ -41,7 +42,7 @@ async function readJson(request) {
   for await (const chunk of request) {
     size += chunk.length;
     if (size > MAX_BODY_BYTES) {
-      const error = new Error("Request too large. Please shorten your notes and try again.");
+      const error = new Error("Request is too large. Please shorten your notes and try again.");
       error.statusCode = 413;
       throw error;
     }
@@ -57,30 +58,67 @@ async function readJson(request) {
   }
 }
 
-function extractGeminiText(data) {
-  const candidates = Array.isArray(data.candidates) ? data.candidates : [];
-  const parts = candidates[0]?.content?.parts || [];
-  return parts
-    .filter((part) => typeof part.text === "string")
-    .map((part) => part.text)
-    .join("\n")
-    .trim();
+async function groqRequest(path, options = {}) {
+  return fetch(`${GROQ_BASE_URL}${path}`, {
+    ...options,
+    headers: {
+      Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+  });
 }
 
 async function handleHealth(response) {
-  const configured = Boolean(process.env.GEMINI_API_KEY);
-  return sendJson(response, configured ? 200 : 503, {
-    ok: configured,
-    provider: "Google Gemini",
-    model: GEMINI_MODEL,
-    message: configured
-      ? "Gemini API key is loaded by the backend."
-      : "GEMINI_API_KEY is missing. Add it to the local .env file and restart the backend.",
-  });
+  if (!process.env.GROQ_API_KEY) {
+    return sendJson(response, 503, {
+      ok: false,
+      provider: "Groq",
+      model: GROQ_MODEL,
+      message: "GROQ_API_KEY is missing. Add it to your local .env file and restart the backend.",
+    });
+  }
+
+  try {
+    const result = await groqRequest("/models", {
+      method: "GET",
+      signal: AbortSignal.timeout(8000),
+    });
+    const data = await result.json().catch(() => ({}));
+
+    if (!result.ok) {
+      return sendJson(response, result.status, {
+        ok: false,
+        provider: "Groq",
+        model: GROQ_MODEL,
+        message: data?.error?.message || "Groq could not verify this API key.",
+      });
+    }
+
+    const models = Array.isArray(data.data) ? data.data : [];
+    const modelAvailable = models.some((item) => item.id === GROQ_MODEL);
+
+    return sendJson(response, modelAvailable ? 200 : 503, {
+      ok: modelAvailable,
+      provider: "Groq",
+      model: GROQ_MODEL,
+      message: modelAvailable
+        ? "Groq API key and model are available."
+        : `The API key works, but ${GROQ_MODEL} was not listed for this account. Check model access in Groq Console.`,
+    });
+  } catch {
+    return sendJson(response, 503, {
+      ok: false,
+      provider: "Groq",
+      model: GROQ_MODEL,
+      message: "Could not reach Groq. Check your internet connection and try again.",
+    });
+  }
 }
 
 async function handleGenerate(request, response) {
   let body;
+
   try {
     body = await readJson(request);
   } catch (error) {
@@ -92,84 +130,66 @@ async function handleGenerate(request, response) {
     typeof body.systemInstruction === "string" ? body.systemInstruction.trim() : "";
 
   if (!prompt) {
-    return sendJson(response, 400, { error: "Please enter notes or a question first." });
+    return sendJson(response, 400, { error: "Please provide notes or a question for the AI." });
   }
 
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) {
+  if (!process.env.GROQ_API_KEY) {
     return sendJson(response, 503, {
-      error: "Gemini API key is missing. Add GEMINI_API_KEY to the project .env file and restart npm run ai:server.",
+      error: "Groq is not configured. Add GROQ_API_KEY to the local .env file and restart npm run ai:server.",
     });
   }
 
-  const requestBody = {
-    contents: [
-      {
-        role: "user",
-        parts: [{ text: prompt }],
-      },
-    ],
-    generationConfig: {
-      temperature: 0.35,
-      maxOutputTokens: 8192,
-    },
-  };
-
-  if (systemInstruction) {
-    requestBody.systemInstruction = {
-      parts: [{ text: systemInstruction }],
-    };
-  }
+  const messages = [];
+  if (systemInstruction) messages.push({ role: "system", content: systemInstruction });
+  messages.push({ role: "user", content: prompt });
 
   try {
-    const geminiResponse = await fetch(
-      `${GEMINI_BASE_URL}/${encodeURIComponent(GEMINI_MODEL)}:generateContent`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "x-goog-api-key": apiKey,
-        },
-        body: JSON.stringify(requestBody),
-        signal: AbortSignal.timeout(120000),
-      }
-    );
+    const result = await groqRequest("/chat/completions", {
+      method: "POST",
+      signal: AbortSignal.timeout(120000),
+      body: JSON.stringify({
+        model: GROQ_MODEL,
+        messages,
+        max_completion_tokens: 4096,
+        reasoning_effort: "low",
+        temperature: 0.4,
+        stream: false,
+      }),
+    });
 
-    const data = await geminiResponse.json().catch(() => ({}));
+    const data = await result.json().catch(() => ({}));
 
-    if (!geminiResponse.ok) {
-      const providerMessage =
-        data?.error?.message ||
-        data?.message ||
-        `Gemini returned HTTP ${geminiResponse.status}.`;
-      console.error("Gemini API error:", geminiResponse.status, providerMessage);
-      return sendJson(response, geminiResponse.status, {
-        error: providerMessage,
-        provider: "Google Gemini",
-        status: geminiResponse.status,
-      });
+    if (!result.ok) {
+      const message = data?.error?.message || data?.message || `Groq returned HTTP ${result.status}.`;
+      console.error("Groq API error:", result.status, message);
+      const headers = {};
+      const retryAfter = result.headers.get("retry-after");
+      if (retryAfter) headers["Retry-After"] = retryAfter;
+      return sendJson(response, result.status, { error: message }, headers);
     }
 
-    const text = extractGeminiText(data);
-    if (!text) {
-      const finishReason = data?.candidates?.[0]?.finishReason || "unknown";
-      console.error("Gemini returned no text. finishReason:", finishReason);
+    const text = data?.choices?.[0]?.message?.content;
+    if (typeof text !== "string" || !text.trim()) {
+      console.error("Groq returned no text:", JSON.stringify({
+        finish_reason: data?.choices?.[0]?.finish_reason,
+        model: data?.model,
+      }));
       return sendJson(response, 502, {
-        error: `Gemini returned no text (finish reason: ${finishReason}). Try again or shorten the notes.`,
+        error: "Groq returned an empty response. Please retry with shorter notes.",
       });
     }
 
     return sendJson(response, 200, {
-      text,
-      model: data.modelVersion || GEMINI_MODEL,
+      text: text.trim(),
+      model: data.model || GROQ_MODEL,
     });
   } catch (error) {
     const timedOut = error.name === "TimeoutError" || error.name === "AbortError";
-    console.error("Gemini connection error:", error);
+    console.error("Groq connection error:", error.message);
     return sendJson(response, timedOut ? 504 : 502, {
       error: timedOut
-        ? "Gemini took more than two minutes to respond. Try shorter notes and retry."
-        : "Could not reach Google Gemini. Check your internet connection and try again.",
+        ? "Groq took too long to respond. Try shorter notes and retry."
+        : "Could not reach Groq. Check your internet connection and try again.",
     });
   }
 }
@@ -190,8 +210,8 @@ const server = http.createServer(async (request, response) => {
 
 server.listen(PORT, "127.0.0.1", () => {
   console.log(`AI backend running at http://127.0.0.1:${PORT}`);
-  console.log(`Provider: Google Gemini | Model: ${GEMINI_MODEL}`);
-  if (!process.env.GEMINI_API_KEY) {
-    console.log("WARNING: GEMINI_API_KEY is missing. Create/update the local .env file.");
+  console.log(`Provider: Groq | Model: ${GROQ_MODEL}`);
+  if (!process.env.GROQ_API_KEY) {
+    console.log("WARNING: GROQ_API_KEY is missing. Create/update the local .env file.");
   }
 });
