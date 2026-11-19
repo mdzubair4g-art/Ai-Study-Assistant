@@ -22,7 +22,7 @@ function MCQ() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
 
-  // Generate questions using Ollama
+  // Generate questions using the Groq AI backend
   const generateMCQs = async () => {
     if (!notes.trim()) {
       setError("Please enter your study material first.");
