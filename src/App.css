@@ -886,3 +886,29 @@ textarea:focus-visible, select:focus-visible {
     min-height: 135px;
   }
 }
+
+
+/* Final contrast and interaction polish for the shared tool UI. */
+button.bg-blue-600.text-white,
+button.bg-purple-600.text-white,
+button.bg-green-600.text-white,
+button.bg-green-700.text-white,
+button.bg-red-600.text-white,
+a.bg-blue-600.text-white,
+a.bg-purple-600.text-white,
+a.bg-green-600.text-white,
+a.bg-green-700.text-white,
+a.bg-red-600.text-white {
+  color: #fff !important;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .min-h-screen main div[class~="rounded-2xl"][class~="border"] {
+    transition: transform .24s cubic-bezier(.2,.75,.25,1), box-shadow .24s ease, border-color .24s ease;
+  }
+  .min-h-screen main div[class~="rounded-2xl"][class~="border"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 17px 34px rgba(75, 56, 92, .105);
+    border-color: rgba(121, 96, 232, .23) !important;
+  }
+}
