@@ -912,3 +912,202 @@ a.bg-red-600.text-white {
     border-color: rgba(121, 96, 232, .23) !important;
   }
 }
+
+
+/* =========================================================
+   FINAL POLISH — ALL STUDY PAGES
+   Warm editorial surfaces, playful colour, and calm motion.
+   ========================================================= */
+:root {
+  --ink-strong: #29243a;
+  --ink-soft: #716a7d;
+  --paper: #fffdf8;
+  --paper-warm: #fff4e5;
+  --paper-lilac: #f2edff;
+  --paper-peach: #fff0e9;
+  --paper-mint: #eaf8f0;
+  --accent-yellow: #ffd34f;
+  --accent-coral: #ff795e;
+  --accent-purple: #7960e8;
+  --accent-blue: #477bef;
+}
+
+.min-h-screen {
+  color: var(--ink-strong);
+}
+.min-h-screen main {
+  color: var(--ink-strong);
+}
+.min-h-screen main > div.text-center:first-child {
+  padding: 1rem 0 1.4rem;
+}
+.min-h-screen main > div.text-center:first-child > div:first-child {
+  filter: drop-shadow(0 8px 12px rgba(121, 96, 232, .12));
+  animation: gentleBob 4.5s ease-in-out infinite;
+}
+@keyframes gentleBob {
+  0%,100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-5px) rotate(2deg); }
+}
+.min-h-screen main > div.text-center:first-child h1 {
+  margin-inline: auto;
+  color: var(--ink-strong) !important;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.06;
+}
+.min-h-screen main > div.text-center:first-child p {
+  color: var(--ink-soft) !important;
+}
+
+/* The first feature panel on dashboards and tools feels like a warm welcome. */
+.min-h-screen main > section:first-child:not(.creative-hero) {
+  border-color: rgba(121, 96, 232, .18) !important;
+  background:
+    radial-gradient(circle at 92% 10%, rgba(255,121,94,.16), transparent 28%),
+    linear-gradient(125deg, #fff2d7 0%, #f1edff 58%, #fff8ee 100%) !important;
+}
+.min-h-screen main > section:first-child:not(.creative-hero) h1,
+.min-h-screen main > section:first-child:not(.creative-hero) h2 {
+  color: var(--ink-strong) !important;
+}
+.min-h-screen main > section:first-child:not(.creative-hero) p {
+  color: var(--ink-soft) !important;
+}
+
+/* Main content cards: clean paper surfaces with soft coloured edge details. */
+.min-h-screen main > section:not(:first-child),
+.min-h-screen main > div > section {
+  border-color: var(--stroke) !important;
+}
+.min-h-screen main [class~="rounded-2xl"][class~="bg-gray-900"],
+.min-h-screen main [class~="rounded-3xl"][class~="bg-gray-900"] {
+  background: var(--paper) !important;
+}
+.min-h-screen main [class~="rounded-xl"][class~="bg-gray-800"],
+.min-h-screen main [class~="rounded-2xl"][class~="bg-gray-800"] {
+  background: #f5f0e8 !important;
+}
+
+/* Stats, weekly charts and progress indicators. */
+.min-h-screen main .grid > [class~="rounded-2xl"][class~="p-6"] {
+  position: relative;
+  overflow: hidden;
+}
+.min-h-screen main .grid > [class~="rounded-2xl"][class~="p-6"]::after {
+  content: "";
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  right: -52px;
+  top: -52px;
+  border-radius: 50%;
+  background: rgba(121, 96, 232, .10);
+  pointer-events: none;
+}
+.min-h-screen main [class~="bg-blue-500"][class~="rounded-full"],
+.min-h-screen main [class~="bg-blue-500"][class~="rounded-t-lg"] {
+  background: linear-gradient(90deg, #477bef, #8b70ec) !important;
+}
+.min-h-screen main [class~="bg-gray-700"][class~="rounded-full"],
+.min-h-screen main [class~="bg-gray-800"][class~="rounded-full"] {
+  background: #eee8e1 !important;
+}
+
+/* Forms are paper-white with visible labels and a soft focus ring. */
+.min-h-screen main label {
+  display: inline-block;
+  margin-bottom: .45rem;
+  color: #514961;
+}
+.min-h-screen main textarea,
+.min-h-screen main input:not([type="checkbox"]):not([type="radio"]),
+.min-h-screen main select {
+  box-shadow: 0 2px 8px rgba(54, 43, 72, .025);
+}
+.min-h-screen main textarea::placeholder,
+.min-h-screen main input::placeholder {
+  color: #9a91a3 !important;
+}
+.min-h-screen main textarea:focus,
+.min-h-screen main input:focus,
+.min-h-screen main select:focus {
+  border-color: #8a73ed !important;
+  box-shadow: 0 0 0 4px rgba(121, 96, 232, .12);
+}
+
+/* Consistent pill treatments for filters and status labels. */
+.min-h-screen main button[class*="rounded-full"] {
+  border-radius: 999px;
+}
+.min-h-screen main button[class*="bg-gray-800"],
+.min-h-screen main button[class*="bg-gray-700"] {
+  border: 1px solid rgba(54, 43, 72, .10);
+}
+.min-h-screen main button[class*="bg-blue-600"],
+.min-h-screen main button[class*="bg-purple-600"] {
+  box-shadow: 0 8px 20px rgba(93, 91, 195, .18);
+}
+.min-h-screen main button[class*="bg-green-600"],
+.min-h-screen main button[class*="bg-green-700"] {
+  box-shadow: 0 8px 20px rgba(43, 152, 118, .14);
+}
+
+/* Smooth hover cards and tactile controls without adding a runtime dependency. */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .min-h-screen main [class~="rounded-2xl"][class~="border"]:hover,
+  .min-h-screen main [class~="rounded-xl"][class~="border"]:hover {
+    border-color: rgba(121, 96, 232, .24) !important;
+    box-shadow: 0 16px 36px rgba(75, 56, 92, .11);
+  }
+  .min-h-screen main button:not(:disabled):hover {
+    transform: translateY(-2px);
+  }
+  .min-h-screen main button:not(:disabled):active {
+    transform: translateY(0) scale(.98);
+  }
+}
+
+/* A light stagger for grids; continuous text and navigation remain still. */
+@keyframes softCardIn {
+  from { opacity: 0; transform: translateY(14px) scale(.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .min-h-screen main .grid > [class~="rounded-2xl"] {
+    animation: softCardIn .55s both;
+  }
+  .min-h-screen main .grid > [class~="rounded-2xl"]:nth-child(2) { animation-delay: .04s; }
+  .min-h-screen main .grid > [class~="rounded-2xl"]:nth-child(3) { animation-delay: .08s; }
+  .min-h-screen main .grid > [class~="rounded-2xl"]:nth-child(4) { animation-delay: .12s; }
+  .min-h-screen main .grid > [class~="rounded-2xl"]:nth-child(5) { animation-delay: .16s; }
+  .min-h-screen main .grid > [class~="rounded-2xl"]:nth-child(6) { animation-delay: .20s; }
+}
+
+/* Hide browser-specific dark native controls; keep the page fully light. */
+:root { color-scheme: light; }
+input, textarea, select { color-scheme: light; }
+
+/* Responsive tightening for smaller screens. */
+@media (max-width: 700px) {
+  .min-h-screen main {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+  .min-h-screen main > div.text-center:first-child {
+    margin-bottom: 2rem;
+  }
+  .min-h-screen main > div.text-center:first-child h1 {
+    font-size: clamp(1.9rem, 8vw, 2.5rem);
+  }
+  .min-h-screen main > section:first-child:not(.creative-hero) {
+    padding: 1.35rem !important;
+    border-radius: 1.35rem !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .min-h-screen main > div.text-center:first-child > div:first-child,
+  .min-h-screen main .grid > [class~="rounded-2xl"] {
+    animation: none !important;
+  }
+}
