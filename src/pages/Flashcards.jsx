@@ -31,7 +31,7 @@ function Flashcards() {
     }
   }, [cards]);
 
-  // Generate flashcards using Ollama
+  // Generate flashcards using the Groq AI backend
   const generateFlashcards = async () => {
     if (!notes.trim()) {
       setError("Please enter your study notes first.");
@@ -95,7 +95,7 @@ ${notes}
       );
 
       if (!response.ok) {
-        throw new Error("Ollama could not generate flashcards.");
+        throw new Error("Groq could not generate flashcards. Check the AI backend and try again.");
       }
 
       const data = await response.json();
