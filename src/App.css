@@ -630,3 +630,259 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
     transition-duration: .01ms !important;
   }
 }
+
+
+/* =========================================================
+   PRODUCT-WIDE FINISH
+   Inspired by component-led micro-interactions, scroll reveals,
+   tactile feedback and playful but restrained parallax.
+   ========================================================= */
+
+:root {
+  --surface: #fffdf8;
+  --surface-warm: #fff2df;
+  --surface-lilac: #f0eaff;
+  --surface-mint: #e7f7ef;
+  --surface-peach: #ffebe3;
+  --stroke: rgba(54, 43, 72, .13);
+  --shadow-soft: 0 12px 32px rgba(75, 56, 92, .075);
+  --shadow-lift: 0 20px 42px rgba(75, 56, 92, .14);
+}
+
+body {
+  background-color: #fff8ed;
+  background-attachment: fixed;
+}
+main {
+  isolation: isolate;
+}
+main h1, main h2, main h3 {
+  text-wrap: pretty;
+}
+main p {
+  text-wrap: pretty;
+}
+
+/* Replace the remaining dark gradient panels from the original tool pages. */
+[class~="from-blue-950"],
+[class~="to-purple-950"],
+[class~="to-blue-950"],
+[class~="from-gray-900"] {
+  background-image: linear-gradient(125deg, #fff0d2 0%, #f1ebff 58%, #fff3e8 100%) !important;
+  border-color: rgba(121, 96, 232, .18) !important;
+  box-shadow: var(--shadow-soft);
+}
+[class~="from-blue-950"] h1,
+[class~="from-blue-950"] h2,
+[class~="from-blue-950"] h3,
+[class~="from-gray-900"] h1,
+[class~="from-gray-900"] h2,
+[class~="from-gray-900"] h3 {
+  color: #29243a !important;
+}
+[class~="from-blue-950"] p,
+[class~="from-gray-900"] p {
+  color: #716a7d !important;
+}
+
+/* Soft semantic surfaces keep success, warning and error messages readable. */
+[class*="bg-red-900"],
+[class*="bg-red-950"] {
+  background-color: #fff0ed !important;
+  border-color: #f1b7ad !important;
+}
+[class*="bg-green-900"],
+[class*="bg-green-950"] {
+  background-color: #eaf8f0 !important;
+  border-color: #b5dfc9 !important;
+}
+[class*="bg-blue-900"],
+[class*="bg-blue-950"] {
+  background-color: #edf4ff !important;
+  border-color: #c5d8f8 !important;
+}
+[class*="bg-purple-900"],
+[class*="bg-purple-950"] {
+  background-color: #f2edff !important;
+  border-color: #d7c9fa !important;
+}
+[class*="bg-orange-900"],
+[class*="bg-orange-950"] {
+  background-color: #fff2e7 !important;
+  border-color: #f2d0ae !important;
+}
+.text-red-300, .text-red-400 { color: #b84f4a !important; }
+.text-green-300 { color: #267552 !important; }
+.text-blue-300 { color: #315f9e !important; }
+.text-purple-300 { color: #654bb1 !important; }
+.text-orange-300 { color: #a95b33 !important; }
+.text-cyan-300 { color: #247c91 !important; }
+
+/* Reusable paper-like panels across Dashboard, Simplify, MCQ, Planner,
+   Flashcards, Summary, Podcast and Chatbot. */
+.min-h-screen main [class~="rounded-2xl"][class~="border"],
+.min-h-screen main [class~="rounded-3xl"][class~="border"] {
+  border-color: var(--stroke) !important;
+  box-shadow: var(--shadow-soft);
+}
+.min-h-screen main [class~="rounded-xl"][class~="border"] {
+  border-color: var(--stroke) !important;
+}
+.min-h-screen main [class~="bg-gray-800"] {
+  color: #3c354c;
+}
+.min-h-screen main [class~="bg-gray-700"] {
+  color: #4c455b;
+}
+
+/* Clear hierarchy and generous form controls on every study tool. */
+.min-h-screen main h1 {
+  color: #29243a;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: -.055em;
+}
+.min-h-screen main h2,
+.min-h-screen main h3 {
+  color: #332d45;
+  font-family: "Space Grotesk", sans-serif;
+  letter-spacing: -.035em;
+}
+.min-h-screen main label {
+  color: #514961;
+  font-weight: 700;
+}
+.min-h-screen main textarea {
+  min-height: 150px;
+  line-height: 1.75;
+  box-shadow: inset 0 1px 2px rgba(54, 43, 72, .035);
+}
+.min-h-screen main input:not([type="checkbox"]):not([type="radio"]),
+.min-h-screen main textarea,
+.min-h-screen main select {
+  min-height: 46px;
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+.min-h-screen main textarea:focus,
+.min-h-screen main input:focus,
+.min-h-screen main select:focus {
+  background: #fffefa !important;
+}
+
+/* Buttons feel tactile: short lift, brighter colour and quick press response. */
+button:not(:disabled) {
+  transition:
+    transform .2s cubic-bezier(.2,.75,.25,1),
+    box-shadow .2s ease,
+    filter .2s ease,
+    background-color .2s ease;
+}
+button:not(:disabled):hover {
+  transform: translateY(-2px);
+  filter: saturate(1.08);
+}
+button:not(:disabled):active {
+  transform: translateY(0) scale(.975);
+}
+a:not(.nav-link):not(.brand-link):not(.footer-brand) {
+  transition: color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+a.rounded-xl:hover,
+a.rounded-2xl:hover,
+button.rounded-xl:hover,
+button.rounded-2xl:hover {
+  box-shadow: 0 12px 26px rgba(75, 56, 92, .12);
+}
+
+/* Friendly cards respond to hover without making static content jump. */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .min-h-screen main a[class~="rounded-xl"],
+  .min-h-screen main a[class~="rounded-2xl"],
+  .min-h-screen main button[class~="rounded-xl"],
+  .min-h-screen main button[class~="rounded-2xl"] {
+    transition: transform .24s cubic-bezier(.2,.75,.25,1), box-shadow .24s ease;
+  }
+  .min-h-screen main a[class~="rounded-xl"]:hover,
+  .min-h-screen main a[class~="rounded-2xl"]:hover,
+  .min-h-screen main button[class~="rounded-xl"]:hover,
+  .min-h-screen main button[class~="rounded-2xl"]:hover {
+    transform: translateY(-3px);
+  }
+}
+
+/* Route changes and sections enter with a small, calm rise. */
+@keyframes productPageEnter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.min-h-screen > main {
+  animation: productPageEnter .55s cubic-bezier(.2,.7,.2,1) both;
+}
+.min-h-screen > main > section {
+  animation: productPageEnter .65s cubic-bezier(.2,.7,.2,1) both;
+}
+.min-h-screen > main > section:nth-of-type(2) { animation-delay: .06s; }
+.min-h-screen > main > section:nth-of-type(3) { animation-delay: .12s; }
+.min-h-screen > main > section:nth-of-type(4) { animation-delay: .18s; }
+
+/* Scroll-aware reveals: progressive enhancement for browsers supporting view timelines. */
+@keyframes scrollCardReveal {
+  from { opacity: .35; transform: translateY(18px) scale(.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@supports (animation-timeline: view()) {
+  .min-h-screen main section > [class~="grid"] > div,
+  .min-h-screen main section > [class~="space-y-4"] > div,
+  .min-h-screen main section > [class~="space-y-6"] > div {
+    animation: scrollCardReveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 32%;
+  }
+}
+
+/* A small animated marker makes keyboard focus and selected controls obvious. */
+input[type="checkbox"], input[type="radio"] {
+  accent-color: #7960e8;
+}
+button:focus-visible, a:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible {
+  outline: 3px solid rgba(121, 96, 232, .32);
+  outline-offset: 3px;
+}
+
+/* The study sheet keeps the playful motion from the homepage while staying subtle. */
+.study-sheet {
+  box-shadow: 0 30px 62px rgba(68, 48, 85, .16), 0 0 0 9px rgba(255,255,255,.62);
+}
+.floating-note {
+  box-shadow: 0 15px 34px rgba(68, 48, 85, .13);
+}
+.art-orbit { animation: orbitBreathe 9s ease-in-out infinite alternate; }
+@keyframes orbitBreathe {
+  from { opacity: .55; scale: .98; }
+  to { opacity: 1; scale: 1.025; }
+}
+
+/* Keep motion comfortable and functional for every visitor. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  .min-h-screen > main,
+  .min-h-screen > main > section,
+  .art-orbit,
+  .study-sheet,
+  .floating-note,
+  .developer-feature-card {
+    animation: none !important;
+    transform: none !important;
+  }
+  button, a { transition: none !important; }
+}
+
+@media (max-width: 700px) {
+  .min-h-screen main [class~="rounded-2xl"][class~="border"],
+  .min-h-screen main [class~="rounded-3xl"][class~="border"] {
+    box-shadow: 0 8px 22px rgba(75, 56, 92, .06);
+  }
+  .min-h-screen main textarea {
+    min-height: 135px;
+  }
+}
