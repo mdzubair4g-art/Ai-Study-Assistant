@@ -243,7 +243,7 @@ ${podcast}
   };
 
   return (
-    <div className= tool-page tool-page-podcast"min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 tool-page tool-page-podcast">
       <Navbar />
 
       <main className="max-w-5xl mx-auto px-6 py-12">
