@@ -2626,3 +2626,48 @@ body::before {
     radial-gradient(ellipse at 50% 120%, rgba(255, 121, 94, .24), transparent 52%),
     linear-gradient(125deg, #ffe9c0, #e9e0ff 62%, #fff1df);
 }
+
+/* Stronger version of the same warm pastel palette — color intensity only. */
+body::before {
+  background:
+    radial-gradient(ellipse at 7% 2%, rgba(121, 96, 232, .23), transparent 36%),
+    radial-gradient(ellipse at 96% 15%, rgba(255, 121, 94, .27), transparent 33%),
+    radial-gradient(ellipse at 55% 100%, rgba(76, 169, 214, .09), transparent 38%),
+    #fff8ed;
+}
+
+.creative-hero {
+  background:
+    radial-gradient(ellipse at 88% 8%, rgba(255, 121, 94, .32), transparent 32%),
+    radial-gradient(ellipse at 53% 100%, rgba(121, 96, 232, .25), transparent 45%),
+    linear-gradient(128deg, #fffbea 0%, #ffedcb 55%, #e7ddff 100%);
+}
+
+.hero-kicker {
+  background: rgba(255, 211, 79, .38);
+  border-color: rgba(222, 164, 40, .68);
+}
+
+.developer-feature-card:nth-child(4n+1) {
+  background: linear-gradient(145deg, #ffdf91, #fff0c9);
+}
+.developer-feature-card:nth-child(4n+2) {
+  background: linear-gradient(145deg, #d8c9ff, #eee7ff);
+}
+.developer-feature-card:nth-child(4n+3) {
+  background: linear-gradient(145deg, #ccefe0, #e9f8ef);
+}
+.developer-feature-card:nth-child(4n+4) {
+  background: linear-gradient(145deg, #ffc9b9, #ffe8df);
+}
+
+.feature-icon {
+  box-shadow: 0 9px 24px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.creative-cta {
+  background:
+    radial-gradient(ellipse at 50% 120%, rgba(255, 121, 94, .31), transparent 54%),
+    radial-gradient(ellipse at 92% 0%, rgba(121, 96, 232, .20), transparent 39%),
+    linear-gradient(125deg, #ffe2a4, #e2d6ff 62%, #ffe9d7);
+}
