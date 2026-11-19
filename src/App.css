@@ -1424,3 +1424,80 @@ img, video, canvas, svg {
     scroll-behavior: auto !important;
   }
 }
+
+
+/* =========================================================
+   MOBILE RESPONSIVENESS — final device-width safeguards
+   ========================================================= */
+@media (max-width: 768px) {
+  html, body, #root { width: 100%; max-width: 100%; }
+  body { overflow-x: clip; }
+  .developer-nav { width: 100%; }
+  .nav-inner { width: 100%; }
+  .min-h-screen, .home-page { width: 100%; max-width: 100%; overflow-x: clip; }
+  .min-h-screen main, .home-main { width: 100%; max-width: 100%; }
+  .min-h-screen main > *, .min-h-screen main section,
+  .min-h-screen main article, .min-h-screen main form { min-width: 0; max-width: 100%; }
+  .min-h-screen main .flex:not(.flex-col) { flex-wrap: wrap; }
+  .min-h-screen main .grid { min-width: 0; }
+  .min-h-screen main .grid > * { min-width: 0; }
+  .min-h-screen main pre, .min-h-screen main code,
+  .min-h-screen main .overflow-x-auto { max-width: 100%; }
+  .min-h-screen main table { display: block; width: 100%; max-width: 100%; overflow-x: auto; }
+  .min-h-screen main img, .min-h-screen main video,
+  .min-h-screen main iframe { max-width: 100%; }
+  .developer-feature-card { min-width: 0; }
+  .creative-cta { margin-inline: 0; }
+  .creative-footer { flex-wrap: wrap; gap: 12px 20px; }
+}
+
+@media (max-width: 520px) {
+  .nav-inner { min-height: 66px; padding: 9px 13px; gap: 9px; }
+  .brand-link { gap: 8px; }
+  .brand-icon { width: 36px; height: 36px; border-radius: 12px; font-size: 21px; }
+  .brand-title { font-size: 12px; }
+  .nav-mobile-button { width: 42px; height: 42px; flex: 0 0 42px; }
+  .nav-mobile-menu { padding-left: 13px; padding-right: 13px; }
+  .nav-mobile-menu.open { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; }
+  .nav-mobile-menu .nav-link { min-height: 42px; padding: 9px 7px; font-size: 11px; }
+  .mobile-nav-cta { min-height: 44px; }
+  .min-h-screen main { padding-left: 14px !important; padding-right: 14px !important; }
+  .min-h-screen main > section { border-radius: 18px; }
+  .min-h-screen main .flex.items-center.justify-between { align-items: flex-start; }
+  .min-h-screen main button, .min-h-screen main a[class*="px-"] { max-width: 100%; }
+  .min-h-screen main input:not([type="checkbox"]):not([type="radio"]),
+  .min-h-screen main textarea, .min-h-screen main select { font-size: 16px; }
+  .min-h-screen main [class~="grid-cols-7"] { gap: 4px; }
+  .min-h-screen main [class~="grid-cols-7"] span { font-size: 10px; }
+  .hero-kicker { max-width: 100%; white-space: normal; line-height: 1.5; }
+  .hero-actions { display: grid; grid-template-columns: 1fr; }
+  .hero-button-primary, .hero-button-secondary { width: 100%; min-height: 48px; }
+  .hero-art { min-height: 300px; }
+  .study-sheet { width: min(76%, 270px); min-height: 265px; }
+  .floating-note { max-width: 46%; gap: 7px; padding: 8px; }
+  .floating-note strong { font-size: 10px; }
+  .floating-note small { font-size: 8px; white-space: normal; }
+  .mini-note-icon, .flash-icon { width: 27px; height: 27px; flex: 0 0 27px; }
+  .note-left { left: 0; top: 11%; }
+  .note-right { right: 0; bottom: 12%; }
+  .tools-heading-row { gap: 12px; }
+  .tools-heading-sticker { flex: 0 0 auto; }
+  .developer-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .developer-feature-card { min-height: 220px; padding: 15px; }
+  .feature-title { font-size: 14px; overflow-wrap: anywhere; }
+  .feature-description { font-size: 10px; }
+  .creative-cta { padding: 30px 20px !important; }
+  .creative-footer { padding: 22px 16px !important; text-align: center; justify-content: center; }
+}
+
+@media (max-width: 360px) {
+  .developer-feature-grid { grid-template-columns: 1fr; }
+  .tools-heading-row { flex-direction: column; }
+  .tools-heading-sticker { align-self: flex-start; }
+  .nav-mobile-menu.open { grid-template-columns: 1fr 1fr; }
+  .hero-heading { font-size: clamp(39px, 12vw, 48px); }
+  .hero-art { min-height: 270px; }
+  .study-sheet { width: 74%; padding: 17px; }
+  .floating-note { max-width: 43%; }
+  .min-h-screen main [class~="grid-cols-7"] { gap: 2px; }
+}
