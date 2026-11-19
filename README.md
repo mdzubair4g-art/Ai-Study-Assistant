@@ -65,7 +65,7 @@ An AI-powered study platform that helps students simplify class notes, generate 
 
 7. Open the local URL printed by Vite (usually `http://localhost:5173`).
 
-The Vite development proxy forwards `/api` requests to the local Node backend at `127.0.0.1:3001`. The existing React study pages route their Ollama-compatible fetch calls through `src/aiProxy.js`, which converts them into the backend's standard prompt format. The Groq key stays on the server and is never sent to the browser.
+The Vite development proxy forwards `/api` requests to the local Node backend at `127.0.0.1:3001`. The React study pages call `/api/generate` directly. The Groq key stays on the server and is never sent to the browser.
 
 ## Check the Groq connection
 
