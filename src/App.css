@@ -2543,3 +2543,48 @@ textarea:focus-visible, select:focus-visible {
   .tool-page-podcast main > div.text-center:first-child > p { font-size: 10px; }
   .tool-page-planner main > section:first-child { padding: 20px 18px; }
 }
+
+
+/* Route-level loading state for lazy-loaded study tools */
+.route-loading {
+  display: grid;
+  min-height: 100svh;
+  place-content: center;
+  justify-items: center;
+  gap: 13px;
+  padding: 24px;
+  color: #665c70;
+  background:
+    radial-gradient(ellipse at 50% 35%, rgba(255, 212, 79, .20), transparent 38%),
+    #fff8ed;
+  text-align: center;
+}
+.route-loading-mark {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 17px;
+  color: #fff;
+  background: linear-gradient(145deg, #ff795e, #f4a24c);
+  box-shadow: 0 9px 22px rgba(255, 121, 94, .20);
+  font-size: 25px;
+}
+.route-loading-spinner {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #e8dfd7;
+  border-top-color: #7960e8;
+  border-radius: 50%;
+  animation: routeSpin .75s linear infinite;
+}
+.route-loading p {
+  margin: 0;
+  color: #817888;
+  font-size: 12px;
+  font-weight: 700;
+}
+@keyframes routeSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) {
+  .route-loading-spinner { animation: none; border-top-color: #7960e8; }
+}
