@@ -1,15 +1,10 @@
 import http from "node:http";
-import { readFileSync } from "node:fs";
-import { existsSync } from "node:fs";
-
-const GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/interactions";
-const MAX_BODY_BYTES = 2 * 1024 * 1024;
+import { readFileSync, existsSync } from "node:fs";
 
 function loadLocalEnv() {
-  const envPath = ".env";
-  if (!existsSync(envPath)) return;
+  if (!existsSync(".env")) return;
+  const raw = readFileSync(".env", "utf8");
 
-  const raw = readFileSync(envPath, "utf8");
   for (const line of raw.split(/\r?\n/)) {
     const match = line.match(/^\s*(?:export\s+)?([A-Z][A-Z0-9_]*)\s*=\s*(.*)\s*$/);
     if (!match || process.env[match[1]] !== undefined) continue;
@@ -28,6 +23,8 @@ loadLocalEnv();
 
 const PORT = Number(process.env.AI_SERVER_PORT || 3001);
 const GEMINI_MODEL = process.env.GEMINI_MODEL || "gemini-3.8-flash";
+const GEMINI_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models";
+const MAX_BODY_BYTES = 2 * 1024 * 1024;
 
 function sendJson(response, status, payload) {
   response.writeHead(status, {
@@ -44,7 +41,7 @@ async function readJson(request) {
   for await (const chunk of request) {
     size += chunk.length;
     if (size > MAX_BODY_BYTES) {
-      const error = new Error("Request is too large. Please shorten your notes and try again.");
+      const error = new Error("Request too large. Please shorten your notes and try again.");
       error.statusCode = 413;
       throw error;
     }
@@ -60,21 +57,14 @@ async function readJson(request) {
   }
 }
 
-function extractOutputText(data) {
-  if (typeof data.output_text === "string" && data.output_text.trim()) {
-    return data.output_text.trim();
-  }
-
-  const pieces = [];
-  for (const step of Array.isArray(data.steps) ? data.steps : []) {
-    if (step.type !== "model_output" || !Array.isArray(step.content)) continue;
-    for (const item of step.content) {
-      if (item.type === "text" && typeof item.text === "string") {
-        pieces.push(item.text);
-      }
-    }
-  }
-  return pieces.join("\n").trim();
+function extractGeminiText(data) {
+  const candidates = Array.isArray(data.candidates) ? data.candidates : [];
+  const parts = candidates[0]?.content?.parts || [];
+  return parts
+    .filter((part) => typeof part.text === "string")
+    .map((part) => part.text)
+    .join("\n")
+    .trim();
 }
 
 async function handleHealth(response) {
@@ -84,8 +74,8 @@ async function handleHealth(response) {
     provider: "Google Gemini",
     model: GEMINI_MODEL,
     message: configured
-      ? "Gemini API key is configured. Send a test prompt to verify model access."
-      : "GEMINI_API_KEY is missing. Add it to your local .env file and restart the AI server.",
+      ? "Gemini API key is loaded by the backend."
+      : "GEMINI_API_KEY is missing. Add it to the local .env file and restart the backend.",
   });
 }
 
@@ -102,57 +92,84 @@ async function handleGenerate(request, response) {
     typeof body.systemInstruction === "string" ? body.systemInstruction.trim() : "";
 
   if (!prompt) {
-    return sendJson(response, 400, { error: "Please provide notes or a question for Gemini." });
+    return sendJson(response, 400, { error: "Please enter notes or a question first." });
   }
 
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     return sendJson(response, 503, {
-      error: "Gemini is not configured yet. Add GEMINI_API_KEY to your local .env file and restart the AI server.",
+      error: "Gemini API key is missing. Add GEMINI_API_KEY to the project .env file and restart npm run ai:server.",
     });
   }
 
-  try {
-    const geminiResponse = await fetch(GEMINI_ENDPOINT, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-goog-api-key": apiKey,
-        "Api-Revision": "2026-05-20",
+  const requestBody = {
+    contents: [
+      {
+        role: "user",
+        parts: [{ text: prompt }],
       },
-      signal: AbortSignal.timeout(180000),
-      body: JSON.stringify({
-        model: GEMINI_MODEL,
-        input: prompt,
-        ...(systemInstruction ? { system_instruction: systemInstruction } : {}),
-        store: false,
-      }),
-    });
+    ],
+    generationConfig: {
+      temperature: 0.35,
+      maxOutputTokens: 8192,
+    },
+  };
+
+  if (systemInstruction) {
+    requestBody.systemInstruction = {
+      parts: [{ text: systemInstruction }],
+    };
+  }
+
+  try {
+    const geminiResponse = await fetch(
+      `${GEMINI_BASE_URL}/${encodeURIComponent(GEMINI_MODEL)}:generateContent`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-goog-api-key": apiKey,
+        },
+        body: JSON.stringify(requestBody),
+        signal: AbortSignal.timeout(120000),
+      }
+    );
 
     const data = await geminiResponse.json().catch(() => ({}));
 
     if (!geminiResponse.ok) {
-      const message =
+      const providerMessage =
         data?.error?.message ||
         data?.message ||
         `Gemini returned HTTP ${geminiResponse.status}.`;
-      return sendJson(response, geminiResponse.status, { error: message });
-    }
-
-    const text = extractOutputText(data);
-    if (!text) {
-      return sendJson(response, 502, {
-        error: "Gemini returned no text. Please try again with a shorter prompt.",
+      console.error("Gemini API error:", geminiResponse.status, providerMessage);
+      return sendJson(response, geminiResponse.status, {
+        error: providerMessage,
+        provider: "Google Gemini",
+        status: geminiResponse.status,
       });
     }
 
-    return sendJson(response, 200, { text, model: GEMINI_MODEL });
+    const text = extractGeminiText(data);
+    if (!text) {
+      const finishReason = data?.candidates?.[0]?.finishReason || "unknown";
+      console.error("Gemini returned no text. finishReason:", finishReason);
+      return sendJson(response, 502, {
+        error: `Gemini returned no text (finish reason: ${finishReason}). Try again or shorten the notes.`,
+      });
+    }
+
+    return sendJson(response, 200, {
+      text,
+      model: data.modelVersion || GEMINI_MODEL,
+    });
   } catch (error) {
     const timedOut = error.name === "TimeoutError" || error.name === "AbortError";
+    console.error("Gemini connection error:", error);
     return sendJson(response, timedOut ? 504 : 502, {
       error: timedOut
-        ? "Gemini took too long to respond. Try shorter notes and retry."
-        : "Could not reach the Gemini API. Check your internet connection and try again.",
+        ? "Gemini took more than two minutes to respond. Try shorter notes and retry."
+        : "Could not reach Google Gemini. Check your internet connection and try again.",
     });
   }
 }
@@ -175,6 +192,6 @@ server.listen(PORT, "127.0.0.1", () => {
   console.log(`AI backend running at http://127.0.0.1:${PORT}`);
   console.log(`Provider: Google Gemini | Model: ${GEMINI_MODEL}`);
   if (!process.env.GEMINI_API_KEY) {
-    console.log("Missing GEMINI_API_KEY. Create a local .env file before making AI requests.");
+    console.log("WARNING: GEMINI_API_KEY is missing. Create/update the local .env file.");
   }
 });
