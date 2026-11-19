@@ -17,7 +17,7 @@ const LANGUAGES = [
   { name: "German", code: "de-DE" },
 ];
 
-const MODEL = "qwen3:0.6b";
+const MODEL = "openai/gpt-oss-120b";
 const OLLAMA_URL = "http://127.0.0.1:11434/api/generate";
 
 function Podcast() {
@@ -86,7 +86,7 @@ function Podcast() {
     });
 
     if (!response.ok) {
-      throw new Error("AI request failed. Check Ollama.");
+      throw new Error("AI request failed. Check the Groq backend and API key.");
     }
 
     const data = await response.json();
@@ -136,7 +136,7 @@ ${notes}
       setMessage("Your podcast has been generated successfully!");
     } catch (error) {
       setMessage(
-        "Could not connect to Ollama. Make sure Ollama is running and the model is downloaded. " +
+        "Could not connect to Groq. Make sure the backend is running and GROQ_API_KEY is configured. " +
           error.message
       );
     } finally {
@@ -174,7 +174,7 @@ ${podcast}
       setPodcast(result);
       setMessage("Podcast translated successfully!");
     } catch (error) {
-      setMessage("Translation failed. Check Ollama. " + error.message);
+      setMessage("Translation failed. Check the Groq backend. " + error.message);
     } finally {
       setLoading(false);
     }
