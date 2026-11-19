@@ -456,7 +456,7 @@ ${notes}
   };
 
   return (
-    <div className= tool-page tool-page-mcq"min-h-screen bg-gray-950 text-white">
+    <div className="min-h-screen bg-gray-950 text-white tool-page tool-page-mcq">
       <Navbar />
 
       <main className="max-w-6xl mx-auto px-6 py-12">
