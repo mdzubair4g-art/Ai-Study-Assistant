@@ -96,7 +96,7 @@ ${notes}
       setSummary(result);
     } catch (err) {
       setError(
-        "Unable to connect to Ollama. Please make sure Ollama is running on your computer."
+        "Unable to connect to Groq. Make sure the AI backend is running with npm run ai:server."
       );
     } finally {
       setLoading(false);
