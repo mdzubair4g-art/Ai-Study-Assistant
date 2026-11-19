@@ -1,341 +1,222 @@
-
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
 const features = [
   {
     number: "01",
-    icon: "✨",
+    icon: "✦",
     title: "AI Notes Simplifier",
-    description: "Transform complicated study material into simple explanations.",
+    description: "Turn dense class notes into clear explanations you can actually remember.",
     path: "/simplify",
-    color: "#60a5fa",
+    color: "#ffb52e",
+    tag: "Make it simple",
   },
   {
     number: "02",
-    icon: "📝",
+    icon: "▤",
     title: "Summary Generator",
-    description: "Create organized summaries for faster exam preparation.",
+    description: "Get the important ideas first, with summaries made for quick revision.",
     path: "/summary",
-    color: "#c4b5fd",
+    color: "#a78bfa",
+    tag: "Find the gist",
   },
   {
     number: "03",
-    icon: "🎯",
+    icon: "◎",
     title: "MCQ Generator",
-    description: "Generate practice questions and check your knowledge.",
+    description: "Test what stuck with smart practice questions and clear explanations.",
     path: "/mcq",
-    color: "#4ade80",
+    color: "#64d9b4",
+    tag: "Check yourself",
   },
   {
     number: "04",
-    icon: "🃏",
+    icon: "▣",
     title: "Interactive Flashcards",
-    description: "Learn concepts using active recall and spaced repetition.",
+    description: "Flip through bite-sized prompts and build stronger active recall.",
     path: "/flashcards",
-    color: "#f9a8d4",
+    color: "#ff8e70",
+    tag: "Remember more",
   },
   {
     number: "05",
-    icon: "🎧",
+    icon: "♫",
     title: "AI Podcast",
-    description: "Turn your learning material into an audio experience.",
+    description: "Give your eyes a break and turn study material into something to listen to.",
     path: "/podcast",
-    color: "#fdba74",
+    color: "#73c8ff",
+    tag: "Listen & learn",
   },
   {
     number: "06",
-    icon: "📅",
+    icon: "▦",
     title: "Study Planner",
-    description: "Organize tasks, deadlines and focused study sessions.",
+    description: "Make room for deep work with tasks, deadlines and focused sessions.",
     path: "/planner",
-    color: "#67e8f9",
+    color: "#f3cf59",
+    tag: "Find your rhythm",
   },
   {
     number: "07",
-    icon: "🤖",
+    icon: "✳",
     title: "AI Study Chatbot",
-    description: "Ask questions, talk with AI and understand difficult topics.",
+    description: "Ask the questions you were saving for later. Your AI tutor is right here.",
     path: "/chatbot",
-    color: "#a78bfa",
+    color: "#c69cff",
+    tag: "Get unstuck",
   },
   {
     number: "08",
-    icon: "📊",
+    icon: "↗",
     title: "Student Dashboard",
-    description: "Monitor your study progress and manage your learning.",
+    description: "See your progress, pick up where you left off and keep moving forward.",
     path: "/dashboard",
-    color: "#facc15",
+    color: "#ff9bc4",
+    tag: "Your big picture",
   },
 ];
 
 function Home() {
   return (
-    <div className="min-h-screen bg-gray-950 text-white">
-
+    <div className="min-h-screen bg-gray-950 text-white home-page">
       <Navbar />
 
-      <main className="max-w-7xl mx-auto px-6 py-12 md:py-16">
-
-        {/* Developer-style Hero */}
-        <section className="developer-hero">
+      <main className="home-main max-w-7xl mx-auto px-6 py-12 md:py-16">
+        <section className="creative-hero">
+          <div className="hero-spark hero-spark-one">✳</div>
+          <div className="hero-spark hero-spark-two">✦</div>
 
           <div className="hero-content">
-
             <div className="hero-kicker">
-              <span className="hero-status-dot" />
-              AI LEARNING PLATFORM · SYSTEM ONLINE
+              <span className="hero-kicker-icon">✦</span>
+              YOUR STUDY SIDEKICK, POWERED BY AI
             </div>
 
             <h1 className="hero-heading">
-              Your Ideas.
-              <span className="hero-gradient-text">
-                Your Learning.
-              </span>
-              Your AI.
+              Big ideas.
+              <span className="hero-heading-highlight">Clear notes.</span>
+              <span className="hero-heading-last">Better you.</span>
             </h1>
 
             <p className="hero-description">
-              A smarter workspace for students. Simplify notes,
-              generate quizzes, create flashcards, plan your
-              studies and talk with your own AI tutor.
+              Less time untangling notes, more time understanding the good stuff.
+              Simplify, revise and get back to learning your way.
             </p>
 
             <div className="hero-actions">
-
-              <Link
-                to="/dashboard"
-                className="hero-button-primary"
-              >
-                Explore Dashboard →
+              <Link to="/simplify" className="hero-button-primary">
+                Simplify my notes <span aria-hidden="true">↗</span>
               </Link>
-
-              <Link
-                to="/chatbot"
-                className="hero-button-secondary"
-              >
-                Talk to AI Assistant
+              <Link to="/dashboard" className="hero-button-secondary">
+                Explore workspace <span aria-hidden="true">→</span>
               </Link>
-
             </div>
 
-            <div className="hero-meta">
-              <span>✦ 8 Learning Sections</span>
-              <span>✦ Local AI Powered</span>
-              <span>✦ Built for Students</span>
+            <div className="hero-proof">
+              <div className="proof-avatars" aria-hidden="true">
+                <span>✎</span><span>✦</span><span>⌁</span>
+              </div>
+              <span>Your all-in-one space to study smarter</span>
             </div>
-
           </div>
 
-          {/* Developer Terminal */}
-          <div className="terminal-window">
+          <div className="hero-art" aria-label="A playful preview of AI-generated study notes">
+            <div className="art-orbit orbit-one" />
+            <div className="art-orbit orbit-two" />
 
-            <div className="terminal-header">
-              <span
-                className="terminal-dot"
-                style={{ background: "#fb7185" }}
-              />
-
-              <span
-                className="terminal-dot"
-                style={{ background: "#fbbf24" }}
-              />
-
-              <span
-                className="terminal-dot"
-                style={{ background: "#34d399" }}
-              />
-
-              <span className="terminal-filename">
-                student-workspace.jsx
-              </span>
+            <div className="floating-note note-left">
+              <span className="mini-note-icon">✦</span>
+              <span><strong>AI summary</strong><small>Key ideas, made clear</small></span>
             </div>
 
-            <div className="terminal-body">
-
-              <div className="terminal-line terminal-muted">
-                // Welcome to your AI-powered learning workspace
+            <div className="study-sheet">
+              <div className="sheet-topline">
+                <span className="sheet-label">YOUR STUDY SNAPSHOT</span>
+                <span className="sheet-dots">•••</span>
               </div>
-
-              <div className="terminal-line">
-                <span className="terminal-purple">const</span>{" "}
-                <span className="terminal-blue">student</span> = {"{"}
+              <div className="sheet-title">Today's big idea<span>.</span></div>
+              <div className="sheet-line sheet-line-long" />
+              <div className="sheet-line sheet-line-mid" />
+              <div className="sheet-highlight"><span>✦</span> The simple explanation</div>
+              <div className="sheet-line sheet-line-long" />
+              <div className="sheet-line sheet-line-short" />
+              <div className="sheet-bottom">
+                <span className="sheet-check">✓</span>
+                <span>Looking good. Keep going!</span>
               </div>
-
-              <div className="terminal-line">
-                &nbsp;&nbsp;name:{" "}
-                <span className="terminal-green">"Future Developer"</span>,
-              </div>
-
-              <div className="terminal-line">
-                &nbsp;&nbsp;workspace:{" "}
-                <span className="terminal-green">"AI Study Assistant"</span>,
-              </div>
-
-              <div className="terminal-line">
-                &nbsp;&nbsp;learningMode:{" "}
-                <span className="terminal-pink">"Smart"</span>,
-              </div>
-
-              <div className="terminal-line">
-                &nbsp;&nbsp;tools:{" "}
-                <span className="terminal-blue">8</span>,
-              </div>
-
-              <div className="terminal-line">
-                &nbsp;&nbsp;aiPowered:{" "}
-                <span className="terminal-purple">true</span>
-              </div>
-
-              <div className="terminal-line">{"};"}</div>
-
-              <br />
-
-              <div className="terminal-line">
-                <span className="terminal-purple">function</span>{" "}
-                <span className="terminal-blue">startLearning</span>() {"{"}
-              </div>
-
-              <div className="terminal-line">
-                &nbsp;&nbsp;<span className="terminal-pink">return</span>{" "}
-                <span className="terminal-green">"Let's grow! 🚀"</span>;
-              </div>
-
-              <div className="terminal-line">{"}"}</div>
-
-              <br />
-
-              <div className="terminal-line terminal-prompt">
-                $ npm run learn
-              </div>
-
-              <div className="terminal-line terminal-green">
-                ✓ AI assistant ready
-              </div>
-
-              <div className="terminal-line terminal-green">
-                ✓ Learning tools loaded
-              </div>
-
-              <div className="terminal-line terminal-green">
-                ✓ Your workspace is ready
-              </div>
-
             </div>
 
-            <div className="terminal-footer">
-              <span>● LOCAL AI ENVIRONMENT</span>
-              <span>READY_</span>
+            <div className="floating-note note-right">
+              <span className="flash-icon">▣</span>
+              <span><strong>Flashcard ready</strong><small>One idea at a time</small></span>
             </div>
 
+            <div className="sunburst">✹</div>
+            <div className="art-caption">A little more clarity, a lot more confidence.</div>
           </div>
 
+          <div className="hero-bottom-line">
+            <span>MAKE SPACE FOR THE “OH, I GET IT!” MOMENTS</span>
+            <span className="bottom-line-star">✳</span>
+          </div>
         </section>
 
-        {/* Learning Tools */}
-        <section className="developer-section">
-
-          <div className="text-center">
-
-            <p className="section-kicker">
-              YOUR DIGITAL TOOLKIT
-            </p>
-
-            <h2 className="section-heading">
-              Everything You Need to Learn Better
-            </h2>
-
-            <p className="section-description">
-              Eight connected tools. One intelligent learning workspace.
-            </p>
-
+        <section className="home-tools developer-section" id="tools">
+          <div className="tools-heading-row">
+            <div>
+              <p className="section-kicker">THE STUDY TOOLKIT</p>
+              <h2 className="section-heading">Everything clicks, <span>in one place.</span></h2>
+              <p className="section-description">
+                Eight thoughtful tools to help you go from “where do I start?” to “I've got this.”
+              </p>
+            </div>
+            <div className="tools-heading-sticker" aria-hidden="true">study<br />happy ✳</div>
           </div>
 
           <div className="developer-feature-grid">
-
             {features.map((feature) => (
               <Link
                 to={feature.path}
                 key={feature.path}
                 className="developer-feature-card"
-                style={{
-                  "--accent": feature.color,
-                }}
+                style={{ "--accent": feature.color }}
               >
-
                 <div className="feature-topline">
-
-                  <div className="feature-icon">
-                    {feature.icon}
-                  </div>
-
-                  <span className="feature-number">
-                    /{feature.number}
-                  </span>
-
+                  <div className="feature-icon" aria-hidden="true">{feature.icon}</div>
+                  <span className="feature-number">/{feature.number}</span>
                 </div>
-
-                <h3 className="feature-title">
-                  {feature.title}
-                </h3>
-
-                <p className="feature-description">
-                  {feature.description}
-                </p>
-
+                <span className="feature-tag">{feature.tag}</span>
+                <h3 className="feature-title">{feature.title}</h3>
+                <p className="feature-description">{feature.description}</p>
                 <div className="feature-action">
                   <span>EXPLORE TOOL</span>
-                  <span>↗</span>
+                  <span className="feature-arrow" aria-hidden="true">↗</span>
                 </div>
-
               </Link>
             ))}
-
           </div>
-
         </section>
 
-        {/* Bottom Call to Action */}
-        <section className="developer-cta">
-
-          <div className="text-5xl mb-5">
-            🚀
-          </div>
-
-          <h2>
-            Ready to Upgrade Your Learning?
-          </h2>
-
-          <p>
-            Take control of your study schedule, explore your AI tools
-            and make every learning session count.
-          </p>
-
-          <Link
-            to="/dashboard"
-            className="hero-button-primary"
-          >
-            Open Your Dashboard →
+        <section className="creative-cta">
+          <div className="cta-confetti cta-confetti-left" aria-hidden="true">✳</div>
+          <div className="cta-confetti cta-confetti-right" aria-hidden="true">✦</div>
+          <p className="section-kicker">YOUR NEXT “I'VE GOT THIS” STARTS HERE</p>
+          <h2>Make studying feel<br /><span>a little more you.</span></h2>
+          <p>Pick a tool, bring your notes and let’s make the hard stuff feel lighter.</p>
+          <Link to="/dashboard" className="hero-button-primary">
+            Open my workspace <span aria-hidden="true">↗</span>
           </Link>
-
         </section>
-
       </main>
 
-      <footer className="border-t border-gray-800 py-7 text-center text-sm">
-        <p className="font-bold text-gray-300 mb-2">
-          AI STUDY ASSISTANT
-        </p>
-
-        <p>
-          Designed for smarter learning · Powered by local AI
-        </p>
-
-        <p className="mt-2 text-xs">
-          © 2026 AI Study Assistant. All rights reserved.
-        </p>
+      <footer className="creative-footer">
+        <div className="footer-brand">
+          <span className="footer-brand-mark">✳</span>
+          <span>AI Notes Simplifier</span>
+        </div>
+        <p>Made for curious minds and late-night lightbulb moments.</p>
+        <span className="footer-year">© 2026 AI Notes Simplifier</span>
       </footer>
-
     </div>
   );
 }
