@@ -61,16 +61,24 @@ The project is built with React and Vite and uses the Groq API for AI-powered ge
 
 ## Tech stack
 
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=html,css,js,react,vite,tailwind,nodejs,vercel,github" alt="HTML, CSS, JavaScript, React, Vite, Tailwind CSS, Node.js, Vercel and GitHub logos" />
+  <img src="https://cdn.simpleicons.org/groq/F55036" alt="Groq logo" height="48" />
+</p>
+
 | Area | Technology |
 | --- | --- |
+| Markup | HTML5 |
+| Styling | CSS3 and Tailwind CSS 4 |
+| Programming language | JavaScript (ES modules) |
 | Frontend | React 19 |
 | Build tool and development server | Vite 8 |
-| Styling | Tailwind CSS 4 and project CSS |
 | Routing | React Router |
 | AI provider | Groq API |
 | Default AI model | `openai/gpt-oss-120b` |
 | Local development API | Node.js |
 | Production hosting | Vercel |
+| Version control | Git and GitHub |
 | PDF features | PDF.js and jsPDF |
 | Voice playback | Browser Speech APIs |
 | Browser-side persistence | Local Storage |
