@@ -1,8 +1,8 @@
-# AI Notes Simplifier
+# AI Study Assistant
 
-An AI-powered study platform that helps students simplify class notes, generate summaries, create MCQs and flashcards, listen to study podcasts, and organize a study routine.
+An AI-powered study platform that helps students understand class notes, generate summaries, create MCQs and flashcards, listen to study podcasts, and organize a study routine.
 
-## Features
+## Study tools
 
 - **AI Notes Simplifier:** Turns difficult study notes into clearer explanations.
 - **Summary Generator:** Creates revision-friendly summaries.
