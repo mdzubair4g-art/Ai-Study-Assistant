@@ -53,11 +53,11 @@ function Navbar() {
     <>
       <header className="developer-nav">
         <div className="nav-inner">
-          <Link to="/" className="brand-link" onClick={closeMenu} aria-label="AI Notes Simplifier home">
+          <Link to="/" className="brand-link" onClick={closeMenu} aria-label="AI Study Assistant home">
             <span className="brand-icon" aria-hidden="true"><span>✳</span></span>
             <span className="brand-copy">
-              <span className="brand-title">AI Notes</span>
-              <span className="brand-title brand-title-second">Simplifier</span>
+              <span className="brand-title">AI Study</span>
+              <span className="brand-title brand-title-second">Assistant</span>
             </span>
           </Link>
 
