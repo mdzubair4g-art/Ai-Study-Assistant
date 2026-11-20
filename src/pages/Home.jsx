@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import QuickStart from "../components/QuickStart";
 
 const features = [
   { number: "01", icon: "✳", title: "AI Notes Simplifier", description: "Turn dense lecture notes into clear, approachable explanations.", path: "/simplify", color: "#ff8a65", tag: "Understand", detail: "Plain-language explanations" },
@@ -112,6 +113,8 @@ function Home() {
             <span className="bottom-line-star">✳</span>
           </div>
         </section>
+
+        <QuickStart />
 
         <section className="home-tools developer-section" id="tools">
           <div className="tools-heading-row">
