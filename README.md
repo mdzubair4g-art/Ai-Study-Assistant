@@ -80,7 +80,7 @@ The project is built with React and Vite and uses the Groq API for AI-powered ge
 The application sends generation requests to a server-side endpoint. The server calls Groq and returns the generated result to the frontend.
 
 - **Local development:** `ai-server.mjs` runs the local Node.js API on port `3001`. Vite forwards `/api` requests to it.
-- **Production:** Vercel runs `api/generate.js) as a serverless function.
+- **Production:** Vercel runs `api/generate.js` as a serverless function.
 - **Secrets:** The Groq API key belongs on the server. It should never be placed in frontend code or exposed through a `VITE_*` variable.
 
 The browser stores the shared study source locally so the supported tools can continue working with the same material in that browser profile.
@@ -190,18 +190,18 @@ A successful response includes `"ok": true` and information about the configured
 
 ## Deploy to Vercel
 
-The repository includes a `vercel.json) configuration for Vercel deployment.
+The repository includes a `vercel.json` configuration for Vercel deployment.
 
 1. Import this GitHub repository into [Vercel](https://vercel.com/).
 2. Use the Vite framework preset.
-3. Set the install command to `npm ci).
-4. Set the build command to `npm run build).
-5. Set the output directory to `dist).
+3. Set the install command to `npm ci`.
+4. Set the build command to `npm run build`.
+5. Set the output directory to `dist`.
 6. Open **Project → Settings → Environment Variables**.
-7. Add `GROQ_API_KEY) and, optionally, `GROQ_MODEL` for the Production environment. Add them to Preview too if preview deployments should use AI.
+7. Add `GROQ_API_KEY` and, optionally, `GROQ_MODEL` for the Production environment. Add them to Preview too if preview deployments should use AI.
 8. Redeploy the project.
 
-The production API is handled by `api/generate.js). You do not need to run `ai-server.mjs` on Vercel.
+The production API is handled by `api/generate.js`. You do not need to run `ai-server.mjs` on Vercel.
 
 **Live deployment:** [https://ai-notes-simplifier-iota.vercel.app/](https://ai-notes-simplifier-iota.vercel.app/)
 
@@ -243,7 +243,7 @@ Ai-Study-Assistant/
 ## Privacy and security
 
 - Keep API keys in server-side environment variables.
-- Do not commit `.env) or paste secrets into public repositories.
+- Do not commit `.env` or paste secrets into public repositories.
 - The shared study source used by the study tools is stored in the browser's local storage for that browser profile.
 - Uploaded PDF content is used by the chatbot flow as context for requests. Avoid uploading confidential, personal or sensitive documents.
 - AI-generated explanations and answers can contain mistakes. Check important facts against your course material or trusted sources.
@@ -252,7 +252,7 @@ Ai-Study-Assistant/
 
 | Problem | What to check |
 | --- | --- |
-| AI request says the key is missing | Confirm `.env` exists in the project root and contains `GROQ_API_KEY). Restart the local AI server after changing it. |
+| AI request says the key is missing | Confirm `.env` exists in the project root and contains `GROQ_API_KEY`. Restart the local AI server after changing it. |
 | Connection refused on port 3001 | Run `npm run ai:server` and keep that terminal open. |
 | Invalid API key / HTTP 401 | Create or replace the key in [Groq Console](https://console.groq.com/keys). |
 | Model access error | Check that the configured model is available to your Groq account. |
