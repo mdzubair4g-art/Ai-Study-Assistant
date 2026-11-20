@@ -255,11 +255,11 @@ function Home() {
       <footer className="creative-footer">
         <div className="footer-brand">
           <span className="footer-brand-mark">✳</span>
-          <span>AI Notes Simplifier</span>
+          <span>AI Study Assistant</span>
         </div>
         <p>Made for curious minds and late-night lightbulb moments.</p>
         <div className="footer-links"><Link to="/dashboard">Dashboard</Link><Link to="/planner">Planner</Link><Link to="/chatbot">AI tutor</Link></div>
-        <span className="footer-year">© 2026 AI Notes Simplifier</span>
+        <span className="footer-year">© 2026 AI Study Assistant</span>
       </footer>
     </div>
   );
