@@ -53,8 +53,8 @@ function QuickStart() {
             rows={4}
             maxLength={12000}
           />
-          <div className="quick-start-input-meta">
-            <span>{error || "Your text stays in this browser and is shared with the study tools on this device."}</span>
+          <div className="quick-start-input-meta" aria-live="polite">
+            <span className={error ? "quick-start-error" : ""}>{error || "Saved in this browser so you can reuse it across study tools on this device."}</span>
             <span>{material.length.toLocaleString()} / 12,000</span>
           </div>
         </div>
