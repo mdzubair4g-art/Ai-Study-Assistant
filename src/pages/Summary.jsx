@@ -1,56 +1,1 @@
-
-import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import { jsPDF } from "jspdf";
-import { readStudySource, saveStudySource } from "../studyWorkflow";
-
-const LANGUAGES = [
-  { name: "English", code: "en-US" },
-  { name: "Hindi", code: "hi-IN" },
-  { name: "Kannada", code: "kn-IN" },
-  { name: "Tamil", code: "ta-IN" },
-  { name: "Telugu", code: "te-IN" },
-];
-
-function Summary() {
-  const [notes, setNotes] = useState(() => readStudySource());
-  const [summary, setSummary] = useState("");
-  const [language, setLanguage] = useState("English");
-  const [length, setLength] = useState("Medium");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [speaking, setSpeaking] = useState(false);
-
-  useEffect(() => {
-    return () => {
-      window.speechSynthesis?.cancel();
-    };
-  }, []);
-
-  // Generate AI summary
-  const generateSummary = async () => {
-    if (!notes.trim()) {
-      setError("Please enter your study notes first.");
-      return;
-    }
-
-    setLoading(true);
-    setError("");
-    setSummary("");
-
-    window.speechSynthesis?.cancel();
-    setSpeaking(false);
-
-    const prompt = `
-You are an expert AI study assistant.
-
-Create a clear and accurate summary of the following study material.
-
-Output language: ${language}
-Summary length: ${length}
-
-Instructions:
-1. Identify the most important concepts.
-2. Remove unnecessary repetition.
-3. Use clear headings where appropriate.
-4. Use bullet point÷ª«±Àû
+CmltcG9ydCB7IHVzZUVmZmVjdCwgdXNlU3RhdGUgfSBmcm9tICJyZWFjdCI7CmltcG9ydCBOYXZiYXIgZnJvbSAiLi4vY29tcG9uZW50cy9OYXZiYXIiOwppbXBvcnQgeyBqc1BERiB9IGZyb20gImpzcGRmIjsKaW1wb3J0IHsgcmVhZFN0dWR5U291cmNlLCBzYXZlU3R1ZHlTb3VyY2UgfSBmcm9tICIuLi9zdHVkeVdvcmtmbG93IjsKCmNvbnN0IExBTkdVQUdFUyA9IFsKICB7IG5hbWU6ICJFbmdsaXNoIiwgY29kZTogImVuLVVTIiB9LAogIHsgbmFtZTogIkhpbmRpIiwgY29kZTogImhpLUlOIiB9LAogIHsgbmFtZTogIkthbm5hZGEiLCBjb2RlOiAia24tSU4iIH0sCiAgeyBuYW1lOiAiVGFtaWwiLCBjb2RlOiAidGEtSU4iIH0sCiAgeyBuYW1lOiAiVGVsdWd1IiwgY29kZTogInRlLUlOIiB9LApdOwoKZnVuY3Rpb24gU3VtbWFyeSgpIHsKICBjb25zdCBbbm90ZXMsIHNldE5vdGVzXSA9IHVzZVN0YXRlKCgpID0+IHJlYWRTdHVkeVNvdXJjZSgpKTsKICBjb25zdCBbc3VtbWFyeSwgc2V0U3VtbWFyeV0gPSB1c2VTdGF0ZSgiIik7CiAgY29uc3QgW2xhbmd1YWdlLCBzZXRMYW5ndWFnZV0gPSB1c2VTdGF0ZSgiRW5nbGlzaCIpOwogIGNvbnN0IFtsZW5ndGgsIHNldExlbmd0aF0gPSB1c2VTdGF0ZSgiTWVkaXVtIik7CiAgY29uc3QgW2xvYWRpbmcsIHNldExvYWRpbmddID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtlcnJvciwgc2V0RXJyb3JdID0gdXNlU3RhdGUoIiIpOwogIGNvbnN0IFtzcGVha2luZywgc2V0U3BlYWtpbmddID0gdXNlU3RhdGUoZmFsc2UpOwoKICB1c2VFZmZlY3QoKCkgPT4gewogICAgcmV0dXJuICgpID0+IHsKICAgICAgd2luZG93LnNwZWVjaFN5bnRoZXNpcz8uY2FuY2VsKCk7CiAgICB9OwogIH0sIFtdKTsKCiAgLy8gR2VuZXJhdGUgQUkgc3VtbWFyeQogIGNvbnN0IGdlbmVyYXRlU3VtbWFyeSA9IGFzeW5jICgpID0+IHsKICAgIGlmICghbm90ZXMudHJpbSgpKSB7CiAgICAgIHNldEVycm9yKCJQbGVhc2UgZW50ZXIgeW91ciBzdHVkeSBub3RlcyBmaXJzdC4iKTsKICAgICAgcmV0dXJuOwogICAgfQoKICAgIHNldExvYWRpbmcodHJ1ZSk7CiAgICBzZXRFcnJvcigiIik7CiAgICBzZXRTdW1tYXJ5KCIiKTsKCiAgICB3aW5kb3cuc3BlZWNoU3ludGhl∂ªßq´^u%ùëµÕë]TÂî»’ŸëYÈôEΩù%ù%ù%ù%	Ÿâ≠9Ωe\’πiPƒ›-X…i\‘¡-MÂA•›%!9±ë’ŸëYÈ-X…i\‘¡1πI°çµë±ë‘…e]‡≈iM¨›%!9°ëµYQë!Y≠ïY9Ÿëa)©iM°±ëµY’ë‘¡ea)πiaE’ëµÕë]U¡=ÂÂôEΩù%ù%ù%ù%	›â©i]°ŸâI±ç®¡•UÈëUùï\‰≈ç•¡ia†¡e¥ÂŸÖÂ	©à»‘¡i\‘¡1	©âÈçÂ	’àÕI±çÂ	Ÿç•	Èë!Y≠ïM	—eaI±çµ±°â	Ωia)±1§—’%ùΩù%ù%ù%ù%	©âÈå¿’°â]TÂ%πç—iπYÕâ	—Ö\——Ö¿…9	ÂàÕY’iY≠1a°Õ%)π1]ëÂea≠—=›%)ŸçµI±ç•	•àÕ)≠ia%—hÕ)°ïL¿Õ5ùç¿≈%!I±ï!E—ê…°¡ëUùàÕX¡â±’iL≈’à»’±%iŸdÕYÈ=µ)ŸçµI±ç§≈•â!Y±1QU›5	Âia9¡ïµU—ïM%-%ù%ù%ù%‡≠ùΩù%ù%ù%ùAI¡ë•	©âÈå¿’°â]TÂ%µëÂÖ]EùhÕ)¡i≈©à…·È1Qùâ]DŸhÕ)¡i≈©à…·È1Q%ùh…›1QUùâaE—9•$≠ùΩù%ù%ù%ù%·i∞…AùΩù%ù%ù%ù%ù%·Õe])±â	©âÈå¿’°â]TÂ%µ)Õà…9…%!I±ï!E—å»¡ùëX—ë≈πçµ’1Q5›5	—e§¡Â%®—-%ù%ù%ù%ù%ù%‰≈ë!≈ë	5e\’πë]πiEΩù%ù%ù%ù%ù%›Ÿâ•i]‹≠ùΩù%ù%ù%ù%ù%·Èi]·±dÕE-%ù%ù%ù%ù%ù%!i°â!Y±Aa—Õe\’πë]πi`¡-%ù%ù%ù%ù%ù%Â’D…°°âµë±AaÕΩiai±âπE¡%¿≠%!9±ë·°âµê≈e]ë±-X…i\‘¡1πI°çµë±ë‘…e]‡≈iM∞Â•ù%ù%ù%ù%ù%	©âÈå¿’°â]TÂ%πç—iπYÕâ	•i‰≈πçµ’1Qù›5	•àÕ)≠ia%ùe¥ÂÂiYÂ1]ëÂea≠—9È›%!)Ÿë\’≠i]E—âçùç¡È%!I±ï!E—ê…°¡ëUùàÕX¡â±’iL≈’à»’±%ùΩù%ù%ù%ù%ù%—-%ù%ù%ù%ù%ù%!—5ET’!YU!IY5’â]›-°¡ëY—-MÂA•Ω•ù%ù%ù%ù%ù%ù%·Ÿç!I¡à»—ùÑ…X’Aa—¡ëY—1µ9ŸiXÂ%!i°â!Y±Aa—¡ëY—1¥’°â]XÂAùΩù%ù%ù%ù%ù%ù%ù%!—¡ëY—1¥’°â]XÂ•ù%ù%ù%ù%ù%ù%›ŸàÕ¡Ö\Â’AùΩù%ù%ù%ù%ù%ù-M∞Â•ù%ù%ù%ù%ùAÂÈi]·±dÕD≠•ù%ù%ù%ù%›Ÿi∞…AùΩ-%ù%ù%ù%ùAI¡ë®—-%ù%ù%ù%ù%·â•i]›ùd…·°åÕ9=e\≈±AM)•âÂ©ÖÂ¡ia†¬⁄Óù∆≠y

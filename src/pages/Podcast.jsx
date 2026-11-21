@@ -1,46 +1,1 @@
-
-import { useState, useEffect, useMemo } from "react";
-import Navbar from "../components/Navbar";
-import { readStudySource, saveStudySource } from "../studyWorkflow";
-
-const LANGUAGES = [
-  { name: "English", code: "en-US" },
-  { name: "Hindi", code: "hi-IN" },
-  { name: "Kannada", code: "kn-IN" },
-  { name: "Tamil", code: "ta-IN" },
-  { name: "Telugu", code: "te-IN" },
-  { name: "Malayalam", code: "ml-IN" },
-  { name: "Urdu", code: "ur-PK" },
-  { name: "Bengali", code: "bn-IN" },
-  { name: "Marathi", code: "mr-IN" },
-  { name: "Spanish", code: "es-ES" },
-  { name: "French", code: "fr-FR" },
-  { name: "German", code: "de-DE" },
-];
-
-const MODEL = "openai/gpt-oss-120b";
-const AI_GENERATE_URL = "/api/generate";
-
-function Podcast() {
-  const [notes, setNotes] = useState(() => readStudySource());
-  const [podcast, setPodcast] = useState("");
-  const [language, setLanguage] = useState("en-US");
-  const [voices, setVoices] = useState(() => {
-    if (typeof window === "undefined" || !window.speechSynthesis) return [];
-    return window.speechSynthesis.getVoices();
-  });
-  const [selectedVoice, setSelectedVoice] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
-  const [playback, setPlayback] = useState("stopped");
-
-  useEffect(() => {
-    if (!window.speechSynthesis) return;
-
-    const loadVoices = () => {
-      setVoices(window.speechSynthesis.getVoices());
-    };
-
-    window.speechSynthesis.onvoiceschanged = loadVoices;
-
-÷ª«±Àû
+CmltcG9ydCB7IHVzZVN0YXRlLCB1c2VFZmZlY3QsIHVzZU1lbW8gfSBmcm9tICJyZWFjdCI7CmltcG9ydCBOYXZiYXIgZnJvbSAiLi4vY29tcG9uZW50cy9OYXZiYXIiOwppbXBvcnQgeyByZWFkU3R1ZHlTb3VyY2UsIHNhdmVTdHVkeVNvdXJjZSB9IGZyb20gIi4uL3N0dWR5V29ya2Zsb3ciOwoKY29uc3QgTEFOR1VBR0VTID0gWwogIHsgbmFtZTogIkVuZ2xpc2giLCBjb2RlOiAiZW4tVVMiIH0sCiAgeyBuYW1lOiAiSGluZGkiLCBjb2RlOiAiaGktSU4iIH0sCiAgeyBuYW1lOiAiS2FubmFkYSIsIGNvZGU6ICJrbi1JTiIgfSwKICB7IG5hbWU6ICJUYW1pbCIsIGNvZGU6ICJ0YS1JTiIgfSwKICB7IG5hbWU6ICJUZWx1Z3UiLCBjb2RlOiAidGUtSU4iIH0sCiAgeyBuYW1lOiAiTWFsYXlhbGFtIiwgY29kZTogIm1sLUlOIiB9LAogIHsgbmFtZTogIlVyZHUiLCBjb2RlOiAidXItUEsiIH0sCiAgeyBuYW1lOiAiQmVuZ2FsaSIsIGNvZGU6ICJibi1JTiIgfSwKICB7IG5hbWU6ICJNYXJhdGhpIiwgY29kZTogIm1yLUlOIiB9LAogIHsgbmFtZTogIlNwYW5pc2giLCBjb2RlOiAiZXMtRVMiIH0sCiAgeyBuYW1lOiAiRnJlbmNoIiwgY29kZTogImZyLUZSIiB9LAogIHsgbmFtZTogIkdlcm1hbiIsIGNvZGU6ICJkZS1ERSIgfSwKXTsKCmNvbnN0IE1PREVMID0gIm9wZW5haS9ncHQtb3NzLTEyMGIiOwpjb25zdCBBSV9HRU5FUkFURV9VUkwgPSAiL2FwaS9nZW5lcmF0ZSI7CgpmdW5jdGlvbiBQb2RjYXN0KCkgewogIGNvbnN0IFtub3Rlcywgc2V0Tm90ZXNdID0gdXNlU3RhdGUoKCkgPT4gcmVhZFN0dWR5U291cmNlKCkpOwogIGNvbnN0IFtwb2RjYXN0LCBzZXRQb2RjYXN0XSA9IHVzZVN0YXRlKCIiKTsKICBjb25zdCBbbGFuZ3VhZ2UsIHNldExhbmd1YWdlXSA9IHVzZVN0YXRlKCJlbi1VUyIpOwogIGNvbnN0IFt2b2ljZXMsIHNldFZvaWNlc10gPSB1c2VTdGF0ZSgoKSA9PiB7CiAgICBpZiAodHlwZW9mIHdpbmRvdyA9PT0gInVuZGVmaW5lZCIgfHwgIXdpbmRvdy5zcGVlY2hTeW50aGVzaXMpIHJldHVybiBbXTsKICAgIHJldHVybiB3aW5kb3cuc3BlZWNoU3ludGhlc2lzLmdldFZvaWNlcygpOwogIH0pOwogIGNvbnN0IFtzZWxlY3RlZFZvaWNlLCBzZXRTZWxlY3RlZFZvaWNlXSA9IHVz∂ªßq´^u%ù%ù%ù%Â’D…°°âµë±AaÕΩiM≠ùAP—ùïÂ	ÈiaI=àÕI±çÂ°±1πI°çµë±ë‘…e]‡≈iM¨›%!9°ëµYQë!Y≠ïY9Ÿëa)©iM°±1πI°çµë±ë‘…e]‡≈iM¨›% ƒÂ•ù%ù%ù%ù%!	Õe]9±ÖÂÕiYÂAM)Eea8¡iM’àÕYÂ%9Ÿâ·±h…Uùâ¥‰¡ia5ùÖYÂiL—’1•%-%ù%ù%ù%ùd…·°åÕ9=e\≈±AM(Õ1]h≈â›ùÖ¿≈9•	•àÕ)≠ia%ùe¥ÂÂiYÂ1]ëÂea≠—5È›%!)Ÿë\’≠i]E—ï›ùç¿¡%‰≈ë·¡âµU—â¥Â’iM	µà…8≈çÈ¡ÂÖ\’π1Q%ùi¥Â©ëa4Ÿçµ±’i‰≈•â!Y±1QU›5	Âia9¡ïµU—ïM%-%ù%ù%ù%‡≠ùΩù%ù%ù%ùAI¡ë•	©âÈå¿’°â]TÂ%¥ƒ¡1Qe•AùΩù%ù%ù%ù%·â•i]›ùd…·°åÕ9=e\≈±AM)•âÂ©ÖÂ	µà»‘¡1a9±â]±•à…·≠%≈•1Q%•AùΩù%ù%ù%ù%ù%9Ωà»ÂÈiM	Eà…I©ea8¡%·°âµê≈e]ë±%Aô©$¡-%ù%ù%ù%ùAÂÕe])±â—-•ù%ù%ù%ù%·Èi]·±dÕE-%ù%ù%ù%ù%…e]‡≈iPƒ›â’hÕY°h…XÂ•ù%ù%ù%ù%ùà»’Ö’h…TÂïÂ°±-MÂA•›•ù%ù%ù%ù%ù%	ÈëÂ›EaY≠Ö\·Ω-QÕ-%ù%ù%ù%ù%ù%!9±ë·°âµê≈e]ë±-U’ëÂh…X¡1πi°â!Y±-QÕ-%ù%ù%ù%ù%ÂôEΩù%ù%ù%ù%ù%9Õea9ÈQµ—iP¡•ë‰≈µë]·Õ%)ŸçµI±ç•	•àÕ)≠ia%—hÕ)°ïL¡È5ùç¥‰≈âµI±i≈ÕiÂ	›1Q5ùeµç—ê…°¡ëUùàÕX¡â±’iL≈’à»’±%iŸdÕYÈ=π)¡âµç—5•	µà…8≈çÈ¡ÂÖ\’π1])Õë]U—9Q›%ùΩù%ù%ù%ù%≠•ù%ù%ù%ù%ùî¡·	Q≠ëYEUëU‰’—eaΩ-∞¡i\¡¡%¿≠%ù-%ù%ù%ù%ù%ù%·Ÿç!I¡à»—ùÑ…X’Aa—¡ëY—1µ9ŸiXÂ%!i°â!Y±Aa—¡ëY—1µ9ŸiXÂAùΩù%ù%ù%ù%ù%ù%›ÖaI±âL’’e\≈±ôEΩù%ù%ù%ù%ù%ùAÂŸç!I¡à»–≠•ù%ù%ù%ù%ù-M∞Â•ù%ù%ù%ù%›Ÿå…YÕi]8¡AùΩù%ù%ù%ùAÂ≠Öad≠ùΩù%ù%ù%ùAI¡ë•	©âÈå¿’°â]TÂ%µiÕiaùùiµ·±ï≈©à…›ùå»¿Ÿiµ·±ï≈ÂàÕçùh…›1Q5ùâaE—9•$≠•ù%ù%ù%ù%·•ëaH¡à»—-%ù%ù%ù%ù%	Ÿâ≠9ÕÖ]9…Aa—πi\’±çµ¡iY	Ÿi9°åÕHÂ•ù%ù%ù%ù%ùi±Èe])Õi]DÊ⁄Óù∆≠y

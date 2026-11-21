@@ -1,54 +1,1 @@
-
-import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import { jsPDF } from "jspdf";
-import { readStudySource, saveStudySource } from "../studyWorkflow";
-
-const STORAGE_KEY = "ai-study-flashcards";
-
-function Flashcards() {
-  const [now] = useState(() => Date.now());
-  const [notes, setNotes] = useState(() => readStudySource());
-  const [cards, setCards] = useState(() => {
-    try {
-      const saved = localStorage.getItem(STORAGE_KEY);
-      return saved ? JSON.parse(saved) : [];
-    } catch {
-      return [];
-    }
-  });
-
-  const [flipped, setFlipped] = useState({});
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [filter, setFilter] = useState("All");
-  const [reviewMessage, setReviewMessage] = useState("");
-
-  // Save flashcards automatically
-  useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(cards));
-    } catch (error) {
-      console.warn("Unable to save flashcards in browser storage.", error);
-    }
-  }, [cards]);
-
-  // Generate flashcards using the Groq AI backend
-  const generateFlashcards = async () => {
-    if (!notes.trim()) {
-      setError("Please enter your study notes first.");
-      return;
-    }
-
-    setLoading(true);
-    setError("");
-    setReviewMessage("");
-    setCards([]);
-    setFlipped({});
-
-    const prompt = `
-You are an expert AI study assistant.
-
-Create exactly 8 useful flashcards from the study notes below.
-
-Return ONLY a valid÷ª«±Àû
+CmltcG9ydCB7IHVzZUVmZmVjdCwgdXNlU3RhdGUgfSBmcm9tICJyZWFjdCI7CmltcG9ydCBOYXZiYXIgZnJvbSAiLi4vY29tcG9uZW50cy9OYXZiYXIiOwppbXBvcnQgeyBqc1BERiB9IGZyb20gImpzcGRmIjsKaW1wb3J0IHsgcmVhZFN0dWR5U291cmNlLCBzYXZlU3R1ZHlTb3VyY2UgfSBmcm9tICIuLi9zdHVkeVdvcmtmbG93IjsKCmNvbnN0IFNUT1JBR0VfS0VZID0gImFpLXN0dWR5LWZsYXNoY2FyZHMiOwoKZnVuY3Rpb24gRmxhc2hjYXJkcygpIHsKICBjb25zdCBbbm93XSA9IHVzZVN0YXRlKCgpID0+IERhdGUubm93KCkpOwogIGNvbnN0IFtub3Rlcywgc2V0Tm90ZXNdID0gdXNlU3RhdGUoKCkgPT4gcmVhZFN0dWR5U291cmNlKCkpOwogIGNvbnN0IFtjYXJkcywgc2V0Q2FyZHNdID0gdXNlU3RhdGUoKCkgPT4gewogICAgdHJ5IHsKICAgICAgY29uc3Qgc2F2ZWQgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbShTVE9SQUdFX0tFWSk7CiAgICAgIHJldHVybiBzYXZlZCA/IEpTT04ucGFyc2Uoc2F2ZWQpIDogW107CiAgICB9IGNhdGNoIHsKICAgICAgcmV0dXJuIFtdOwogICAgfQogIH0pOwoKICBjb25zdCBbZmxpcHBlZCwgc2V0RmxpcHBlZF0gPSB1c2VTdGF0ZSh7fSk7CiAgY29uc3QgW2xvYWRpbmcsIHNldExvYWRpbmddID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtlcnJvciwgc2V0RXJyb3JdID0gdXNlU3RhdGUoIiIpOwogIGNvbnN0IFtmaWx0ZXIsIHNldEZpbHRlcl0gPSB1c2VTdGF0ZSgiQWxsIik7CiAgY29uc3QgW3Jldmlld01lc3NhZ2UsIHNldFJldmlld01lc3NhZ2VdID0gdXNlU3RhdGUoIiIpOwoKICAvLyBTYXZlIGZsYXNoY2FyZHMgYXV0b21hdGljYWxseQogIHVzZUVmZmVjdCgoKSA9PiB7CiAgICB0cnkgewogICAgICBsb2NhbFN0b3JhZ2Uuc2V0SXRlbShTVE9SQUdFX0tFWSwgSlNPTi5zdHJpbmdpZnkoY2FyZHMpKTsKICAgIH0gY2F0Y2ggKGVycm9yKSB7CiAgICAgIGNvbnNvbGUud2FybigiVW5hYmxlIHRvIHNhdmUgZmxhc2hjYXJkcyBpbiBicm93c2VyIHN0b3JhZ2UuIiwgZXJyb3IpOwogICAgfQogIH0sIFtjYXJkc10pOwoKICAvLyBHZW5lcmF0ZSBmbGFzaGNhcmRzIHVzaW5nIHRoZSBHcm9xIEFJIGJhY2tlbmQKICBjb25zdCBnZW5lcmF0ZUZs∂ªßq´^u% ¡-%ù%ùôQÕ-•ù%ù%IŸe‰’ÈiaIà»‘¡-)Ωi]‡…iaI¡d…•1•e¥ÂÕi%¡=›Ωù%ù%	≠à…5’å…X¡I¥Â’ë9¡ïµUΩ5©¡=›Ωù%ù%	≠à…5’å…X¡YX—ë9ŸâÂÂ-5›1—5›ù5Qù›-QÕ-%ù%ùiÂ©1πI±ï!EΩ%≠)%8¡ë]H’%Èå…±Èë’ë%Õ%≈°çµë¡â•›ùïM¨›ùΩù%ù%’%ÃÂ%Â=›Ω-%ù%ùiÂ©1π9±ëiŸâπIQÖa¡±-≈-QÕ-%ù%ùiÂ©1π9±ëI±ï!Ià…·Ÿç•ùÈ5›ù5ÈÕ%5›-QÕ-%ù%ùiÂ©1πI±ï!EΩ%±8¡ë]H’%iÕea9Ωd…Âi!5•1	—ea)πÖ\—Õ%!≠¡=›Ω-%ù%ùïM…AM·5©Õ-•ù%ù%IŸe‰’ÈiaIà»‘¡-)Ωi]‡…iaI¡d…•1•â¥ÂÂâ]Õ%•¨›•ù%ù%IŸe‰’ÈiaIà»‘¡T…∞ŸiMú’-QÕ-%ù%ùiÂ©1π9±ëI±ï!Ià…·Ÿç•ù·5Õ%›5›ù5Q›-QÕ-•ù%ù%IŸe‰‘¡ia†¡-Ωù%ù%ù%	UàÕI°â	âÈÖ9°çµIÈ=•≠î…9°çµIÈ1µ·±âµê¡Ö ≈ù1Ωù%ù%ù%≈°çµë¡â•›-%ù%ù%’•ù%ù%¨›ùΩù%ù%’%ÃÂ%å›ùΩù%ù%	≠à…5’ëX—ëù-%ù%ù%	ùI‰Õâµ·Ÿe]I±iΩù)!—’iaçùI¡iMù¡1πIŸQÂ©e]·±I¡iY8¡çµ±’iÂù¡ô]Õ•ù%ù%ùâ]Âh…±’1Ωù%ù%ù%!≠-%ù%ù-QÕ-•ù%ù%!≠ù-Ë¡ù5Q›ùΩù%ù%	©ea)≠ç‰’µàÕ)e]9Ω-°©ea)≠1	¡âµI±ï≠ùAP—ùï›Ωù%ù%ù%≠i	°h…Y)i¨’±i]I±iùÂ9M¨›ùΩù%ù%ù%IŸe‰’ÈiaIà»‘¡-)Ωi]‡…iaI¡d…•1•e¥ÂÕi%¡=›Ωù%ù%ù%IŸe‰’ÈiaIà»‘¡T…∞ŸiMù·5M¨›•ù%ù%ùiÂ©1π9±ëI±ï!Ià…·Ÿç•ùÈ5›ù=Õ%—5¨›ùΩù%ù%ù%9Ÿâπ8¡%!≈ia8¡Ö\Â’Q±’ia5ùAM	≠à…5’åÕ	ÕÖaIUia†¡YÂQÖa¡±-Ωù%ù%ù%ùe9°çµEù)!—¡âµI±ï…%Â=•≠î…9Õi]’YX—ë°©ea)≠1π≈ia8¡Ö\Â’-`≈ù1Ωù%ù%ù%ùâ]—X…±≠ëù-%ù%ù%¡=›Ω-%ù%ù%	·ë]YÈë±Ÿâ≠·¡âµYÈ1µiŸç≠Y°d…ùΩ-·¡âµU¡%¿≠%!Õ-%ù%ù%ù%≠i	°h…Y)i¨’±i]I±iù¡=›Ωù%ù%ù%ùiÂ©1πI±ï!EΩâ±’iM›ùâ]Âh…±’1’-QÕ-%ù%ù%ù%!≠ù-Ë¡ù9©Õ-%ù%ù%Â-QÕ-•ù%ù%û⁄Óù∆≠y’¶Âg6$4&ïßìñ$Öfƒ≈EWt‘4'ñ#5gU§uf¥≈u£$wvvDÑ¶Ü&‰ÁDv«f&ìÜ$wvu§ÖgïïÖ'##GDÂDtñvˆtî4tî4tî4tî4tî4tî4'¶DÜ«5•CvWî#6u#Fˆuî5#v4Ñße£4¶∆34„î•tveÉ¥î4tî4tî4tî4tî4tî3Ç¥6îtî4tî4tî4tî4u3ñ∂Öí¥6vˆtî4tî4tî4tî4tîGátîtÁ5ïÑÁ•F‘gE•CñDucFD3Ê6‘cT≈Et‘4#•ÜÉ≈ÑÁDîs≈D÷ïvˆtî4tî4tî4tî4tî4vS4¶∆F÷∆∆C%fµ#ì&Â#îîsñ‘îáF•ïÑ¶∂7ìW5•sVÊDvÉîîtÊÜ6’'§îÑ¶∆F÷∆∆C%f¥∆vˆtî4tî4tî4tî4tîGwf4CD¥6îtî4tî4tî4tîGwe§v√%vÙ¥î4tî4tî4tî4vWìáîUß$Ö&∆6‰÷t∂ììî6îtî4tî4tî4tîGÜ∂Öñuì'ÜÜ34‰ıïs≈4¶÷$ucDîuß5•ÜwFC4¶Ü44'EÑ„u£T≈t¶∆DÜF≈•sFvÖ&∆%Ñ◊Eì%gVDugîîvFÜ43îsî≈EñïvÙ¥î4tî4tî4tî4tî4ÜDñuì'ÜÜ34‰ıïs≈4£•ÜÉ≈D£F$4&÷##S≈tßf$uïvˆtî4tî4tî4tî4tî4uusì6î$v$tg¶tÊÜ6’'§6îtî4tî4tî4tî4u3ñÙ÷£D¥6îtî4tî4tî4tî4uu'Fî&¶$tg¶3VÜ%uSîñ’ß5•Üvu¶◊Ü∆T366‘gtîvFÜ43îñ£D¥î4tî4tî4tî4tî4tîáF$ñ¥g6$4ó4î4§VEuVuF”ì4ñóvtñ≥Ü35&∆6’f¥ñ√V%tgt¥6áDugDµ4ïîÙ6îtî4tî4tî4tî4tî4tîGÜñEÖ###D¥î4tî4tî4tî4tî4tî4tî4'%•Ü≥ñS&√•sî6îtî4tî4tî4tî4tî4tî4v##TF$v∆¶£t¥6∂uCFv3%c&÷«6Dugî¥v√•seˆtî4tî4tî4tî4tî4tî4tîtÁ5ïÑÁ•F‘gE•CuîÑ#D≈Ev4Ü∑D÷î'ñ#5gU§uf¥≈wÜ‰îÖ&∆TÖF3#u¶”óVD3••sñ”ó5§4#6‘gV3&√sóTî5#t6îtî4tî4tî4tî4tî4tî4tî4&÷wÉ•ÑñuCîîv√•s¥î4tî4tî4tî4tî4tî4tî4tî4uîïñ÷7Eñ◊É•3$‘DvDucFD36v√•4î¥î4tî4tî4tî4tî4tî4tî4tî4tˆîïñ÷7E£4¶ÜU3D‘DvDucFD3Ê6‘cT≈D◊t‘4&ˆ#5¶∆6ßïßìÊ6‘cT≈F7t‘4î¥î4tî4tî4tî4tî4tî4tî4#ïîÉ¥î4tî4tî4tî4tî4tî4uvˆtî4tî4tî4tî4tî4tî4tîáGDugFeˆtî4tî4tî4tî4tî4tî4Ñ√$£DÖ'f&£D¥î4tî4tî4tî4tî4tî6∑k∫wµÁ

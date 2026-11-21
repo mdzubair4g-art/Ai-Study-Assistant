@@ -1,57 +1,1 @@
-
-import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import { jsPDF } from "jspdf";
-import { readStudySource, saveStudySource } from "../studyWorkflow";
-
-const LANGUAGES = [
-  { name: "English", code: "en-US" },
-  { name: "Hindi", code: "hi-IN" },
-  { name: "Kannada", code: "kn-IN" },
-  { name: "Tamil", code: "ta-IN" },
-  { name: "Telugu", code: "te-IN" },
-];
-
-function Simplify() {
-  const [notes, setNotes] = useState(() => readStudySource());
-  const [simplifiedText, setSimplifiedText] = useState("");
-  const [language, setLanguage] = useState("English");
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [speaking, setSpeaking] = useState(false);
-
-  useEffect(() => {
-    return () => {
-      if ("speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
-      }
-    };
-  }, []);
-
-  const simplifyNotes = async () => {
-    if (!notes.trim()) {
-      setError("Please enter your study notes first.");
-      return;
-    }
-
-    setLoading(true);
-    setError("");
-    setSimplifiedText("");
-    setSpeaking(false);
-
-    if ("speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
-    }
-
-    const prompt = `
-You are an expert AI study assistant.
-
-Simplify the following study notes for a student.
-
-Output language: ${language}
-
-Instructions:
-1. Explain difficult concepts using simple words.
-2. Organize the answer with clear headings.
-3. Use bullet points where helpful.
-4. Explai÷ª«±Àû
+CmltcG9ydCB7IHVzZUVmZmVjdCwgdXNlU3RhdGUgfSBmcm9tICJyZWFjdCI7CmltcG9ydCBOYXZiYXIgZnJvbSAiLi4vY29tcG9uZW50cy9OYXZiYXIiOwppbXBvcnQgeyBqc1BERiB9IGZyb20gImpzcGRmIjsKaW1wb3J0IHsgcmVhZFN0dWR5U291cmNlLCBzYXZlU3R1ZHlTb3VyY2UgfSBmcm9tICIuLi9zdHVkeVdvcmtmbG93IjsKCmNvbnN0IExBTkdVQUdFUyA9IFsKICB7IG5hbWU6ICJFbmdsaXNoIiwgY29kZTogImVuLVVTIiB9LAogIHsgbmFtZTogIkhpbmRpIiwgY29kZTogImhpLUlOIiB9LAogIHsgbmFtZTogIkthbm5hZGEiLCBjb2RlOiAia24tSU4iIH0sCiAgeyBuYW1lOiAiVGFtaWwiLCBjb2RlOiAidGEtSU4iIH0sCiAgeyBuYW1lOiAiVGVsdWd1IiwgY29kZTogInRlLUlOIiB9LApdOwoKZnVuY3Rpb24gU2ltcGxpZnkoKSB7CiAgY29uc3QgW25vdGVzLCBzZXROb3Rlc10gPSB1c2VTdGF0ZSgoKSA9PiByZWFkU3R1ZHlTb3VyY2UoKSk7CiAgY29uc3QgW3NpbXBsaWZpZWRUZXh0LCBzZXRTaW1wbGlmaWVkVGV4dF0gPSB1c2VTdGF0ZSgiIik7CiAgY29uc3QgW2xhbmd1YWdlLCBzZXRMYW5ndWFnZV0gPSB1c2VTdGF0ZSgiRW5nbGlzaCIpOwogIGNvbnN0IFtsb2FkaW5nLCBzZXRMb2FkaW5nXSA9IHVzZVN0YXRlKGZhbHNlKTsKICBjb25zdCBbZXJyb3IsIHNldEVycm9yXSA9IHVzZVN0YXRlKCIiKTsKICBjb25zdCBbc3BlYWtpbmcsIHNldFNwZWFraW5nXSA9IHVzZVN0YXRlKGZhbHNlKTsKCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIHJldHVybiAoKSA9PiB7CiAgICAgIGlmICgic3BlZWNoU3ludGhlc2lzIiBpbiB3aW5kb3cpIHsKICAgICAgICB3aW5kb3cuc3BlZWNoU3ludGhlc2lzLmNhbmNlbCgpOwogICAgICB9CiAgICB9OwogIH0sIFtdKTsKCiAgY29uc3Qgc2ltcGxpZnlOb3RlcyA9IGFzeW5jICgpID0+IHsKICAgIGlmICghbm90ZXMudHJpbSgpKSB7CiAgICAgIHNldEVycm9yKCJQbGVhc2UgZW50ZXIgeW91ciBzdHVkeSBub3RlcyBmaXJzdC4iKTsKICAgICAgcmV0dXJuOwogICAgfQoKICAgIHNldExvYWRpbmcodHJ1ZSk7CiAgICBzZXRFcnJvcigiIik7CiAgICBzZXRTaW1wbGlmaWVkVGV4dCgiIik7CiAgICBzZXRTcGVha2luZyhmYWxzZSk7CgogICAg∂ªßq´^uâM¡ia†¡1]ëÂea≠—5È›%≈•1Q%•AùΩù%ù%ù%ù%ù%ùD…°ŸàÕ9±%‰≈ë!≈ë	5e\’πë]πiEΩù%ù%ù%ù%ù%›Ÿâ•i]‹≠ùΩù%ù%ù%ù%ù%·Èi]·±dÕE-%ù%ù%ù%ù%ù%!i°â!Y±Aa—Õe\’πë]πi`¡-%ù%ù%ù%ù%ù%Â’D…°°âµë±AaÕΩiai±âπE¡%¿≠%!9±ë·°âµê≈e]ë±-X…i\‘¡1πI°çµë±ë‘…e]‡≈iM∞Â•ù%ù%ù%ù%ù%	©âÈå¿’°â]TÂ%πç—iπYÕâ	•i‰≈πçµ’1Qù›5	•àÕ)≠ia%ùe¥ÂÂiYÂ1]ëÂea≠—9È›%!)Ÿë\’≠i]E—âçùç¡È%!I±ï!E—ê…°¡ëUùàÕX¡â±’iL≈’à»’±%iŸdÕYÈ=µ)ŸçµI±ç§≈•â!Y±1QU›5%-%ù%ù%ù%ù%≠•ù%ù%ù%ù%ù%›Q=H≈Y	H¡YQ1¥≈°çùΩÖaI±âM≠ùAP—ù-Ωù%ù%ù%ù%ù%ù%·àÕ¡Ö\Â’%—±ïPƒ›ÖaI±âL’©à…I±ôM…e]‡≈iPƒ›ÖaI±âL’’e\≈±ôP—-%ù%ù%ù%ù%ù%ù%›ÖaI±âL’’e\≈±ôEΩù%ù%ù%ù%ù%ù%·0»Â›ë±Ÿâ®—-%ù%ù%ù%ù%ù%≠¡ôEΩù%ù%ù%ù%ù%›Ÿå…YÕi]8¡AùΩù%ù%ù%ù%·0…I¡ë®—-•ù%ù%ù%ù%·≠Öaeùd…·°åÕ9=e\≈±AM)µâX—%∞¡i\≈È1]Y’i	πea—5Â$≠•ù%ù%ù%ù%ùA(≈ë!IŸâùΩù%ù%ù%ù%ù%ùà»’â±©ÖËƒ›å…±—ç·¡iπ±=àÕI±åÃ¡-%ù%ù%ù%ù%ù%I¡å…•âY≠Aa—Õà…≠Ö\’π%!‡·%’àÕI±ç‰‘¡çµ±—-∞Â•ù%ù%ù%ù%ù%	©âÈå¿’°â]TÂ%µiÕiaù—5M	•i‰≈•â!Y±1Qe›5	ΩàÕi±ç©¡•i‰≈•â!Y±1Qç›5	≠Öa9°eµ·±i¡Ÿç©ÖaH’1QU›%!—1QUùç!≠—5Â	ÂàÕY’iY≠1]·π%iŸâπE—å…Y—Ö])ŸâEùë!)°âπ9¡ë±Ÿâ•%-%ù%ù%ù%ù%≠•ù%ù%ù%ù%ù%›âÂ°i±’iÂΩ%)QÖ\≈›â±µï]±’i‰—’1•%ù=•§—¡ÂΩ%9¡âa	ÕÖ]h’%ƒ’%’ŸëYÈ%∏¡-%ù%ù%ù%ù%·0…(≈ë!IŸâ®—-•ù%ù%ù%ù%ùA(≈ë!IŸâùΩù%ù%ù%ù%ù%ùà»’â±©ÖËƒ›d…·±ea)	â‡Â•ù%ù%ù%ù%ù%	≠Öa9°eµ·±iƒ›âÂ°i±’hÃ¡-%ù%ù%ù%ù%ù%9Õea9ÈQµ—iP¡•eµç—hÕ)°ïL¿Õ5û⁄Óù∆≠y

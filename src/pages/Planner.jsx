@@ -1,63 +1,1 @@
-
-import { useEffect, useRef, useState } from "react";
-import Navbar from "../components/Navbar";
-
-const TASK_KEY = "ai-study-assistant-tasks";
-const FOCUS_KEY = "ai-study-focus-history";
-
-function readSavedArray(key) {
-  try {
-    const saved = localStorage.getItem(key);
-    const parsed = saved ? JSON.parse(saved) : [];
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
-}
-
-function getDateKey(timestamp) {
-  const date = new Date(Number(timestamp));
-
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-
-  return `${year}-${month}-${day}`;
-}
-
-function getCurrentStreak(sessions) {
-  const activeDays = new Set(
-    sessions.map(getDateKey)
-  );
-
-  const cursor = new Date();
-  cursor.setHours(0, 0, 0, 0);
-
-  // A streak remains active through today or until yesterday.
-  if (!activeDays.has(getDateKey(cursor.getTime()))) {
-    cursor.setDate(cursor.getDate() - 1);
-  }
-
-  let streak = 0;
-
-  while (activeDays.has(getDateKey(cursor.getTime()))) {
-    streak++;
-    cursor.setDate(cursor.getDate() - 1);
-  }
-
-  return streak;
-}
-
-function formatTime(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const remainingSeconds = seconds % 60;
-
-  return `${String(minutes).padStart(2, "0")}:${String(
-    remainingSeconds
-  ).padStart(2, "0")}`;
-}
-
-function Planner() {
-  const [now] = useState(() => Date.now());
-  const [tasks, setTasks] = useState(() =>
-    readSaÖ»Ç±Ëž
+CmltcG9ydCB7IHVzZUVmZmVjdCwgdXNlUmVmLCB1c2VTdGF0ZSB9IGZyb20gInJlYWN0IjsKaW1wb3J0IE5hdmJhciBmcm9tICIuLi9jb21wb25lbnRzL05hdmJhciI7Cgpjb25zdCBUQVNLX0tFWSA9ICJhaS1zdHVkeS1hc3Npc3RhbnQtdGFza3MiOwpjb25zdCBGT0NVU19LRVkgPSAiYWktc3R1ZHktZm9jdXMtaGlzdG9yeSI7CgpmdW5jdGlvbiByZWFkU2F2ZWRBcnJheShrZXkpIHsKICB0cnkgewogICAgY29uc3Qgc2F2ZWQgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbShrZXkpOwogICAgY29uc3QgcGFyc2VkID0gc2F2ZWQgPyBKU09OLnBhcnNlKHNhdmVkKSA6IFtdOwogICAgcmV0dXJuIEFycmF5LmlzQXJyYXkocGFyc2VkKSA/IHBhcnNlZCA6IFtdOwogIH0gY2F0Y2ggewogICAgcmV0dXJuIFtdOwogIH0KfQoKZnVuY3Rpb24gZ2V0RGF0ZUtleSh0aW1lc3RhbXApIHsKICBjb25zdCBkYXRlID0gbmV3IERhdGUoTnVtYmVyKHRpbWVzdGFtcCkpOwoKICBjb25zdCB5ZWFyID0gZGF0ZS5nZXRGdWxsWWVhcigpOwogIGNvbnN0IG1vbnRoID0gU3RyaW5nKGRhdGUuZ2V0TW9udGgoKSArIDEpLnBhZFN0YXJ0KDIsICIwIik7CiAgY29uc3QgZGF5ID0gU3RyaW5nKGRhdGUuZ2V0RGF0ZSgpKS5wYWRTdGFydCgyLCAiMCIpOwoKICByZXR1cm4gYCR7eWVhcn0tJHttb250aH0tJHtkYXl9YDsKfQoKZnVuY3Rpb24gZ2V0Q3VycmVudFN0cmVhayhzZXNzaW9ucykgewogIGNvbnN0IGFjdGl2ZURheXMgPSBuZXcgU2V0KAogICAgc2Vzc2lvbnMubWFwKGdldERhdGVLZXkpCiAgKTsKCiAgY29uc3QgY3Vyc29yID0gbmV3IERhdGUoKTsKICBjdXJzb3Iuc2V0SG91cnMoMCwgMCwgMCwgMCk7CgogIC8vIEEgc3RyZWFrIHJlbWFpbnMgYWN0aXZlIHRocm91Z2ggdG9kYXkgb3IgdW50aWwgeWVzdGVyZGF5LgogIGlmICghYWN0aXZlRGF5cy5oYXMoZ2V0RGF0ZUtleShjdXJzb3IuZ2V0VGltZSgpKSkpIHsKICAgIGN1cnNvci5zZXREYXRlKGN1cnNvci5nZXREYXRlKCkgLSAxKTsKICB9CgogIGxldCBzdHJlYWsgPSAwOwoKICB3aGlsZSAoYWN0aXZlRGF5cy5oYXMoZ2V0RGF0ZUtleShjdXJzb3IuZ2V0VGltZSgpKSkpIHsKICAgIHN0cmVhaysrOwogICAgY3Vyc29yLnNldERhdGUoY3Vyc29yLmdldERh¶»§q«^u5¥	©‰éŒÀÕ¡‰]Tå%¹I±•!EÑ4Í¡Í%iÙ‰¹EÑe´åÍiÁia Á1\ååe\Õ¹iLÀÁ5¥A½%%%%%A™±-U”É8Å¹)±‰¹IQ‘!)±e]Ðå%I¡•a5-%%%%Aå½5¨Ñ-%%%%ÝÙi°ÉA½-%%%á0Í9±dÍIÁˆÈÐ­½%%%!ÍÙ-¥	ˆÉ8Åå	U…\Å±¥Å0ÌÁ-%%%áŒÉY©‘±Ù‰¥	©‰éŒÀÕ¡‰]Tå%¹)Ù‘\Õ­i]EÑ4Í¡Í%)ÙµI±¥	¥ˆÍ)­ia%ÑhÍ)¡•LÀÑ5eµÑhÍ)¡i±±‰¹EÑ‘áÑe¹%i¹)Ù‰LÅ¹µÕ1Q­Ý5Á‰äÅ¥‰!Y±1Q¬Å5àÁ5	Ý1Q‰]%Ñ5Q¥A½-%%%%á­…aedÉá¡ŒÍ9=e\Å±AM(Áia Á1]9±‰¹I±¥$­½%%%%á	©‰éŒÀÕ¡‰]Tå%¹I±•!EÑeµàÅiLÀÁ5i´åÕ‘Åéi\ÅÁe´åÍiÁµ©„É±ÕiäÄÍ…]I±ŒÍE‘XÑ‘Åé‰M	Ñe¤Áé%¨Ñ-%%%%%	EPÀÅAIåMQå	PÁ9YUå	UMTÅU½%%%%á0Í­½%%%%á…%dÉá¡ŒÍ9=e\Å±AM(Áia Á1Q(Ñ‰	µˆÈÔÁ1])Ù‰E‰]%Ñ9¥$­¥%%%%TÍI¡•M	ˆÉ8ÅŒÉY­1¥		dÉ¡Áiai±%ÅÙµUÕ¥%%%%ÝÙ…$­½%%%%ái°É%9Íea9éQµÑiPÁ¥iµá±•	Å‘a8Á…]hÕ1]9±‰¹I±¥	¹eaÑ5å	Ñe¤ÀÑ%¨Ñ-%%%%%áe¹XÁ‘åÕ¥%%%%%	Ù‰­9Í…]9ÉAaÍ½-MåA¥	éÉ°ÁdÉ¡9ˆÉI±-)ˆÉ8Åå%Á™E½%%%%%dÉá¡ŒÍ9=e\Å±AaÑ!Ñ9M	Ý•LÁå%!)Ù‘\Õ­i]EÑi¹YÍ‰	µˆÈÔÁ1a9±‰]±¥ˆÉá­%!Iåe\Õé…aIÁˆÈÑ)!Í-%%%%%%‰\å­iMåAPÁ%­iÙdÍYé%½%%%%%%%á%µ)¹1])Í‘]UÑ9©Ý%!I±•!EÑÉ¡Á‘U¥¥%%%%%%=¥¥eµÑhÍ)¡•LÀÑ5‘XÑ‘Å¹µÕ1Q5Ý5%-%%%%%% Å™E½%%%%%Ñ-%%%%%%iÙdÍYé%5,Í%$Å%ÅÁ‰½%%%%%ÝÙe¹XÁ‘åÕA½-%%%%%áe¹XÁ‘åÕ¥%%%%%	Ù‰­9Í…]9ÉAaÍ½-MåA¥	éÉ°ÁdÉ¡9ˆÉI±-)µY¡…å%Á™E½%%%%%dÉá¡ŒÍ9>ÚîÆ­yÖDvÇf&£D´6”t”4t”4t”4…¤vÃ$”tç5•„ç¥FÔgE¥C•¦×†ÆT4&Ö$ucDÅ†G••„våg¦DvÆÖU3•¥…#5¥ugT”vÃ¥s¤ÅtæÆ&å&Æ6”&å•„Dä4'E–“$–£D´6”t”4t”4t”4t”G†ôÖ”&¦$tg¦3V†%uS”–å&ÆT…DÖæ‡4”u§f&åE–Ó—5¤4’´6”t”4t”4t”4t”4uus“6”%U•„ç&7vöt”4t”4t”4t”4„Ã&w•vô´”4t”4t”4t”4uu'F”&¦$tg¦3V†%uS”–Õ§5¥†vu¦×†ÆT366Ôgt”vF†43”–£D´”4t”4t”4t”4t”4#uw”¤&$wv”Ä4•TugU¤vÇU§”—4”4¤F##v$uc¥u•…3WE•„ô´vÃ¥s”C´”6t´”4t”4t”4t”4t”4t”G†–E…###D´”4t”4t”4t”4t”4t”4v%cU‡GDugFeöt”4t”4t”4t”4t”4t”4'f&´ç6tç%‡6ôµ4•”'¥¥…$vwƒ¥„–ö…&Æ%6Ã”6”t”4t”4t”4t”4t”4t”tç5•„ç¥FÔgE¥Cu”„#DÅEv4†·DÖ”'–#5gU¤uf´Åw†ä”…&ÆT…F3#u¦Ó—VD3¥¥s–Ó—5¤4#6ÔgV3&Ãs—T”5#t6”t”4t”4t”4t”4t”4t”4u¦ÖÇ6Dug””C•4'DugD6”t”4t”4t”4t”4t”4t”4t”4ô”4¦•§“–$…fÄÅE—tÔ4#¥†ƒÅ†Fö…&Ä–vöt”4t”4t”4t”4t”4t”4t”4tö”•–Ö7E£4¦†U3DÔDvDucFD3æ6ÔcTÅD×tÔ4&ö#5¦Æ6§•§“æ6ÔcTÅF7tÔ4”´”4t”4t”4t”4t”4t”4vet#”6”t”4t”4t”4t”4t”4´6”t”4t”4t”4t”4t”4t”‡GDugFeöt”4t”4t”4t”4t”4u3––E…###B´6”t”4t”4t”4t”4tµ6Ã”6”t”4t”4t”4t”Gwe¤vÃ%vô´”4t”4t”4t”Gwe¤vÃ%vô´”4t”4t”4t”‡FÖwƒ¥„¦Å¤e&†3'G¤Æ×†Æ&ÖC4•CtÔ4ô”6t´”4t”4t”4t”4uu'F”&¦$tg¦3V†%uS”–å&ÆT…E“%gVDug””„§fEsVµ¥uDÖæ‡4”t§f6Õ&Æ6”&–#4¦µ¥„—E£4¦†U3DÔDu–Ö7E£4¦†U3TÔDv43„Ö”’´6”t”4t”4t”4t”4uu'F”&¦$tg¦3V†%uS”–å&ÆT…Då†‡4”s”ÅE•d6f³U“„Ã%'F£D´6”t”4t”4t”4t”4uvw¤”tç5•„ç¥FÔgE¥C–DucFD3F$4&Ö##SÅt§f$uv%t—DÖ”’´6”t”4t”4t”4t”4t”4$ö'”#•„ç&7”&Ö#5gU¤öt”4t”4t”4t”4t”GwfDÒ´6vöt”4t”4t”4t”4t”G‡t”tç5•„ç¥FÔgE¥C–DucFD3æ6Ôc[kºwµç
