@@ -270,7 +270,7 @@ ${notes}
               }}
               placeholder="Paste the relevant textbook page, class notes or question-bank content here…"
               rows={9}
-              maxLength={50000}
+              maxLength={47000}
               className="w-full rounded-xl border border-gray-700 bg-gray-800 p-4 text-white placeholder:text-gray-500 resize-y"
             />
             <p className="text-xs text-gray-500 mt-2">
