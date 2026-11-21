@@ -109,6 +109,7 @@ const tools = [
 ];
 
 function Dashboard() {
+  const [now] = useState(() => Date.now());
   const [data, setData] = useState(getDashboardData);
 
   useEffect(() => {
@@ -157,7 +158,7 @@ function Dashboard() {
   ).length;
 
   const dueCards = cards.filter(
-    (card) => !card.dueAt || Number(card.dueAt) <= Date.now()
+    (card) => !card.dueAt || Number(card.dueAt) <= now
   );
 
   const flashcardProgress = cards.length
@@ -174,7 +175,7 @@ function Dashboard() {
 
   const todayFocusSessions = focusSessions.filter(
     (timestamp) =>
-      getDateKey(timestamp) === getDateKey(Date.now())
+      getDateKey(timestamp) === getDateKey(now)
   ).length;
 
   const totalFocusMinutes = focusSessions.length * 25;
