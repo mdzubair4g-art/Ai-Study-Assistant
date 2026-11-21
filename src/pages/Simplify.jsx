@@ -200,7 +200,7 @@ ${notes}
       }
 
       doc.save("AI-Simplified-Notes.pdf");
-    } catch (err) {
+    } catch {
       setError("Unable to create the PDF. Please try again.");
     }
   };
