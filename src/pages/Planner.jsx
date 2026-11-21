@@ -58,6 +58,7 @@ function formatTime(seconds) {
 }
 
 function Planner() {
+  const [now] = useState(() => Date.now());
   const [tasks, setTasks] = useState(() =>
     readSavedArray(TASK_KEY)
   );
@@ -113,9 +114,13 @@ function Planner() {
     }
 
     completionHandled.current = true;
+    // This completion effect must stop the running timer immediately.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsRunning(false);
 
     if (mode === "Focus") {
+      // This completion effect records the finished focus session.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFocusSessions((previous) => [
         ...previous,
         Date.now(),
@@ -138,7 +143,7 @@ function Planner() {
 
   const todayFocusSessions = focusSessions.filter(
     (timestamp) =>
-      getDateKey(timestamp) === getDateKey(Date.now())
+      getDateKey(timestamp) === getDateKey(now)
   ).length;
 
   const currentStreak = getCurrentStreak(focusSessions);
