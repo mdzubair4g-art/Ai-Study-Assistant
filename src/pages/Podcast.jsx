@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Navbar from "../components/Navbar";
 import { readStudySource, saveStudySource } from "../studyWorkflow";
 
@@ -25,7 +25,10 @@ function Podcast() {
   const [notes, setNotes] = useState(() => readStudySource());
   const [podcast, setPodcast] = useState("");
   const [language, setLanguage] = useState("en-US");
-  const [voices, setVoices] = useState([]);
+  const [voices, setVoices] = useState(() => {
+    if (typeof window === "undefined" || !window.speechSynthesis) return [];
+    return window.speechSynthesis.getVoices();
+  });
   const [selectedVoice, setSelectedVoice] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
@@ -38,29 +41,31 @@ function Podcast() {
       setVoices(window.speechSynthesis.getVoices());
     };
 
-    loadVoices();
     window.speechSynthesis.onvoiceschanged = loadVoices;
 
     return () => {
       window.speechSynthesis.cancel();
-      window.speechSynthesis.onvoiceschanged = null;
+      if (window.speechSynthesis.onvoiceschanged === loadVoices) {
+        window.speechSynthesis.onvoiceschanged = null;
+      }
     };
   }, []);
 
   const currentLanguage =
     LANGUAGES.find((item) => item.code === language) || LANGUAGES[0];
 
-  const matchingVoices = voices.filter((voice) =>
-    voice.lang.toLowerCase().startsWith(language.split("-")[0].toLowerCase())
+  const matchingVoices = useMemo(
+    () => voices.filter((voice) =>
+      voice.lang.toLowerCase().startsWith(language.split("-")[0].toLowerCase())
+    ),
+    [voices, language]
   );
 
-  useEffect(() => {
-    if (matchingVoices.length > 0) {
-      setSelectedVoice(matchingVoices[0].voiceURI);
-    } else {
-      setSelectedVoice("");
-    }
-  }, [language, voices]);
+  const effectiveSelectedVoice = matchingVoices.some(
+    (voice) => voice.voiceURI === selectedVoice
+  )
+    ? selectedVoice
+    : matchingVoices[0]?.voiceURI || "";
 
   const stopAudio = () => {
     if (window.speechSynthesis) {
@@ -208,7 +213,7 @@ ${podcast}
     utterance.rate = 0.95;
     utterance.pitch = 1;
 
-    const voice = voices.find((item) => item.voiceURI === selectedVoice);
+    const voice = voices.find((item) => item.voiceURI === effectiveSelectedVoice);
 
     if (voice) {
       utterance.voice = voice;
@@ -343,7 +348,7 @@ ${podcast}
               </label>
 
               <select
-                value={selectedVoice}
+                value={effectiveSelectedVoice}
                 onChange={(e) => setSelectedVoice(e.target.value)}
                 disabled={matchingVoices.length === 0}
                 className="w-full border border-gray-300 rounded-lg p-3 bg-white disabled:bg-gray-100"
