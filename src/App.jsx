@@ -1,7 +1,7 @@
 import "./App.css";
 
 import { lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 // Load each study workspace only when the learner opens that route.
 // This keeps heavier tools such as PDF support out of the homepage bundle.
@@ -26,6 +26,23 @@ function RouteLoading() {
   );
 }
 
+function NotFound() {
+  return (
+    <main className="min-h-screen bg-gray-950 text-white flex items-center justify-center px-6">
+      <section className="w-full max-w-xl rounded-3xl border border-purple-800/40 bg-gray-900 p-8 text-center shadow-2xl shadow-purple-950/30">
+        <p className="mb-3 text-xs font-bold tracking-[.22em] text-purple-300">404 / PAGE NOT FOUND</p>
+        <h1 className="mb-3 text-3xl font-extrabold md:text-4xl">This page isn’t in your study space.</h1>
+        <p className="mb-7 leading-7 text-gray-400">
+          The link may be outdated or the page may have moved. Your study material is still safe in this browser.
+        </p>
+        <Link to="/" className="inline-flex rounded-xl bg-purple-600 px-5 py-3 font-bold text-white transition hover:bg-purple-500">
+          Back to home ↗
+        </Link>
+      </section>
+    </main>
+  );
+}
+
 function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
@@ -41,6 +58,7 @@ function App() {
           <Route path="/podcast" element={<Podcast />} />
           <Route path="/planner" element={<Planner />} />
           <Route path="/chatbot" element={<Chatbot />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
