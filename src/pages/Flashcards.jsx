@@ -426,6 +426,7 @@ ${notes}
     setCards([]);
     setFlipped({});
     setNotes("");
+    saveStudySource("");
     setError("");
     setReviewMessage("");
   };
