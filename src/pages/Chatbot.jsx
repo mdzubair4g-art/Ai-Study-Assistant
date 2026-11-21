@@ -1,1 +1,1332 @@
-CmltcG9ydCB7IHVzZUVmZmVjdCwgdXNlUmVmLCB1c2VTdGF0ZSB9IGZyb20gInJlYWN0IjsKaW1wb3J0IHsganNQREYgfSBmcm9tICJqc3BkZiI7CmltcG9ydCAqIGFzIHBkZmpzTGliIGZyb20gInBkZmpzLWRpc3QiOwppbXBvcnQgcGRmV29ya2VyIGZyb20gInBkZmpzLWRpc3QvYnVpbGQvcGRmLndvcmtlci5taW4ubWpzP3VybCI7CmltcG9ydCBOYXZiYXIgZnJvbSAiLi4vY29tcG9uZW50cy9OYXZiYXIiOwoKcGRmanNMaWIuR2xvYmFsV29ya2VyT3B0aW9ucy53b3JrZXJTcmMgPSBwZGZXb3JrZXI7Cgpjb25zdCBTVE9SQUdFX0tFWSA9ICJhaS1zdHVkeS1jaGF0LWhpc3RvcnkiOwpjb25zdCBET0NVTUVOVF9URVhUX0tFWSA9ICJhaS1zdHVkeS1wZGYtdGV4dCI7CmNvbnN0IERPQ1VNRU5UX05BTUVfS0VZID0gImFpLXN0dWR5LXBkZi1uYW1lIjsKCmNvbnN0IE1BWF9GSUxFX1NJWkUgPSAxNSAqIDEwMjQgKiAxMDI0Owpjb25zdCBNQVhfUEFHRVMgPSAzMDsKY29uc3QgTUFYX1RFWFRfTEVOR1RIID0gMzAwMDA7Cgpjb25zdCBpbml0aWFsTWVzc2FnZXMgPSBbCiAgewogICAgcm9sZTogImFzc2lzdGFudCIsCiAgICBjb250ZW50OgogICAgICAiSGVsbG8hIFdlbGNvbWUgdG8geW91ciBBSSBTdHVkeSBBc3Npc3RhbnQuIFlvdSBjYW4gdGFsayB0byBtZSwgdXBsb2FkIHN0dWR5IFBERnMgYW5kIGdlbmVyYXRlIHByYWN0aWNlIHF1aXp6ZXMhIiwKICB9LApdOwoKY29uc3QgVk9JQ0VfTEFOR1VBR0VTID0gWwogIHsgbmFtZTogIkVuZ2xpc2giLCBjb2RlOiAiZW4tSU4iIH0sCiAgeyBuYW1lOiAiSGluZGkiLCBjb2RlOiAiaGktSU4iIH0sCiAgeyBuYW1lOiAiS2FubmFkYSIsIGNvZGU6ICJrbi1JTiIgfSwKICB7IG5hbWU6ICJUYW1pbCIsIGNvZGU6ICJ0YS1JTiIgfSwKICB7IG5hbWU6ICJUZWx1Z3UiLCBjb2RlOiAidGUtSU4iIH0sCl07CgpmdW5jdGlvbiBDaGF0Ym90KCkgewogIGNvbnN0IFttZXNzYWdlcywgc2V0TWVzc2FnZXNdID0gdXNlU3RhdGUoKCkgPT4gewogICAgdHJ5IHsKICAgICAgY29uc3Qgc2F2ZWQgPSBsb2NhbFN0b3JhZ2UuZ2V0SXRlbShTVE9SQUdFX0tFWSk7CiAgICAgIGNvbnN0IHBhcnNlZCA9IHNhdmVkID8gSlNPTi5wYXJzZShzYXZlZCkgOiBudWxsOwoK∂ªßq´^uçaY¡ï•	¡â•≠îÕ9±âY©ëY≠Q’hÕY°h…XÂ1ùΩ-UµX¡ëa)’%Â=Q≠ùeM…e]·¡i	-T¿Â=%Âçµ’1ù¡âÂ	’àÕEùÖ\’©â!Y≠iM	—ea)…i‰Õâ•	Ÿç•	©à…I±%i±âµ9±ç‰—-±YÈiM	±ï©ë‡’%!IΩÖa5ùi¥ÂÂâ]¡=ùΩ-]›Ωù%!Õ-%ù%)·ë]YÈë±Ÿâ•$Ÿ%)aÖ¡%±È%ùd»Â—ç!X¡ia$Ω%•›-%ù%)Ÿç!I¡à»’È%©Ωùï›Ωù%ù%•EM$Ÿ%)	â•	±âY©ë!)Ÿâµ±©%I±ëµ±©iM%Õ•ù%ù%)%©Ωù%≠ùë!±›iM	Ÿi•	›â’ë%Õ•ù%ù%)%©Ωù%≠ùë!±›iM	Ÿi•	°âµ±—e]›•1Ωù%ù%•I$Ÿ%)	%!H’çUùà…eùi¥ÂŸi%-%ù% ¡Õ•ù%•d»ÂÂçµY©ë’åÕë±ç•$Ÿ%)	%•›-%ù%)±ï!	Õe\’°ë±Ÿâ•$Ÿ%)	%9Ÿâa≈ëYÂ%±È%’%YÕi]8¡ç¥Â’Ö]5ùiX…Ö]9±%!IΩeaEùç!)Ÿd…YÈå…YÈ%I°ë’%ùΩù% ¡-aEΩ-MT≈EP≈)UET’U%)YQYQ=ùΩ·1•	çµY°ëUùia°°dÕIÕïM≈%I¡iµi±çµY’ë	·ë]YÈë±Ÿâπ5’©%’%Y°d…ùùçaY±åÕI¡à»—ùâaYÈë	Ωeai±%X—e]8¡â!≠ù9	Ÿç!I¡à»’È1ùΩÈ1•	Aâµ‡’%Â’iM	Ÿç!I¡à»—ùâaYÈë	•iM	©àÕ)Âi]8¡1ùº¡1•	©àÕ)Âi]8¡E\’Èê…YÂ%ƒ≈åÕEùeµUùEM›ùE•›ùEÂ	Ÿç•	1ùº≈1•	Eç¥‰…Ö]I±%ùå…°ŸçπEùia°›â’eaI¡à»—ùi¥ÂÂ%Y°d…ùùe\’Èê…YÂ1ùº…1•	Yå…Uùà»’ÕïM¡ÖUùÖ\’µàÕ)—eaI¡à»—ùiπ)ŸâM¡ÖUùåÕH≈i!≠ùâ]¡ia)¡e]›’©ç’%Y’åÕYÂiM¡ÖUùM±9AQ•	¡çÂ…e]·¡i—-±9UYUIi%≈	YYMMU5=ùΩ≠îÕ	≠i±I±ï!E’å…·¡d…UΩ5›ù5Qù›5¡ôE¡ù=›Ω-%ù%!IÂïM›•ù%ù%9Ÿâπ8¡%!)±åÕ	Ÿâπ9±%¡ùeaë°ÖaEùiµX¡d…ùΩ•ù%ù%ù%§Â°ç≠Ÿh…Y’ia)°ëU•1Ωù%ù%ù%!Õ-%ù%ù%ù%≈±ë°ŸiΩù%±	AT≈E•1Ωù%ù%ù%ùÖY°iYÂçÈΩùï›Ωù%ù%ù%ù%•D»Â’ëY’ë≈Uïa	±%©Ωù%µ›ç·¡d…¡Ö\Â’0…¡Èà»—•1Ωù%ù%ù%ùôM›-%ù%ù%ù%)Ÿi!¨Ÿ%¡QP¿—’åÕIÂÖ\’πÖ]h’-!Õ-%ù%ù%ù%ùç!)Ÿâa¡1Ωù%ù%ù%ù%	Èë!)±e\¿Ÿ%i°â!9±1Ωù%ù%ù%ùôM≠Õ•ù%ù%ùôEΩù%ù%¡=›Ω-%ù%ùÖ]eù-Âia9›à»’ÈiL’ŸÖÂ≠ùï›Ωù%ù%û⁄Óù∆≠y‘î4#6sV∂#67US4&≈•tÊıV’f¶#&GVÖ'##Fvdát¥î4tî4vC&«U§sì4∆ÊF≈ñ◊GDdÁu•uf¶d¶≈ì#ñÊ&÷√sóT˜vÙ¥î4tîv∆‘î6vÖS4&≈•tÊıV’f¶#&GVÖ'##Gîá4¥î4tî4v3%c%Ñßñ#4ñÙ6îtî4tî4tñ≈ßftÊƒîÑ¶≈ì#ñÊ&÷√sóTîv«§îsWfD4'¶EÑ'v#4£•uTîd'5•tg••4#3%Vu##óe£'ÜƒîTÊˆ6”óE•3Fî6îtî4tî6≥t6îtî4tîÑ¶∆DÖgñ&ß4¥î4tîÉ¥6îtî4'¶îˆ$sñÖ§v«Ußî#Üd4#4wáeïu'&÷E§uñvdávv5ÖgV∑áeïu'&÷7îÑ¶∆DÖgñ&ß4¥6îtî4'¶îˆ$v«¶DugVsV‰µ4#t6îtî4tîÑ¶≈ì#ñÊ&÷√sóUV’f‘∆‘„6‰¶∆&ÂÙ∆‰„#4ÙµG4¥î4tî4v6’cEÑßT˜vˆtî4veÙ¥î4tîÑÊ∆DUgñ6”óî¥4ñîµG4¥î4tîÑ„#4%F4ufÜ&«Ußñw˜vÙ¥î4tîtÁf&‰„îÑ¶≈ì#ñÊ&÷√sóTîCv&’c4îdÁu•uf¶d¶≈ì#ñÊ&÷√sóT¥6≥t6vˆtî4v6’f¶#&GVÖ'##GV$tgUßîîîwÜÜ&÷CïvFƒ˜vˆtî4v6’f¶#&GVÖ'##GUì#óVDv«VEsì7îîîu¶Ü$ÑÊƒ˜vˆtî4v6’f¶#&GVÖ'##GVsS•Ñß%d¶∆35g6DÑ÷u4#6Âfƒ˜vÙ¥î4tîwÜ∆D4&÷sVÜ$e'ïïsW•ì4ß4Öu4îñß4¥6îtî4'ï•tÁe£#WDv«f&ìWf&‰„ïÑ£îCt¥6∂uCFv3%cDv«¶DugVsV‰¥Ö'ñEuW˜vÙ¥î4tîÑ¶≈ì#ñÊ&÷√sóT∆”óV6’g¶EwÉîCt¥uc%•sSµ4ïî#t6îtî4tîwÜ∆D4'&Â&∆6÷«EdÑ¶Ü&‰Ê¶6÷«vD4îî4ñî˜vÙ¥î4tî4u¶”óîî6t¥î4tî4tî4'5•Öv4îîuc%•sS∆‰¶∆35g6DV«U§ucD˜vˆtî4tî4tîv∂u4&∆F’gVD3Wï•Ñ„$Ö'§∆◊Ü∆&÷CG4¥î4tî4tî4'∑ó4¥î4tî4tµ4#t6îtî4tî4uì#óV35vDÑ¶Ü&‰Ê¶6÷«vD4îîuc%•sS∆‰¶∆35g6DÑÊ&c$‘cVDÑ¶Ü&‰Ê¶6÷«vDG4¥6îtî4tî4vuñt¥uc%•sS∆‰¶∆35g6DÑÊ&cVÑ‰vsVÜ$6∂vWvˆtî4tî4tî4u¶÷«UïwÖV6‘gV3$ÁñÑ#î73îîÖ'ïïsW•ì4ß4Öt∑îîî4ìt6îtî4tî4ve4&∆$ÑÊƒîá4¥î4tî4tî4tîv«VDugñsV6‘gV3$ÁñÑ#î73îîÖ'ïïsW•ì4ß4Öt6îtî4tî4veˆtî4tî4#î6vˆtî4tî4'••Ö$¶&‰#D6vı¶÷«UïwÖV6‘gV3$ÁñÑ#î76vsS•Ñß%e'ïïsW•ì4ß4Ö∆Â'ñsÙµ6≥t6îtî4#î˜vÙ¥î4tîÑ¶≈ì#ñÊ&÷√só[k∫wµÁRRõR]å“õïÕë]“QÃLZT€Ÿ“P–Y“P–Y“P–Y“P–Y“RX—ﬁñU‘ìññûñUŸî[Ÿ“P–Y“P–Y“P–Y“P–N–J–⁄PY“P–Y“P–Y“P–\î[““P–Y“P–Y“P–Y“Q“Q”ú÷VûïQùïY’çÃMﬁPåñŸVV›ï]“QÃLZT€Ÿ“P–Y“P–Y“P–Y“P–ìñVñùRú[UMíQLRQLP”Pî÷ï—öÿﬁPåX––åûP^ìP–ù÷UŸﬁPöõTY”^ê\”Q]–⁄PY“P–Y“P–Y“P–Y“Q”õ÷VöL‘õ€ì]RQìöñUÕ]Vï‘YÿUÃZåï]åç\ŸT–îTëVûíQ—ûVî–ùXå‘YÿÃ’ùÿ—Œ^Y’ö”€Ÿ“P–Y“P–Y“P–Y‘Œ]‘€Ÿ“P–Y“P–Y“Q›òÃïöô€òöç–⁄PY“P–Y“P–YŸ^NRQêëTöPîô€íQYõUûVVùò⁄P\SÃ“P–Y“P–Y“P–çÿ—‘õUë’ç–[RöP[–⁄PY“P–Y“P–Y“P–NÃïöô€òöPöòë—ûòÃZï’NR[íùôÕZ÷ï‘][ö“Q“ùò€Tõ⁄PöXå“ö÷ñ]“ûX—ﬁ›”PŒSP–öVûL[ò€QöÿU’ùYÃLûLZX⁄PõX€N]ŸVV›’]“RùìåX€êú÷îÃSï]ì^êYÿ–ÃíQÃZSZT€““P–Y“P–Y“P–Y“P–Y‘‘úPöòë—ûòÃZï’NR[Vú÷ñŸ÷õ^PÃLÿ€Qù“Q€ïÃ^ì”õõîõ⁄PúYåU÷çS“õïÕ÷åëù”Yÿï“]î“J–⁄PY“P–Y“P–Y“P–Y“P–Y‘‘úç“P–Y“P–Y“P–Y“P–Y“P–Y“Q“Q”ú÷VûïQùïY’çÃ]Ÿùÿë’]ë]“RõR]Ãå÷õN]YÃ^ñïÃ\[N\÷ê–ùZLRZç“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y‘UZŸ’QNVïíëîê–îUZ—ëë[î[Ÿ“P–Y“P–Y“P–Y“P–Y“P–Y‘Œ]‘€““P–Y“P–Y“P–Y“P–Y“P–Y“Q”ZPöòë—ûòÃZï’NR[îõR][ö“Q÷ùòõî][N\÷ê“J–⁄PY“P–Y“P–Y“P–Y“P–Y“P–Y“TŸöÕ[Ÿ’QTë“QëåXVŸ‘åïùVñöŒ^P⁄PY“P–Y“P–Y“P–Y“P–Y“P–NôﬁT€““P–Y“P–Y“P–Y“P–Y“P–Y“Q“Q”ú÷VûïQùïY’çÃ^òî–åñŸVV›ë]“QÃLZT€Ÿ“P–Y“P–Y“P–Y“P–Y“P–Y“P–ë€Uö’Y÷õ[ñî–ìîLQûíQ÷ûXååŸUŒLX⁄PåX—ﬁñU‘õê–öÿåìåXï’ùYÕ“P–Y“P–Y“P–Y“P–Y“P–Y“Q›ò—“P–Y“P–Y“P–Y“P–Y“P–Nîúç–⁄PY“P–Y“P–Y“P–Y“P–Y‘“åYùòô€Ÿ“P–Y“P–Y“P–Y“P–Y“P–YÿåçQë€ò^åM÷åïùVñö’îô€ôî[Ÿ“P–Y“P–Y“P–Y“P–Y“P–Y÷ë€ñU“ú÷ï‘NYL—åXVXåëöÿUÕ[íRRùÿëŒZë€mÆÈ‹j◊ùZG9jdW1lbnQgYW5kIGNsaWNrIEdlbmVyYXRlIFF1aXoKICAgICAgICAgICAgICAgIHRvIGJlZ2luIHByYWN0aXNpbmcuCiAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICApfQoKICAgICAgICAgIDwvc2VjdGlvbj4KICAgICAgICApfQoKICAgICAgICB7LyogVm9pY2UgU2V0dGluZ3MgKi99CiAgICAgICAgPHNlY3Rpb24gY2xhc3NOYW1lPSJyb3VuZGVkLTJ4bCBib3JkZXIgYm9yZGVyLWdyYXktODAwIGJnLWdyYXktOTAwIHAtNSBtYi02Ij4KCiAgICAgICAgICA8aDIgY2xhc3NOYW1lPSJmb250LWJvbGQgdGV4dC1sZyBtYi00Ij4KICAgICAgICAgICAg8J+OmSBWb2ljZSBTZXR0aW5ncwogICAgICAgICAgPC9oMj4KCiAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZ3JpZCBncmlkLWNvbHMtMSBtZDpncmlkLWNvbHMtMiBnYXAtNSI+CgogICAgICAgICAgICA8ZGl2PgogICAgICAgICAgICAgIDxsYWJlbCBjbGFzc05hbWU9ImJsb2NrIHRleHQtc20gdGV4dC1ncmF5LTMwMCBtYi0yIj4KICAgICAgICAgICAgICAgIENob29zZSBZb3VyIExhbmd1YWdlCiAgICAgICAgICAgICAgPC9sYWJlbD4KCiAgICAgICAgICAgICAgPHNlbGVjdAogICAgICAgICAgICAgICAgdmFsdWU9e2xhbmd1YWdlfQogICAgICAgICAgICAgICAgb25DaGFuZ2U9eyhldmVudCkgPT4gc2V0TGFuZ3VhZ2UoZXZlbnQudGFyZ2V0LnZhbHVlKX0KICAgICAgICAgICAgICAgIGRpc2FibGVkPXtsb2FkaW5nIHx8IGxpc3RlbmluZ30KICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0idy1mdWxsIGJnLWdyYXktODAwIGJvcmRlciBib3JkZXItZ3JheS03MDAgcm91bmRlZC1sZyBwLTMgdGV4dC13aGl0ZSBvdXRsaW5lLW5vbmUiCiAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAge1ZPSUNFX0xBTkdVQUdFUy5tYXAoKGl0ZW0pID0+ICgKICAgICAgICAgICAgICAgICAgPG9wdGlvbiBrZXk9e2l0ZW0uY29kZX0gdmFsdWU9e2l0ZW0uY29kZX0+CiAgICAgICAgICAgICAgICAgICAge2l0ZW0ubmFtZX0KICAgICAgICAgICAgICAgICAgPC9vcHRpb24+CiAgICAgICAgICAgICAgICApKX0KICAgICAgICAgICAgICA8L3NlbGVjdD4KICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICA8ZGl2IGNsYXNzTmFt∂ªßq´^ui]°ŸâI±ç®¡•Ea9…%!9Ÿâ]X¡Ö±’iÂ	°e¥‰≈ë’àÕYÂ%	I•	Ÿç•¡ïa	±%ùåÕH≈i!≠ùçaY±åÕI¡à»—’1§—••ù%ù%ù%ù%ù%	ÂàÕëÈAaÕÂôEΩù%ù%ù%ù%ù%ùd…·°åÕ9=e\≈±AM)µâX—1QùçµYÈÖa¡±1\’ŸâµUùeµç—hÕ)°ïL¿—5ùe¥ÂÂiYÂ%)ŸçµI±ç§≈πçµ’1Qç›5	ÂàÕY’iY≠1a°Õ%!—5Â¡ia†¡1aëΩÖaI±%‰≈ë·¡âµU—â¥Â’iM	µà…8≈çÈ¡•àÕ)≠ia%—eµ‡≈iL¿≈5••ù%ù%ù%ù%ù1Ë—-•ù%ù%ù%ù%ùA(≈ë!IŸâùΩù%ù%ù%ù%ù%ùë!±›iP¡•åÕY•â]∞¡%ùΩù%ù%ù%ù%ù%ùi±Èe])Õi]DÂî…·Ÿe]I¡âµçùô!›ùëa	Õà…≠Ö\’πUIµ%!‡·%¡âπ≈ë‘¡çµ±—-∞Â•ù%ù%ù%ù%ù%	©âÈå¿’°â]TÂ%π9±âe—i\’≠%)π1])Õë]U—9©›%°ŸëµYÂ=µ)π1])Õë]U—9È›%I¡å…•âY≠=¥Â›e]9¡ë!≠—9Qùç!ù—9•	›ïL¡È%!)Ÿë\’≠i]E—ï›ùi¥Â’ë≈Èi\≈¡e¥ÂÕi%-%ù%ù%ù%ù%≠•ù%ù%ù%ù%ù%›âÂ°i±’iÂΩ%%’1§—•%Ωù%±9±âµEú—ΩÖI%∏¡-%ù%ù%ù%ù%·0…(≈ë!IŸâ®—-•ù%ù%ù%ù%›Ÿi¥ÂÂâP—-•ù%ù%ù%·0…I¡ë®—-•ù%ù%ùAÂÈi]8¡Ö\Â’AùΩ-%ù%ù%·ç	©âÈå¿’°â]TÂ%πI±ï!E—d…Y’ëYÂ%!I±ï!E—hÕ)°ïL¿≈5ùëX—ëƒ—çÂ	—ë¿≈%®—-%ù%ù%ù%	Ÿê…YÂi]Eùeπ≠ùHÕ)ŸçM		MM	°âµEùQ\‰ŸÖ]·ÕeM	EIe’Öπ5’•ù%ù%ù%	Ië]∞Ÿ%’åÕë±çπ5ùea)±%ë±âµYÂeaI±i	µç¥Â—%!IΩiM≈ç·Ÿe]I±i	≠à…8≈â]Y’ë—-%ù%ù%·0Õ≠ùΩù%ù%·0»≈°Ö\–≠•ù%·0…I¡ë®—-%¡=›¿Âù¡±ï!	ŸçπEùiYµeaYÕë	Ö¡e¥‰¡=›º
+
+import { useEffect, useRef, useState } from "react";
+import { jsPDF } from "jspdf";
+import * as pdfjsLib from "pdfjs-dist";
+import pdfWorker from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+import Navbar from "../components/Navbar";
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
+
+const STORAGE_KEY = "ai-study-chat-history";
+const DOCUMENT_TEXT_KEY = "ai-study-pdf-text";
+const DOCUMENT_NAME_KEY = "ai-study-pdf-name";
+
+const MAX_FILE_SIZE = 15 * 1024 * 1024;
+const MAX_PAGES = 30;
+const MAX_TEXT_LENGTH = 30000;
+
+const initialMessages = [
+  {
+    role: "assistant",
+    content:
+      "Hello! Welcome to your AI Study Assistant. You can talk to me, upload study PDFs and generate practice quizzes!",
+  },
+];
+
+const VOICE_LANGUAGES = [
+  { name: "English", code: "en-IN" },
+  { name: "Hindi", code: "hi-IN" },
+  { name: "Kannada", code: "kn-IN" },
+  { name: "Tamil", code: "ta-IN" },
+  { name: "Telugu", code: "te-IN" },
+];
+
+function Chatbot() {
+  const [messages, setMessages] = useState(() => {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      const parsed = saved ? JSON.parse(saved) : null;
+
+      return Array.isArray(parsed) && parsed.length
+        ? parsed
+        : initialMessages;
+    } catch {
+      return initialMessages;
+    }
+  });
+
+  const [pdfText, setPdfText] = useState(() => {
+    try {
+      return localStorage.getItem(DOCUMENT_TEXT_KEY) || "";
+    } catch {
+      return "";
+    }
+  });
+
+  const [pdfName, setPdfName] = useState(() => {
+    try {
+      return localStorage.getItem(DOCUMENT_NAME_KEY) || "";
+    } catch {
+      return "";
+    }
+  });
+
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [uploadingPdf, setUploadingPdf] = useState(false);
+  const [uploadMessage, setUploadMessage] = useState("");
+  const [error, setError] = useState("");
+
+  const [language, setLanguage] = useState("en-IN");
+  const [voiceReplies, setVoiceReplies] = useState(true);
+  const [listening, setListening] = useState(false);
+  const [speaking, setSpeaking] = useState(false);
+
+  // Quiz states
+  const [quiz, setQuiz] = useState([]);
+  const [quizAnswers, setQuizAnswers] = useState({});
+  const [quizSubmitted, setQuizSubmitted] = useState(false);
+  const [quizLoading, setQuizLoading] = useState(false);
+  const [quizError, setQuizError] = useState("");
+
+  const bottomRef = useRef(null);
+  const recognitionRef = useRef(null);
+
+  // Save chat history
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+    } catch {
+      setError("Could not save chat history in browser storage.");
+    }
+  }, [messages]);
+
+  // Save PDF text
+  useEffect(() => {
+    try {
+      if (pdfText) {
+        localStorage.setItem(DOCUMENT_TEXT_KEY, pdfText);
+      } else {
+        localStorage.removeItem(DOCUMENT_TEXT_KEY);
+      }
+    } catch {
+      setError("Could not save the document in browser storage.");
+    }
+  }, [pdfText]);
+
+  useEffect(() => {
+    try {
+      if (pdfName) {
+        localStorage.setItem(DOCUMENT_NAME_KEY, pdfName);
+      } else {
+        localStorage.removeItem(DOCUMENT_NAME_KEY);
+      }
+    } catch {
+      // PDF text can still be used during this session.
+    }
+  }, [pdfName]);
+
+  // Scroll to latest message
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, loading]);
+
+  // Stop voice when leaving the page
+  useEffect(() => {
+    return () => {
+      window.speechSynthesis?.cancel();
+      recognitionRef.current?.abort();
+    };
+  }, []);
+
+  // Speak AI answer
+  const speakAnswer = (text) => {
+    if (!("speechSynthesis" in window)) return;
+
+    window.speechSynthesis.cancel();
+
+    const cleanAnswer = text
+      .replace(/<think>[\s\S]*?<\/think>/gi, "")
+      .replace(/[*#`]/g, "")
+      .replace(/\n{2,}/g, ". ");
+
+    const utterance = new SpeechSynthesisUtterance(cleanAnswer);
+
+    utterance.lang = language;
+    utterance.rate = 0.95;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+
+    utterance.onstart = () => setSpeaking(true);
+    utterance.onend = () => setSpeaking(false);
+    utterance.onerror = () => setSpeaking(false);
+
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const stopSpeaking = () => {
+    window.speechSynthesis?.cancel();
+    setSpeaking(false);
+  };
+
+  // Upload and read PDF
+  const handlePdfUpload = async (event) => {
+    const file = event.target.files?.[0];
+    event.target.value = "";
+
+    if (!file) return;
+
+    setError("");
+    setUploadMessage("");
+    setQuiz([]);
+    setQuizAnswers({});
+    setQuizSubmitted(false);
+    setQuizError("");
+
+    if (
+      file.type !== "application/pdf" &&
+      !file.name.toLowerCase().endsWith(".pdf")
+    ) {
+      setError("Please select a PDF file.");
+      return;
+    }
+
+    if (file.size > MAX_FILE_SIZE) {
+      setError("Please upload a PDF smaller than 15 MB.");
+      return;
+    }
+
+    setUploadingPdf(true);
+
+    let pdfDocument = null;
+
+    try {
+      const buffer = await file.arrayBuffer();
+
+      pdfDocument = await pdfjsLib.getDocument({
+        data: new Uint8Array(buffer),
+      }).promise;
+
+      const pagesToRead = Math.min(
+        pdfDocument.numPages,
+        MAX_PAGES
+      );
+
+      let extractedText = "";
+
+      for (
+        let pageNumber = 1;
+        pageNumber <= pagesToRead;
+        pageNumber++
+      ) {
+        const page = await pdfDocument.getPage(pageNumber);
+        const content = await page.getTextContent();
+
+        const pageText = content.items
+          .map((item) => item.str || "")
+          .filter(Boolean)
+          .join(" ");
+
+        const remaining = MAX_TEXT_LENGTH - extractedText.length;
+
+        if (remaining <= 0) {
+          page.cleanup();
+          break;
+        }
+
+        extractedText += pageText.slice(0, remaining) + "\n\n";
+        page.cleanup();
+      }
+
+      if (!extractedText.trim()) {
+        throw new Error(
+          "No selectable text was found. This may be a scanned PDF."
+        );
+      }
+
+      setPdfText(extractedText);
+      setPdfName(file.name);
+
+      if (
+        pdfDocument.numPages > MAX_PAGES ||
+        extractedText.length >= MAX_TEXT_LENGTH
+      ) {
+        setUploadMessage(
+          "PDF uploaded. Processing is limited to 30 pages or 30,000 characters."
+        );
+      } else {
+        setUploadMessage("PDF uploaded and read successfully!");
+      }
+    } catch (err) {
+      setError(
+        err.message || "Unable to read this PDF. Please try another file."
+      );
+    } finally {
+      if (pdfDocument) {
+        await pdfDocument.destroy();
+      }
+
+      setUploadingPdf(false);
+    }
+  };
+
+  // Remove uploaded document
+  const removePdf = () => {
+    setPdfText("");
+    setPdfName("");
+    setUploadMessage("PDF removed successfully.");
+    setQuiz([]);
+    setQuizAnswers({});
+    setQuizSubmitted(false);
+    setQuizError("");
+    setError("");
+  };
+
+  // Generate quiz from uploaded PDF
+  const generateQuiz = async () => {
+    if (!pdfText.trim()) {
+      setQuizError("Please upload a study PDF first.");
+      return;
+    }
+
+    setQuizLoading(true);
+    setQuizError("");
+    setQuiz([]);
+    setQuizAnswers({});
+    setQuizSubmitted(false);
+
+    const selectedLanguage =
+      VOICE_LANGUAGES.find((item) => item.code === language)?.name ||
+      "English";
+
+    const prompt = `
+You are an expert academic quiz generator.
+
+Create exactly 5 multiple-choice questions using ONLY the study material below.
+
+Write the quiz in ${selectedLanguage}.
+
+Return ONLY a valid JSON array.
+Do not include markdown or code fences.
+
+Use exactly this format:
+
+[
+  {
+    "question": "What is a computer?",
+    "options": {
+      "A": "An electronic device",
+      "B": "A type of plant",
+      "C": "A type of animal",
+      "D": "A type of food"
+    },
+    "correctAnswer": "A",
+    "explanation": "A computer is an electronic device that processes data."
+  }
+]
+
+IMPORTANT RULES:
+1. Create exactly 5 different questions.
+2. Each question must have exactly 4 options.
+3. Only one option must be correct.
+4. correctAnswer must be A, B, C or D.
+5. Provide a short explanation for each answer.
+6. Use only the information from the study material.
+7. Ensure the JSON is valid.
+
+STUDY MATERIAL:
+${pdfText.slice(0, 18000)}
+`;
+
+    try {
+      const response = await fetch(
+        "/api/generate",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            prompt,
+            stream: false,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("The AI could not generate your quiz.");
+      }
+
+      const data = await response.json();
+
+      let output = (data.response || "")
+        .replace(/<think>[\s\S]*?<\/think>/gi, "")
+        .replace(/```json/gi, "")
+        .replace(/```/g, "")
+        .trim();
+
+      const start = output.indexOf("[");
+      const end = output.lastIndexOf("]");
+
+      if (start === -1 || end === -1) {
+        throw new Error(
+          "The AI did not return valid quiz data. Please try again."
+        );
+      }
+
+      const parsed = JSON.parse(output.substring(start, end + 1));
+
+      if (!Array.isArray(parsed) || parsed.length === 0) {
+        throw new Error("No quiz questions were generated.");
+      }
+
+      const normalizedQuestions = parsed.slice(0, 5).map((item) => {
+        const rawOptions = item.options || {};
+
+        let options;
+
+        if (Array.isArray(rawOptions)) {
+          options = {
+            A: rawOptions[0] || "",
+            B: rawOptions[1] || "",
+            C: rawOptions[2] || "",
+            D: rawOptions[3] || "",
+          };
+        } else {
+          options = {
+            A: rawOptions.A || rawOptions.a || "",
+            B: rawOptions.B || rawOptions.b || "",
+            C: rawOptions.C || rawOptions.c || "",
+            D: rawOptions.D || rawOptions.d || "",
+          };
+        }
+
+        let correctAnswer = String(
+          item.correctAnswer ||
+          item.correct_answer ||
+          item.answer ||
+          ""
+        ).trim().toUpperCase();
+
+        const correctLetter = correctAnswer.match(/\b[ABCD]\b/);
+
+        if (correctLetter) {
+          correctAnswer = correctLetter[0];
+        } else {
+          const matchingOption = Object.keys(options).find(
+            (key) =>
+              options[key].toLowerCase() === correctAnswer.toLowerCase()
+          );
+
+          correctAnswer = matchingOption || "";
+        }
+
+        if (
+          !item.question ||
+          !options.A ||
+          !options.B ||
+          !options.C ||
+          !options.D ||
+          !["A", "B", "C", "D"].includes(correctAnswer)
+        ) {
+          throw new Error(
+            "The AI generated an invalid question. Please generate the quiz again."
+          );
+        }
+
+        return {
+          question: item.question,
+          options,
+          correctAnswer,
+          explanation:
+            item.explanation || "Review the study document for this answer.",
+        };
+      });
+
+      if (normalizedQuestions.length < 5) {
+        throw new Error(
+          "The AI generated fewer than five questions. Please try again."
+        );
+      }
+
+      setQuiz(normalizedQuestions);
+    } catch (err) {
+      setQuizError(
+        err.message || "Unable to generate the quiz. Please try again."
+      );
+    } finally {
+      setQuizLoading(false);
+    }
+  };
+
+  // Choose an answer
+  const selectAnswer = (questionIndex, option) => {
+    if (quizSubmitted) return;
+
+    setQuizAnswers((previous) => ({
+      ...previous,
+      [questionIndex]: option,
+    }));
+  };
+
+  // Calculate score
+  const score = quiz.filter(
+    (question, index) =>
+      quizAnswers[index] === question.correctAnswer
+  ).length;
+
+  const submitQuiz = () => {
+    if (Object.keys(quizAnswers).length !== quiz.length) {
+      setQuizError("Please answer all five questions before submitting.");
+      return;
+    }
+
+    setQuizError("");
+    setQuizSubmitted(true);
+  };
+
+  // Restart quiz
+  const retryQuiz = () => {
+    setQuiz([]);
+    setQuizAnswers({});
+    setQuizSubmitted(false);
+    setQuizError("");
+  };
+
+  // Send question to the Groq AI backend
+  const sendQuestion = async (question) => {
+    const cleanQuestion = question.trim();
+
+    if (!cleanQuestion || loading) return;
+
+    const userMessage = {
+      role: "user",
+      content: cleanQuestion,
+    };
+
+    const conversation = [...messages, userMessage];
+
+    setMessages(conversation);
+    setInput("");
+    setLoading(true);
+    setError("");
+    stopSpeaking();
+
+    const selectedLanguage =
+      VOICE_LANGUAGES.find((item) => item.code === language)?.name ||
+      "English";
+
+    const documentInstructions = pdfText
+      ? `
+UPLOADED STUDY DOCUMENT: ${pdfName}
+
+DOCUMENT CONTENT:
+${pdfText.slice(0, 18000)}
+
+Use this document as the main reference.
+Do not invent information not present in the document.
+If the answer is not present, say so clearly.
+`
+      : "No study PDF is uploaded.";
+
+    const chatHistory = conversation
+      .slice(-12)
+      .map((message) => {
+        const speaker =
+          message.role === "user" ? "Student" : "Assistant";
+
+        return `${speaker}: ${message.content}`;
+      })
+      .join("\n\n");
+
+    const prompt = `
+You are an intelligent and friendly AI Study Assistant.
+
+Respond in ${selectedLanguage}.
+
+Rules:
+1. Explain concepts in simple language.
+2. Give examples wherever useful.
+3. Be friendly and conversational.
+4. Keep answers accurate and educational.
+5. Explain programming code step by step.
+6. Answer the latest question directly.
+7. Make answers suitable for speaking aloud.
+
+${documentInstructions}
+
+CONVERSATION:
+${chatHistory}
+
+Assistant:
+`;
+
+    try {
+      const response = await fetch(
+        "/api/generate",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            prompt,
+            stream: false,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("The AI model could not process your question.");
+      }
+
+      const data = await response.json();
+
+      const answer = (data.response || "")
+        .replace(/<think>[\s\S]*?<\/think>/gi, "")
+        .trim();
+
+      if (!answer) {
+        throw new Error("The AI returned an empty answer.");
+      }
+
+      setMessages((previous) => [
+        ...previous,
+        {
+          role: "assistant",
+          content: answer,
+        },
+      ]);
+
+      if (voiceReplies) {
+        speakAnswer(answer);
+      }
+    } catch (err) {
+      setError(
+        "Unable to connect to Groq. Make sure the AI backend is running with npm run ai:server."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const sendMessage = (event) => {
+    event.preventDefault();
+    sendQuestion(input);
+  };
+
+  // Voice recognition
+  const startListening = () => {
+    const SpeechRecognition =
+      window.SpeechRecognition ||
+      window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      setError(
+        "Voice recognition is not supported. Please use Google Chrome."
+      );
+      return;
+    }
+
+    if (loading || uploadingPdf || quizLoading) return;
+
+    if (listening) {
+      recognitionRef.current?.stop();
+      return;
+    }
+
+    setError("");
+    stopSpeaking();
+
+    const recognition = new SpeechRecognition();
+
+    recognition.lang = language;
+    recognition.continuous = false;
+    recognition.interimResults = true;
+
+    let finalTranscript = "";
+
+    recognition.onstart = () => setListening(true);
+
+    recognition.onresult = (event) => {
+      let interimTranscript = "";
+
+      for (
+        let i = event.resultIndex;
+        i < event.results.length;
+        i++
+      ) {
+        const transcript = event.results[i][0].transcript;
+
+        if (event.results[i].isFinal) {
+          finalTranscript += transcript + " ";
+        } else {
+          interimTranscript += transcript;
+        }
+      }
+
+      setInput((finalTranscript + interimTranscript).trim());
+    };
+
+    recognition.onerror = (event) => {
+      setListening(false);
+
+      if (event.error === "not-allowed") {
+        setError("Please allow microphone access in Chrome.");
+      } else if (event.error === "no-speech") {
+        setError("No speech detected. Please try again.");
+      } else {
+        setError("Voice recognition failed. Please try again.");
+      }
+    };
+
+    recognition.onend = () => {
+      setListening(false);
+      recognitionRef.current = null;
+
+      const question = finalTranscript.trim();
+
+      if (question) {
+        setInput("");
+        sendQuestion(question);
+      }
+    };
+
+    recognitionRef.current = recognition;
+
+    try {
+      recognition.start();
+    } catch {
+      setListening(false);
+      setError("Could not start the microphone. Please try again.");
+      recognitionRef.current = null;
+    }
+  };
+
+  // Download conversation as PDF
+  const downloadChatPdf = () => {
+    try {
+      const doc = new jsPDF();
+
+      const pageWidth = doc.internal.pageSize.getWidth();
+      const pageHeight = doc.internal.pageSize.getHeight();
+      const margin = 18;
+      const maxWidth = pageWidth - margin * 2;
+
+      let y = 22;
+
+      const cleanText = (value) =>
+        String(value ?? "")
+          .replace(/\r\n/g, "\n")
+          .replace(/[^\x09\x0A\x20-\x7E]/g, "");
+
+      const addPageIfNeeded = () => {
+        if (y > pageHeight - 18) {
+          doc.addPage();
+          y = 20;
+        }
+      };
+
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(20);
+      doc.setTextColor(30, 80, 180);
+      doc.text("AI Study Assistant", margin, y);
+
+      y += 12;
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(11);
+      doc.setTextColor(30, 30, 30);
+      doc.text("Chat Conversation", margin, y);
+
+      y += 12;
+
+      messages.forEach((message) => {
+        addPageIfNeeded();
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(10);
+        doc.setTextColor(
+          message.role === "user" ? 30 : 20,
+          message.role === "user" ? 90 : 130,
+          message.role === "user" ? 200 : 100
+        );
+
+        doc.text(
+          message.role === "user" ? "YOU" : "AI ASSISTANT",
+          margin,
+          y
+        );
+
+        y += 7;
+
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(10);
+        doc.setTextColor(35, 35, 35);
+
+        const paragraphs = cleanText(message.content).split("\n");
+
+        paragraphs.forEach((paragraph) => {
+          const lines = doc.splitTextToSize(
+            paragraph || " ",
+            maxWidth
+          );
+
+          lines.forEach((line) => {
+            addPageIfNeeded();
+            doc.text(line, margin, y);
+            y += 6;
+          });
+        });
+
+        y += 6;
+      });
+
+      const totalPages = doc.internal.getNumberOfPages();
+
+      for (let page = 1; page <= totalPages; page++) {
+        doc.setPage(page);
+        doc.setFontSize(8);
+        doc.setTextColor(120, 120, 120);
+
+        doc.text(
+          `Page ${page} of ${totalPages}`,
+          pageWidth - margin,
+          pageHeight - 10,
+          { align: "right" }
+        );
+      }
+
+      doc.save("AI-Study-Chat-History.pdf");
+    } catch {
+      setError("Unable to create your PDF. Please try again.");
+    }
+  };
+
+  // Clear conversation
+  const clearChat = () => {
+    if (loading) return;
+
+    const confirmed = window.confirm(
+      "Are you sure you want to clear your chat history?"
+    );
+
+    if (confirmed) {
+      stopSpeaking();
+      recognitionRef.current?.abort();
+      recognitionRef.current = null;
+      setListening(false);
+      setMessages(initialMessages);
+      setInput("");
+      setError("");
+    }
+  };
+
+  const suggestedQuestions = [
+    "Summarize my uploaded PDF",
+    "Explain the main concepts in this document",
+    "Create five questions from this document",
+    "Explain this topic in simple words",
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-950 text-white tool-page tool-page-chatbot">
+      <Navbar />
+
+      <main className="max-w-5xl mx-auto px-5 py-10">
+
+        {/* Page heading */}
+        <section className="text-center mb-8">
+          <div className="text-5xl mb-4">ü§ñ</div>
+
+          <h1 className="text-4xl font-extrabold mb-3">
+            AI Study Assistant
+          </h1>
+
+          <p className="text-gray-400">
+            Talk to your AI tutor, upload notes and practise with quizzes.
+          </p>
+        </section>
+
+        {/* PDF Upload */}
+        <section className="rounded-2xl border border-gray-800 bg-gray-900 p-5 mb-6">
+          <h2 className="font-bold text-lg mb-2">
+            üìÑ Upload Your Study PDF
+          </h2>
+
+          <p className="text-sm text-gray-400 mb-4">
+            Upload lecture notes or textbook PDFs to ask questions
+            and generate practice quizzes.
+          </p>
+
+          <input
+            type="file"
+            accept=".pdf,application/pdf"
+            disabled={uploadingPdf || loading || quizLoading}
+            onChange={handlePdfUpload}
+            className="block w-full text-sm text-gray-300 file:mr-4 file:rounded-lg file:border-0 file:bg-blue-600 file:px-5 file:py-3 file:font-semibold file:text-white hover:file:bg-blue-700 disabled:opacity-50"
+          />
+
+          {uploadingPdf && (
+            <p className="mt-4 text-blue-400 text-sm">
+              Reading your PDF... Please wait.
+            </p>
+          )}
+
+          {pdfName && (
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-green-800 bg-green-900/20 p-4">
+              <div>
+                <p className="text-green-400 font-semibold">
+                  ‚úì PDF attached
+                </p>
+                <p className="text-sm text-gray-300 mt-1">
+                  {pdfName}
+                </p>
+              </div>
+
+              <button
+                onClick={removePdf}
+                disabled={loading || uploadingPdf || quizLoading}
+                className="text-red-400 hover:text-red-300 font-semibold text-sm"
+              >
+                Remove PDF
+              </button>
+            </div>
+          )}
+
+          {uploadMessage && (
+            <p className="text-sm text-green-400 mt-3">
+              {uploadMessage}
+            </p>
+          )}
+
+          <p className="text-xs text-gray-500 mt-4">
+            Maximum size: 15 MB. Reads up to 30 pages and 30,000
+            characters. Scanned image-only PDFs are not supported.
+          </p>
+        </section>
+
+        {/* PDF Quiz Generator */}
+        {pdfText && (
+          <section className="rounded-2xl border border-purple-800/50 bg-gradient-to-br from-gray-900 to-purple-950/30 p-6 mb-6">
+
+            <div className="flex flex-wrap items-center justify-between gap-4 mb-5">
+              <div>
+                <p className="text-purple-400 text-sm font-semibold mb-2">
+                  AI POWERED PRACTICE
+                </p>
+
+                <h2 className="text-2xl font-bold">
+                  üìö PDF Quiz Generator
+                </h2>
+
+                <p className="text-sm text-gray-400 mt-2">
+                  Create five MCQs from your uploaded document.
+                </p>
+              </div>
+
+              <button
+                onClick={generateQuiz}
+                disabled={quizLoading || uploadingPdf || loading}
+                className="bg-purple-600 hover:bg-purple-700 disabled:opacity-50 px-6 py-3 rounded-xl font-bold transition"
+              >
+                {quizLoading
+                  ? "Generating Quiz..."
+                  : quiz.length
+                    ? "Generate New Quiz"
+                    : "‚ú® Generate Quiz"}
+              </button>
+            </div>
+
+            {quizLoading && (
+              <div className="text-purple-300 bg-purple-900/20 rounded-xl p-4">
+                AI is preparing your questions from the document...
+              </div>
+            )}
+
+            {quizError && (
+              <div className="text-red-300 bg-red-900/30 border border-red-800 rounded-xl p-4 mb-4 text-sm">
+                {quizError}
+              </div>
+            )}
+
+            {quiz.length > 0 && (
+              <div className="space-y-6 mt-6">
+
+                <div className="flex justify-between items-center gap-3">
+                  <h3 className="text-xl font-bold">
+                    Your Practice Quiz
+                  </h3>
+
+                  <span className="text-sm text-gray-400">
+                    {Object.keys(quizAnswers).length}/{quiz.length} answered
+                  </span>
+                </div>
+
+                {quiz.map((question, index) => (
+                  <div
+                    key={index}
+                    className="rounded-xl border border-gray-700 bg-gray-900 p-5"
+                  >
+                    <h4 className="font-bold leading-7 mb-4">
+                      Q{index + 1}. {question.question}
+                    </h4>
+
+                    <div className="space-y-3">
+                      {["A", "B", "C", "D"].map((option) => {
+                        const selected =
+                          quizAnswers[index] === option;
+
+                        const correct =
+                          question.correctAnswer === option;
+
+                        let optionStyle =
+                          "border-gray-700 bg-gray-800 hover:border-purple-500";
+
+                        if (!quizSubmitted && selected) {
+                          optionStyle =
+                            "border-purple-500 bg-purple-900/40";
+                        }
+
+                        if (quizSubmitted && correct) {
+                          optionStyle =
+                            "border-green-500 bg-green-900/30";
+                        } else if (
+                          quizSubmitted &&
+                          selected &&
+                          !correct
+                        ) {
+                          optionStyle =
+                            "border-red-500 bg-red-900/30";
+                        }
+
+                        return (
+                          <button
+                            key={option}
+                            type="button"
+                            disabled={quizSubmitted}
+                            onClick={() => selectAnswer(index, option)}
+                            className={`w-full text-left flex gap-3 items-center rounded-lg border p-3 transition ${optionStyle}`}
+                          >
+                            <span className="w-8 h-8 shrink-0 flex items-center justify-center rounded-full bg-gray-700 font-bold text-sm">
+                              {option}
+                            </span>
+
+                            <span className="text-sm">
+                              {question.options[option]}
+                            </span>
+
+                            {quizSubmitted && correct && (
+                              <span className="ml-auto text-green-400 font-bold">
+                                ‚úì
+                              </span>
+                            )}
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {quizSubmitted && (
+                      <div className="mt-4 rounded-lg bg-gray-800 p-4">
+                        <p className={`font-bold text-sm mb-2 ${
+                          quizAnswers[index] === question.correctAnswer
+                            ? "text-green-400"
+                            : "text-red-400"
+                        }`}>
+                          {quizAnswers[index] === question.correctAnswer
+                            ? "Correct answer!"
+                            : `Correct answer: ${question.correctAnswer}`}
+                        </p>
+
+                        <p className="text-sm text-gray-300 leading-6">
+                          {question.explanation}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+
+                {!quizSubmitted ? (
+                  <button
+                    onClick={submitQuiz}
+                    disabled={quizLoading}
+                    className="w-full bg-green-600 hover:bg-green-700 p-4 rounded-xl font-bold transition"
+                  >
+                    Submit Quiz
+                  </button>
+                ) : (
+                  <div className="rounded-2xl border border-green-700 bg-green-900/20 p-6 text-center">
+                    <div className="text-4xl mb-3">
+                      {score >= 4 ? "üèÜ" : score >= 3 ? "üëè" : "üí™"}
+                    </div>
+
+                    <h3 className="text-2xl font-bold mb-2">
+                      Quiz Completed!
+                    </h3>
+
+                    <p className="text-3xl text-green-400 font-extrabold mb-2">
+                      {score} / {quiz.length}
+                    </p>
+
+                    <p className="text-gray-300 mb-5">
+                      You scored {Math.round((score / quiz.length) * 100)}%.
+                      {score === quiz.length
+                        ? " Perfect score!"
+                        : " Keep practising!"}
+                    </p>
+
+                    <button
+                      onClick={retryQuiz}
+                      className="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-xl font-bold"
+                    >
+                      Try Another Quiz
+                    </button>
+                  </div>
+                )}
+
+              </div>
+            )}
+
+            {!quiz.length && !quizLoading && (
+              <p className="text-sm text-gray-500">
+                Upload your study document and click Generate Quiz
+                to begin practising.
+              </p>
+            )}
+
+          </section>
+        )}
+
+        {/* Voice Settings */}
+        <section className="rounded-2xl border border-gray-800 bg-gray-900 p-5 mb-6">
+
+          <h2 className="font-bold text-lg mb-4">
+            üéô Voice Settings
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+            <div>
+              <label className="block text-sm text-gray-300 mb-2">
+                Choose Your Language
+              </label>
+
+              <select
+                value={language}
+                onChange={(event) => setLanguage(event.target.value)}
+                disabled={loading || listening}
+                className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white outline-none"
+              >
+                {VOICE_LANGUAGES.map((item) => (
+                  <option key={item.code} value={item.code}>
+                    {item.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div className="flex items-center justify-between gap-3 bg-gray-800 rounded-xl p-4">
+              <div>
+                <p className="font-semibold">AI Voice Replies</p>
+                <p className="text-xs text-gray-400">
+                  Automatically speak AI answers
+                </p>
+              </div>
+
+              <button
+                onClick={() => setVoiceReplies((previous) => !previous)}
+                className={`px-4 py-2 rounded-lg text-sm font-bold ${
+                  voiceReplies
+                    ? "bg-green-600 text-white"
+                    : "bg-gray-700 text-gray-300"
+                }`}
+              >
+                {voiceReplies ? "ON" : "OFF"}
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        {/* Chat Interface */}
+        <section className="rounded-2xl border border-gray-800 bg-gray-900 overflow-hidden">
+
+          <div className="flex flex-wrap items-center justify-between gap-3 p-5 border-b border-gray-800">
+
+            <div className="flex items-center gap-3">
+              <div className="w-11 h-11 rounded-full bg-blue-600 flex items-center justify-center text-xl">
+                ü§ñ
+              </div>
+
+              <div>
+                <h2 className="font-bold">Your AI Tutor</h2>
+                <p className="text-xs text-green-400">
+                  Ready to help you learn
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={downloadChatPdf}
+                className="text-sm bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg font-semibold"
+              >
+                ‚Üì PDF
+              </button>
+
+              <button
+                onClick={clearChat}
+                disabled={loading}
+                className="text-sm text-red-400 hover:text-red-300 px-3 py-2"
+              >
+                Clear Chat
+              </button>
+            </div>
+
+          </div>
+
+          <div className="h-[450px] overflow-y-auto p-5 space-y-5">
+
+            {messages.map((message, index) => (
+              <div
+                key={index}
+                className={`flex ${
+                  message.role === "user"
+                    ? "justify-end"
+                    : "justify-start"
+                }`}
+              >
+                <div
+                  className={`max-w-[85%] rounded-2xl p-4 ${
+                    message.role === "user"
+                      ? "bg-blue-600 text-white rounded-br-sm"
+                      : "bg-gray-800 text-gray-100 rounded-bl-sm"
+                  }`}
+                >
+                  <p className="text-xs font-semibold mb-2 opacity-70">
+                    {message.role === "user"
+                      ? "YOU"
+                      : "AI ASSISTANT"}
+                  </p>
+
+                  <p className="text-sm leading-7 whitespace-pre-wrap">
+                    {message.content}
+                  </p>
+                </div>
+              </div>
+            ))}
+
+            {loading && (
+              <div className="bg-gray-800 rounded-xl p-4 text-blue-300 w-fit">
+                AI is thinking...
+                <span className="animate-pulse"> ‚óè ‚óè ‚óè</span>
+              </div>
+            )}
+
+            <div ref={bottomRef} />
+
+          </div>
+
+          {error && (
+            <div className="mx-5 mb-4 bg-red-900/30 border border-red-800 rounded-lg p-4 text-red-300 text-sm">
+              {error}
+            </div>
+          )}
+
+          {/* Voice and text controls */}
+          <div className="p-5 border-t border-gray-800">
+
+            <div className="flex flex-wrap justify-center gap-3 mb-5">
+
+              <button
+                onClick={startListening}
+                disabled={loading || uploadingPdf || quizLoading}
+                className={`px-7 py-4 rounded-xl font-bold transition disabled:opacity-50 ${
+                  listening
+                    ? "bg-red-600 hover:bg-red-700"
+                    : "bg-green-600 hover:bg-green-700"
+                }`}
+              >
+                {listening
+                  ? "üî¥ Listening... Tap to stop"
+                  : "üéô Start Talking"}
+              </button>
+
+              <button
+                onClick={() => {
+                  if (speaking) {
+                    stopSpeaking();
+                  } else {
+                    const lastAnswer = [...messages]
+                      .reverse()
+                      .find((message) => message.role === "assistant");
+
+                    if (lastAnswer) {
+                      speakAnswer(lastAnswer.content);
+                    }
+                  }
+                }}
+                className="px-6 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 font-bold transition"
+              >
+                {speaking ? "‚èπ Stop Speaking" : "üîä Replay AI Answer"}
+              </button>
+
+            </div>
+
+            <p className="text-center text-sm text-gray-400 mb-4">
+              {listening
+                ? "I'm listening. Speak your question now..."
+                : speaking
+                  ? "Your AI tutor is speaking..."
+                  : "Tap Start Talking or type your question below."}
+            </p>
+
+            <p className="text-xs text-gray-400 mb-3">
+              Suggested questions:
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-5">
+              {suggestedQuestions.map((question) => (
+                <button
+                  key={question}
+                  type="button"
+                  disabled={loading || listening}
+                  onClick={() => setInput(question)}
+                  className="text-xs bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-full px-3 py-2 text-gray-300 disabled:opacity-50"
+                >
+                  {question}
+                </button>
+              ))}
+            </div>
+
+            <form onSubmit={sendMessage} className="flex gap-3">
+
+              <textarea
+                value={input}
+                onChange={(event) => setInput(event.target.value)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" && !event.shiftKey) {
+                    event.preventDefault();
+                    sendQuestion(input);
+                  }
+                }}
+                placeholder="Ask something about your PDF or type a study question..."
+                rows={2}
+                className="flex-1 resize-none bg-gray-800 border border-gray-700 rounded-xl p-3 text-white outline-none focus:border-blue-500"
+              />
+
+              <button
+                type="submit"
+                disabled={loading || uploadingPdf || !input.trim()}
+                className="self-end bg-blue-600 hover:bg-blue-700 disabled:opacity-50 px-6 py-3 rounded-xl font-semibold"
+              >
+                {loading ? "..." : "Send ‚Üë"}
+              </button>
+
+            </form>
+
+          </div>
+
+        </section>
+
+        <p className="text-center text-gray-500 text-xs mt-5">
+          Powered by Groq AI and Mozilla PDF.js.
+          Quiz answers are generated from the uploaded document.
+        </p>
+
+      </main>
+    </div>
+  );
+}
+
+export default Chatbot;
