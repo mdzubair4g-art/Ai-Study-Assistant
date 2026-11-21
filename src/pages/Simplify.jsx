@@ -237,6 +237,7 @@ ${notes}
   const clearAll = () => {
     window.speechSynthesis?.cancel();
     setNotes("");
+    saveStudySource("");
     setSimplifiedText("");
     setError("");
     setSpeaking(false);
