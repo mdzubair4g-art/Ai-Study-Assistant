@@ -3544,3 +3544,107 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 380px) {
   .developer-feature-card:nth-child(9) { grid-column: 1 / -1; min-height: 190px; }
 }
+
+
+/* STUDENT DASHBOARD — give the ninth toolkit card its own full-width layout. */
+.developer-feature-grid > .developer-feature-card:nth-child(9) {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-width: 0;
+  min-height: 148px;
+  display: grid;
+  grid-template-columns: 64px minmax(190px, .85fr) minmax(260px, 1.35fr) minmax(190px, .8fr);
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: clamp(16px, 2.5vw, 30px);
+  row-gap: 7px;
+  padding: 23px 26px;
+}
+.developer-feature-grid > .developer-feature-card:nth-child(9) .feature-topline {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin: 0;
+}
+.developer-feature-grid > .developer-feature-card:nth-child(9) .feature-tag {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  margin: 0;
+}
+.developer-feature-grid > .developer-feature-card:nth-child(9) .feature-title {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  margin: 0;
+}
+.developer-feature-grid > .developer-feature-card:nth-child(9) .feature-description {
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  align-self: center;
+  max-width: 560px;
+  font-size: 12px;
+}
+.developer-feature-grid > .developer-feature-card:nth-child(9) .feature-action {
+  grid-column: 4;
+  grid-row: 1 / span 2;
+  align-self: center;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+@media (max-width: 1040px) {
+  .developer-feature-grid > .developer-feature-card:nth-child(9) {
+    grid-template-columns: 58px minmax(150px, .8fr) minmax(0, 1.2fr);
+    min-height: 140px;
+    padding: 21px;
+  }
+  .developer-feature-grid > .developer-feature-card:nth-child(9) .feature-action {
+    grid-column: 2 / 4;
+    grid-row: 3;
+    justify-self: start;
+    width: 100%;
+    padding-top: 5px;
+  }
+  .developer-feature-grid > .developer-feature-card:nth-child(9) .feature-description {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+}
+@media (max-width: 700px) {
+  .developer-feature-grid > .developer-feature-card:nth-child(9) {
+    grid-column: 1 / -1;
+    grid-template-columns: 52px minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+    min-height: 0;
+    row-gap: 8px;
+    padding: 18px;
+  }
+  .developer-feature-grid > .developer-feature-card:nth-child(9) .feature-topline {
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    align-self: start;
+  }
+  .developer-feature-grid > .developer-feature-card:nth-child(9) .feature-tag {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .developer-feature-grid > .developer-feature-card:nth-child(9) .feature-title {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .developer-feature-grid > .developer-feature-card:nth-child(9) .feature-description {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .developer-feature-grid > .developer-feature-card:nth-child(9) .feature-action {
+    grid-column: 2;
+    grid-row: 4;
+    padding-top: 8px;
+  }
+}
