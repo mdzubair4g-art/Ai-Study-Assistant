@@ -71,6 +71,12 @@ const tools = [
     path: "/summary",
   },
   {
+    icon: "✍️",
+    title: "Exam Answer Generator",
+    description: "Prepare source-based answers for 2, 5 and 10 marks.",
+    path: "/exam-answer",
+  },
+  {
     icon: "🎯",
     title: "MCQ Generator",
     description: "Practise questions and check your knowledge.",

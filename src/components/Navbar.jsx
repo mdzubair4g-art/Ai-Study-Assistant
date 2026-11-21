@@ -6,6 +6,7 @@ const navItems = [
   { name: "Dashboard", path: "/dashboard" },
   { name: "Simplify", path: "/simplify" },
   { name: "Summary", path: "/summary" },
+  { name: "Exam Answer Generator", path: "/exam-answer" },
   { name: "MCQ Generator", path: "/mcq" },
   { name: "Flashcards", path: "/flashcards" },
   { name: "AI Podcast", path: "/podcast" },
@@ -140,7 +141,7 @@ function Navbar() {
               <p className="command-results-label">PAGES & TOOLS</p>
               {filteredItems.length ? filteredItems.map((item, index) => (
                 <Link key={item.path} to={item.path} className="command-result" onClick={closeCommand}>
-                  <span className="command-result-icon">{["⌂", "▦", "✳", "▤", "◎", "▣", "♫", "◷", "✧"][navItems.indexOf(item)]}</span>
+                  <span className="command-result-icon">{["⌂", "▦", "✳", "▤", "✍", "◎", "▣", "♫", "◷", "✧"][navItems.indexOf(item)]}</span>
                   <span>{item.name}</span>
                   <kbd>{index === 0 ? "↵" : "↗"}</kbd>
                 </Link>

@@ -9,6 +9,7 @@ const Home = lazy(() => import("./pages/Home"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Simplify = lazy(() => import("./pages/Simplify"));
 const Summary = lazy(() => import("./pages/Summary"));
+const ExamAnswer = lazy(() => import("./pages/ExamAnswer"));
 const MCQ = lazy(() => import("./pages/MCQ"));
 const Flashcards = lazy(() => import("./pages/Flashcards"));
 const Podcast = lazy(() => import("./pages/Podcast"));
@@ -34,6 +35,7 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/simplify" element={<Simplify />} />
           <Route path="/summary" element={<Summary />} />
+          <Route path="/exam-answer" element={<ExamAnswer />} />
           <Route path="/mcq" element={<MCQ />} />
           <Route path="/flashcards" element={<Flashcards />} />
           <Route path="/podcast" element={<Podcast />} />

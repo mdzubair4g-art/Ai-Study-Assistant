@@ -1,6 +1,6 @@
 # AI Study Assistant
 
-An AI-powered study workspace that helps students turn class material into clear explanations, revision notes, practice questions and more.
+An AI-powered study workspace that helps students turn class material into clear explanations, exam-ready answers, revision notes, practice questions and more.
 
 [**Open the live website →**](https://ai-notes-simplifier-iota.vercel.app/)
 
@@ -42,6 +42,7 @@ The project is built with React and Vite and uses the Groq API for AI-powered ge
 | --- | --- |
 | **AI Notes Simplifier** | Rewrite difficult or dense notes as clearer explanations. |
 | **Summary Generator** | Create focused, revision-friendly summaries. |
+| **Exam Answer Generator** | Prepare source-based answers for 2, 5 and 10 marks in a selected language. |
 | **MCQ Generator** | Generate multiple-choice practice questions with answers and explanations. |
 | **Interactive Flashcards** | Turn study material into cards for active recall. |
 | **AI Podcast** | Prepare a listening script from study material and play it with browser speech support. |
@@ -51,7 +52,8 @@ The project is built with React and Vite and uses the Groq API for AI-powered ge
 
 ## Highlights
 
-- **Connected study workflow:** Simplify, Summary, MCQ, Flashcards and Podcast can reuse the current study source saved in browser local storage.
+- **Connected study workflow:** Simplify, Summary, Exam Answer, MCQ, Flashcards and Podcast can reuse the current study source saved in browser local storage.
+- **Exam-focused answers:** Choose 2, 5 or 10 marks and generate a structured response from your supplied material. The tool is instructed to flag gaps instead of inventing unsupported details.
 - **PDF-aware study chat:** Upload a study PDF in the chatbot and ask questions using its content as context.
 - **Multilingual study support:** Generate study content in supported languages, including English, Hindi, Kannada, Tamil and Telugu.
 - **Quick Navigation:** Press **Ctrl + K** on Windows/Linux or **Cmd + K** on macOS to find a page or tool.

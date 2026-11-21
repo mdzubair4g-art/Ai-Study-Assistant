@@ -5,20 +5,22 @@ import QuickStart from "../components/QuickStart";
 const features = [
   { number: "01", icon: "✳", title: "AI Notes Simplifier", description: "Turn dense lecture notes into clear, approachable explanations.", path: "/simplify", color: "#ff8a65", tag: "Understand", detail: "Plain-language explanations" },
   { number: "02", icon: "▤", title: "Summary Generator", description: "Pull the essential ideas into a focused, revision-ready summary.", path: "/summary", color: "#8a72df", tag: "Find the signal", detail: "Quick revision notes" },
-  { number: "03", icon: "◎", title: "MCQ Generator", description: "Create practice questions, check your answers and see your score.", path: "/mcq", color: "#4aa98a", tag: "Test your recall", detail: "Answers and explanations" },
-  { number: "04", icon: "▣", title: "Interactive Flashcards", description: "Build a deck from your material and revise one idea at a time.", path: "/flashcards", color: "#e77a9d", tag: "Remember", detail: "Flip and review cards" },
-  { number: "05", icon: "♫", title: "AI Podcast", description: "Turn study material into a listening script with spoken playback.", path: "/podcast", color: "#4c94d7", tag: "Listen", detail: "Browser voice playback" },
-  { number: "06", icon: "▦", title: "Study Planner", description: "Organize deadlines, daily tasks and focused study sessions.", path: "/planner", color: "#d49b32", tag: "Stay on track", detail: "Tasks and focus timer" },
-  { number: "07", icon: "✧", title: "AI Study Chatbot", description: "Ask follow-up questions and chat with context from uploaded PDFs.", path: "/chatbot", color: "#7c91d7", tag: "Get unstuck", detail: "PDF-aware study chat" },
-  { number: "08", icon: "↗", title: "Student Dashboard", description: "See your saved learning activity, tasks and review progress.", path: "/dashboard", color: "#d47c58", tag: "See your progress", detail: "Your learning overview" },
+  { number: "03", icon: "✍", title: "Exam Answer Generator", description: "Prepare source-based answers for 2, 5 and 10 marks.", path: "/exam-answer", color: "#f0a34b", tag: "Write with structure", detail: "Exam-ready answer lengths" },
+  { number: "04", icon: "◎", title: "MCQ Generator", description: "Create practice questions, check your answers and see your score.", path: "/mcq", color: "#4aa98a", tag: "Test your recall", detail: "Answers and explanations" },
+  { number: "05", icon: "▣", title: "Interactive Flashcards", description: "Build a deck from your material and revise one idea at a time.", path: "/flashcards", color: "#e77a9d", tag: "Remember", detail: "Flip and review cards" },
+  { number: "06", icon: "♫", title: "AI Podcast", description: "Turn study material into a listening script with spoken playback.", path: "/podcast", color: "#4c94d7", tag: "Listen", detail: "Browser voice playback" },
+  { number: "07", icon: "▦", title: "Study Planner", description: "Organize deadlines, daily tasks and focused study sessions.", path: "/planner", color: "#d49b32", tag: "Stay on track", detail: "Tasks and focus timer" },
+  { number: "08", icon: "✧", title: "AI Study Chatbot", description: "Ask follow-up questions and chat with context from uploaded PDFs.", path: "/chatbot", color: "#7c91d7", tag: "Get unstuck", detail: "PDF-aware study chat" },
+  { number: "09", icon: "↗", title: "Student Dashboard", description: "See your saved learning activity, tasks and review progress.", path: "/dashboard", color: "#d47c58", tag: "See your progress", detail: "Your learning overview" },
 ];
 
 const workflow = [
   { number: "01", icon: "↥", title: "Bring your notes", description: "Start with class notes or study material.", path: "/simplify", tone: "peach" },
   { number: "02", icon: "✦", title: "Make it clear", description: "Simplify difficult ideas and create a summary.", path: "/summary", tone: "lilac" },
-  { number: "03", icon: "◎", title: "Build practice", description: "Turn the topic into questions and flashcards.", path: "/mcq", tone: "mint" },
-  { number: "04", icon: "▣", title: "Recall it", description: "Review cards and strengthen what you know.", path: "/flashcards", tone: "butter" },
-  { number: "05", icon: "↗", title: "Keep moving", description: "Plan your next session and review activity.", path: "/dashboard", tone: "blue" },
+  { number: "03", icon: "✍", title: "Prepare your exam answer", description: "Shape your material into a 2, 5 or 10-mark answer.", path: "/exam-answer", tone: "butter" },
+  { number: "04", icon: "◎", title: "Build practice", description: "Turn the topic into questions and flashcards.", path: "/mcq", tone: "mint" },
+  { number: "05", icon: "▣", title: "Recall it", description: "Review cards and strengthen what you know.", path: "/flashcards", tone: "butter" },
+  { number: "06", icon: "↗", title: "Keep moving", description: "Plan your next session and review activity.", path: "/dashboard", tone: "blue" },
 ];
 
 function Home() {
@@ -60,7 +62,7 @@ function Home() {
 
             <div className="hero-proof">
               <span className="proof-dot" aria-hidden="true">✳</span>
-              <span>Eight focused tools. One calmer way to study.</span>
+              <span>Nine focused tools. One calmer way to study.</span>
             </div>
           </div>
 
@@ -120,7 +122,7 @@ function Home() {
           <div className="tools-heading-row">
             <div>
               <p className="section-kicker">THE STUDY TOOLKIT</p>
-              <h2 className="section-heading">Eight ways to get <span>unstuck.</span></h2>
+              <h2 className="section-heading">Nine ways to get <span>unstuck.</span></h2>
               <p className="section-description">
                 Choose the kind of help you need right now. Your next step is always close by.
               </p>
