@@ -285,7 +285,12 @@ ${notes}
       const cleanText = (value) =>
         String(value ?? "")
           .replace(/\r\n/g, "\n")
-          .replace(/[^\x09\x0A\x20-\x7E]/g, "");
+          .split("")
+          .filter((character) => {
+            const code = character.charCodeAt(0);
+            return code === 9 || code === 10 || (code >= 32 && code <= 126);
+          })
+          .join("");
 
       const addPageIfNeeded = (space = 7) => {
         if (y + space > pageHeight - 20) {
