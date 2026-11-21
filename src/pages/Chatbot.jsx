@@ -86,8 +86,8 @@ function Chatbot() {
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
-    } catch {
-      setError("Could not save chat history in browser storage.");
+    } catch (error) {
+      console.warn("Could not save chat history in browser storage.", error);
     }
   }, [messages]);
 
@@ -99,8 +99,8 @@ function Chatbot() {
       } else {
         localStorage.removeItem(DOCUMENT_TEXT_KEY);
       }
-    } catch {
-      setError("Could not save the document in browser storage.");
+    } catch (error) {
+      console.warn("Could not save the document in browser storage.", error);
     }
   }, [pdfText]);
 
@@ -591,7 +591,7 @@ Assistant:
       if (voiceReplies) {
         speakAnswer(answer);
       }
-    } catch (err) {
+    } catch {
       setError(
         "Unable to connect to Groq. Make sure the AI backend is running with npm run ai:server."
       );
@@ -708,7 +708,12 @@ Assistant:
       const cleanText = (value) =>
         String(value ?? "")
           .replace(/\r\n/g, "\n")
-          .replace(/[^\x09\x0A\x20-\x7E]/g, "");
+          .split("")
+          .filter((character) => {
+            const code = character.charCodeAt(0);
+            return code === 9 || code === 10 || (code >= 32 && code <= 126);
+          })
+          .join("");
 
       const addPageIfNeeded = () => {
         if (y > pageHeight - 18) {
