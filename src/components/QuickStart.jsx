@@ -5,6 +5,7 @@ import { saveStudySource } from "../studyWorkflow";
 const studyTools = [
   { path: "/simplify", icon: "✳", label: "Simplify", hint: "Understand it", tone: "peach" },
   { path: "/summary", icon: "▤", label: "Summarize", hint: "Find the key ideas", tone: "lilac" },
+  { path: "/exam-answer", icon: "✍", label: "Exam answers", hint: "2, 5 or 10 marks", tone: "butter" },
   { path: "/mcq", icon: "◎", label: "Make a quiz", hint: "Test your knowledge", tone: "mint" },
   { path: "/flashcards", icon: "▣", label: "Flashcards", hint: "Remember more", tone: "butter" },
 ];
