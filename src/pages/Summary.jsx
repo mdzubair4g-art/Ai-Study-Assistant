@@ -94,7 +94,7 @@ ${notes}
       }
 
       setSummary(result);
-    } catch (err) {
+    } catch {
       setError(
         "Unable to connect to Groq. Make sure the AI backend is running with npm run ai:server."
       );
