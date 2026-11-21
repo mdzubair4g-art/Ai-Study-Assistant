@@ -17,9 +17,10 @@ const features = [
 const workflow = [
   { number: "01", icon: "↥", title: "Bring your notes", description: "Start with class notes or study material.", path: "/simplify", tone: "peach" },
   { number: "02", icon: "✦", title: "Make it clear", description: "Simplify difficult ideas and create a summary.", path: "/summary", tone: "lilac" },
+  { number: "03", icon: "✍", title: "Prepare your exam answer", description: "Shape your material into a 2, 5 or 10-mark answer.", path: "/exam-answer", tone: "butter" },
   { number: "04", icon: "◎", title: "Build practice", description: "Turn the topic into questions and flashcards.", path: "/mcq", tone: "mint" },
   { number: "05", icon: "▣", title: "Recall it", description: "Review cards and strengthen what you know.", path: "/flashcards", tone: "butter" },
-  { number: "05", icon: "↗", title: "Keep moving", description: "Plan your next session and review activity.", path: "/dashboard", tone: "blue" },
+  { number: "06", icon: "↗", title: "Keep moving", description: "Plan your next session and review activity.", path: "/dashboard", tone: "blue" },
 ];
 
 function Home() {
