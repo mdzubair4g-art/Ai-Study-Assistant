@@ -1,2 +1,841 @@
-CmltcG9ydCB7IHVzZVN0YXRlIH0gZnJvbSAicmVhY3QiOwppbXBvcnQgTmF2YmFyIGZyb20gIi4uL2NvbXBvbmVudHMvTmF2YmFyIjsKaW1wb3J0IHsganNQREYgfSBmcm9tICJqc3BkZiI7CmltcG9ydCB7IHJlYWRTdHVkeVNvdXJjZSwgc2F2ZVN0dWR5U291cmNlIH0gZnJvbSAiLi4vc3R1ZHlXb3JrZmxvdyI7Cgpjb25zdCBMQU5HVUFHRVMgPSBbCiAgIkVuZ2xpc2giLAogICJIaW5kaSIsCiAgIkthbm5hZGEiLAogICJUYW1pbCIsCiAgIlRlbHVndSIsCl07CgpmdW5jdGlvbiBNQ1EoKSB7CiAgY29uc3QgW25vdGVzLCBzZXROb3Rlc10gPSB1c2VTdGF0ZSgoKSA9PiByZWFkU3R1ZHlTb3VyY2UoKSk7CiAgY29uc3QgW3F1ZXN0aW9ucywgc2V0UXVlc3Rpb25zXSA9IHVzZVN0YXRlKFtdKTsKICBjb25zdCBbYW5zd2Vycywgc2V0QW5zd2Vyc10gPSB1c2VTdGF0ZSh7fSk7CiAgY29uc3QgW3F1ZXN0aW9uQ291bnQsIHNldFF1ZXN0aW9uQ291bnRdID0gdXNlU3RhdGUoIjUiKTsKICBjb25zdCBbZGlmZmljdWx0eSwgc2V0RGlmZmljdWx0eV0gPSB1c2VTdGF0ZSgiTWVkaXVtIik7CiAgY29uc3QgW2xhbmd1YWdlLCBzZXRMYW5ndWFnZV0gPSB1c2VTdGF0ZSgiRW5nbGlzaCIpOwogIGNvbnN0IFtsb2FkaW5nLCBzZXRMb2FkaW5nXSA9IHVzZVN0YXRlKGZhbHNlKTsKICBjb25zdCBbc3VibWl0dGVkLCBzZXRTdWJtaXR0ZWRdID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtlcnJvciwgc2V0RXJyb3JdID0gdXNlU3RhdGUoIiIpOwoKICAvLyBHZW5lcmF0ZSBxdWVzdGlvbnMgdXNpbmcgdGhlIEdyb3EgQUkgYmFja2VuZAogIGNvbnN0IGdlbmVyYXRlTUNRcyA9IGFzeW5jICgpID0+IHsKICAgIGlmICghbm90ZXMudHJpbSgpKSB7CiAgICAgIHNldEVycm9yKCJQbGVhc2UgZW50ZXIgeW91ciBzdHVkeSBtYXRlcmlhbCBmaXJzdC4iKTsKICAgICAgcmV0dXJuOwogICAgfQoKICAgIHNldExvYWRpbmcodHJ1ZSk7CiAgICBzZXRFcnJvcigiIik7CiAgICBzZXRRdWVzdGlvbnMoW10pOwogICAgc2V0QW5zd2Vycyh7fSk7CiAgICBzZXRTdWJtaXR0ZWQoZmFsc2UpOwoKICAgIGNvbnN0IHByb21wdCA9IGAKWW91IGFyZSBhbiBleHBlcnQgQUkgZXhhbSBxdWVzdGlvbiBnZW5lcmF0b3IuCgpH∂ªßq´^uà…5’å…X¡I¥Â’ëù•ÖYÕëµX¡Ö]9°%•›ù%µ)ŸâE•-QÕ-%ù%ùiÂ©1π9±ëiŸâπIQÖa¡±-%›-QÕ-%ù%ùiÂ©1π9±ëI±ï!Ià…·Ÿç•ùÈ5›ù=Õ%—5¨›•ù%ù%IŸe‰‘¡ia†¡-)	MM	Që!Y≠ïM		åÕ9¡åÕI°âπE•1	—ea)πÖ\—Õ%!≠¡=›Ω-%ù%ùïM…AM·5©Õ-•ù%ù%IŸe‰’ÈiaIà»‘¡T…∞ŸiMù·9M¨›•ù%ù%IŸe‰’ÈiaIUia†¡D»ÂÕàÕ%Ω5ÈÕ%5›1È5¨›•ù%ù%IŸe‰‘¡ia†¡-)9D≈ùIa°°â]±’eaI¡à»—ùUµY›àÕ(¡%•›ùâ]Âh…±’1’-QÕ-•ù%ù%!≠ù-Ë¡ù5Q$›ùΩù%ù%	≠à…5’å…X¡I¥Â’ëù•ÖYÕëµX¡Ö]9°%•›ù%¥’Ÿç¥≈°â%¡=›Ωù%ù%	≠à…5’å…X¡I¥Â’ë9¡ïµUΩ5Q¡=›Ωù%ù%	≠à…5’ëX—ë°ùI±µiµ±©ë]‡¡ïQΩù)!—≠Ö]iµÖ]8≈â!H’ô]Õ%≈°çµë¡â•›ùïM¨›ùΩù%ù%’%ÃÂ%å›ùΩù%ù%	≠à…5’ëX—ë°ùQ’hÕY°h…TŸ%H›â’hÕY°h…XÂe›ùâ]Âh…±’1’-QÕ-•ù%ù%!≠ù-Ë¡ù9ÈÕ-•ù%ù%IŸe‰‘¡ia†¡-Ωù%ù%ù%	eaI±=•≠î»’±ëÂ	eaI±-≠’ëÂ5à…9°âYeaI±TÕIÂÖ\’π-∞Âe›-%ù%ù%	—ea)πÖ\—Õ•ù%ù%ùïEΩù%ù%¡=›Ω-%ù%ùïM…AM·5Õ-•ù%ù%IŸe‰’ÈiaIçµÕD»ÂÕàÕ%Ω5Qù›1·=Õ%—5¨›•ù%ù%IŸe‰’ÕÖ\’±-≈°çµë¡â•›ùïM›ùçπiYë¡i!IΩ%¡ùâ]Âh…±’1’-QÕ-•ù%ù%!≠ù-Ë¡ù5Q›ùΩù%ù%Ÿ1Â	Qd»ÂÂiM	Èë\≈—ea(’•ù%ù%IŸe‰’ÈiaIà»‘¡-)Ωi]‡…iaI¡d…•1•e¥ÂÕi%¡=›Ωù%ù%	≠à…5’å…X¡I¥Â’ë9¡ïµUΩ5QE¡=›Ωù%ù%	≠à…5’å…X¡YX—ë9ŸâÂÂ-5›1·5©Õ%ç›-QÕ-%ù%ùiÂ©1πI±ï!EΩ•ù%ù%ùei¡âµÕ%9©àÕ)±=•≠î…9Ÿçπ)±dÕIàÕY’ë ¡ù1Â≠îÕ≈ia8¡Ö\Â’ç‰’Õi\’πë†Âe›-%ù%ù%	—ea)πÖ\—Õ•ù%ù%ùïEΩù%ù%¡=›Ω-%ù%ùïM…AM—=›Ω-%ù%ùiÂ©1π9±ëiŸâπEΩ%µ°±â!i±ë±©eM%Õ%)’àÕ)—e]›•-QÕ-%ù%ùiÂ©1π9±ëiŸâπIQÖa¡±-›-QÕ-%ù%ùiÂ©1π9±ëI±ï!Ià…·Ÿç•ú¡5›ù9Õ%E›-QÕ-•ù%ù%IŸe‰‘¡ia†¡-Ωù%ù%ù%	Eia)©i\‘¬⁄Óù∆≠y‘‘4'FD3ñ£D¥î4tî4tî4tî4tî4tîf«fEÑñuV∂vÑ÷v4Ñ¶∆4tgñsV‰îÜ«fEÑñu•ÜÜÜ%v«UïÖ'##GTîd'5•tg••4#5ïv√∆ìGT6îtî4tî4tî4tî4u3óuvˆtî4tî4tî4tî4eÙ¥î4tî4tî4tîGwf3%f¶Dv«f&£D¥î4tî4tî4eÙ¥î4tî4tî4#t«ñˆu%Ñßñ#4ñv%ug¶3$fÂ•4√3¥î4tî4tî4#u•Ñßñ#4ñt¶ïñt¥ˆtî4tî4tî4uu'Fî&¶$tg¶3VÜ%uSîñ”≈Eñv43îÑßfEsVµ•uFTwvuñ÷7F6’f¥≈F∑t‘3á§‘4&ñ#4¶µ•Ññuñ”óï§ugî≈Ñ¶≈§3D‘DvDucFD3ï•uD◊§tñ£D¥î4tî4tî4tî4vS%gñ6”óñeˆtî4tî4tî4u3ñ∂Öí¥6îtî4tî4tµÉ¥6îtî4tî4vWìáîVF∆&’gïïÖ&≈§4&∆TtgFsVÜDv«f&î√3¥î4tî4tî4#v5Öf∆35'##W§∆◊Ü∆&÷C4¥îDt¶ïñt¥ˆtî4tî4tî4uÑÊ≈ì5'##Fuì'ÜÜ34‰ıïs≈4ßFD3Dñ£D¥6îtî4tî4tî4tîá6Ü35fñ%v√Duf¥î5ñ‘î6t¥î4tî4tî4tî4tî4Ö§v√$îtÁ5ïÑÁ•F‘gE•Cñ6”ì&’&≈§3ñTwvuñ”óï§ugîîtßf6’&∆6ìÊ6‘cT≈Fwt‘4&ïßìÊ6‘cT≈F∑t‘4't≈EVv%tóDÊîí¥6îtî4tî4tî4tî4tî4Ö§v√$îtÁ5ïÑÁ•F‘gE•Cï¶◊Ü∆T4&÷$ucD≈ÜGïïÑvÂg¶Dv∆÷U3ï•Ö#5•ugTîv√•s§≈tÊ∆&Â&∆6î&ÂïÑD◊îí¥6îtî4tî4tî4tî4tî4tîGÜ∂Öí¥6îtî4tî4tî4tî4tî4tî4uvwîîtÁ5ïÑÁ•F‘gE•CñDucFD3ñTwvu¶”óVD3ñ#'Ü¥ñ£D¥î4tî4tî4tî4tî4tî4tî4tîf«fEÑñuTÑ¶Öì5'ì%Vu%ÜÜÜ%v«UïÖ'##D¥î4tî4tî4tî4tî4tî4tî4Ñ√&wïvÙ¥î4tî4tî4tî4tî4tî4tî4Ü44&¶$tg¶3VÜ%uSîñÂ&∆TÖE£4¶ÜU3‘DvDucFD3¶%4'FD3îñ£D¥î4tî4tî4tî4tî4tî4tî4tîáF∂u¶÷t„$Ö#Ve4$’•Ö¶∆$4D7Gî#v$tgU£5fÖ£%cîî‘≥4îáGÜEug¶Dv«f&‰◊V$ugU£5&ˆe4%&Eug¶Dv«f&‰‘¥î4tî4tî4tî4tî4tî4tî4Ñ√4¥6îtî4tî4tî4tî4tî4tîGwe§v√%vÙ¥î4tî4tî4tî4tî4tî4uu'Fî&¶$tg¶3VÜ%uSîñÂ&∆TÖEñ◊É•3‘Du¶”óVD3ñ#'Ü¥ñ£D¥î4tî4tî4tî4tî4tî4tî4#uC$ß•t„∆◊F∆UÑ÷ıïsW¶C%gñ7ñ∑V$ugU£5&ˆe3ìv5ÖfÀk∫wµÁRP–Y“P–Y“P–Y“P–Y“P–\›€Ÿ“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y“Rî[““P–Y“P–Y“P–Y“P–Y“P–Y“P–Y‘ŒZÿVJ–Ÿ€Ÿ“P–Y“P–Y“P–Y“P–Y“P–Y“P–çÿÃ’öXï€’ö“P÷[RPŸ““P–Y“P–Y“P–Y“P–Y“P–Y“P–Y“P–Në€íQ”ú÷VûïQùïXñ]î–ûXå’ùVë’ö”“Q“õìŸVV›—]“R]ê“J–Ÿ€Ÿ“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y‘Y÷LûÃ”ì÷UÃ[“åñŸVï’ùS]”P–õXåçL“ùòë‘YŸ’çÃ^òî–ùZLRZç“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y‘Lé^X€Uöô–êòõìå÷ñMíR’ûô€òöMZòå“ûVï”åUÕ^ôïûYî[Ÿ“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y‘Œ]‘€““P–Y“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y“Q“Q”ú÷VûïQùïY’çÃ[ò€QçS]”P–åñùQﬁU‘úõX›ûRJ–⁄PY“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y“R’ûô€òöM[Rú÷UÕZ€òõå“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y“Q›ò—–⁄PY“P–Y“P–Y“P–Y“P–Y“P–Y“P–Y‘ŒZÿVJ–⁄PY“P–Y“P–Y“P–Y“P–Y“P–Y“P€PŸ€Ÿ“P–Y“P–Y“P–Y“P–Y“P–Y‘ŒZÿVJ–⁄PY“P–Y“P–Y“P–Y“P–Y“‘€PŸ€Ÿ“P–Y“P–Y“P–Y“P–Nîúç–⁄PY“P–Y“P–Y“P–Y“R›í⁄PëôQ—ùQ—öô€òõìY“⁄NNP⁄PY“P–Y“P–Y“P–Y“R⁄Ã’öXï€’ö“Q“–[Ÿ“P–Y“P–Y“P–Y“P–Y“QYååç“P–Y“P–Y“P–Y“P–Y“P–Y“QŒ]TLûLúŒYL”åV[L\ëåXVP⁄PY“P–Y“P–Y“P–Y“P–Y“P–öòë—ûòÃZï’NR[ò›õïúÿê–ùÃQ“õìŸVï’ùS]”P–õÿå÷õ⁄úVûL[ò€UõöL”QYÿ–ÃRùôÕZ÷ï‘]Q›Ÿ÷õN]YÃZXåû“RûVUÕ^òVúåçP⁄PY“P–Y“P–Y“P–Y“P–Y‘€Ÿ“P–Y“P–Y“P–Y“P–Y“P–Y’L’öXï€QLMRQUçUÃ\õQåUŒ]P⁄PY“P–Y“P–Y“P–Y“P–Y‘ŒZYååç
-–⁄PY“P–Y“P–Y“P–Y“P⁄Ÿ”⁄P[–⁄PY“P–Y“P–Y“P–Y“P–Y‘‘úPöòë—ûòÃZï’NR[Vú÷ñŸ÷õ^PÃLÿ€Qù“QŸ–ÃQÃL⁄T€““P–Y“P–Y“P–Y“P–Y“P–Y“QYååç“P–Y“P–Y“P–Y“P–Y“P–Y“P–YÿåçQë€ò^åM÷ëŒLÿõ^ñU‘î÷ñåXíûïQTëŸî[Ÿ“P–Y“P–Y“P–Y“P–Y“P–Y“P–öòë—ûòÃZï’NR[Vú÷ñ›T–ùUÕL––öVûLZXíõ]”P–õÿå÷õ⁄úVûLZXíõ›ÌÆÈ‹j◊ù
+
+import { useState } from "react";
+import Navbar from "../components/Navbar";
+import { jsPDF } from "jspdf";
+import { readStudySource, saveStudySource } from "../studyWorkflow";
+
+const LANGUAGES = [
+  "English",
+  "Hindi",
+  "Kannada",
+  "Tamil",
+  "Telugu",
+];
+
+function MCQ() {
+  const [notes, setNotes] = useState(() => readStudySource());
+  const [questions, setQuestions] = useState([]);
+  const [answers, setAnswers] = useState({});
+  const [questionCount, setQuestionCount] = useState("5");
+  const [difficulty, setDifficulty] = useState("Medium");
+  const [language, setLanguage] = useState("English");
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  // Generate questions using the Groq AI backend
+  const generateMCQs = async () => {
+    if (!notes.trim()) {
+      setError("Please enter your study material first.");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+    setQuestions([]);
+    setAnswers({});
+    setSubmitted(false);
+
+    const prompt = `
+You are an expert AI exam question generator.
+
+Generate exactly ${questionCount} multiple-choice questions
+from the study material provided below.
+
+Language: ${language}
+Difficulty: ${difficulty}
+
+Return ONLY a valid JSON array.
+Do not include markdown, code fences or explanations outside JSON.
+
+Use this exact structure:
+
+[
+  {
+    "question": "What is a computer?",
+    "options": {
+      "A": "An electronic device",
+      "B": "A type of plant",
+      "C": "A type of animal",
+      "D": "A type of food"
+    },
+    "correctAnswer": "A",
+    "explanation": "A computer is an electronic device that processes data."
+  }
+]
+
+IMPORTANT RULES:
+1. Generate exactly ${questionCount} questions.
+2. Each question must have four options: A, B, C and D.
+3. Only one option must be correct.
+4. correctAnswer must contain only A, B, C or D.
+5. Give a clear explanation for every answer.
+6. Questions must be based on the supplied material.
+7. Avoid duplicate questions.
+8. Make questions appropriate for ${difficulty} difficulty.
+9. Write all questions and explanations in ${language}.
+10. Ensure valid JSON formatting.
+
+STUDY MATERIAL:
+${notes}
+`;
+
+    try {
+      const response = await fetch(
+        "/api/generate",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            prompt,
+            stream: false,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("The AI model could not generate questions.");
+      }
+
+      const data = await response.json();
+
+      let output = (data.response || "")
+        .replace(/<think>[\s\S]*?<\/think>/gi, "")
+        .replace(/```json/gi, "")
+        .replace(/```/g, "")
+        .trim();
+
+      const start = output.indexOf("[");
+      const end = output.lastIndexOf("]");
+
+      if (start === -1 || end === -1) {
+        throw new Error(
+          "The AI returned an invalid response. Please try again."
+        );
+      }
+
+      const parsed = JSON.parse(
+        output.substring(start, end + 1)
+      );
+
+      if (!Array.isArray(parsed)) {
+        throw new Error("Invalid question format.");
+      }
+
+      const validQuestions = parsed.map((item) => {
+        let options;
+
+        if (Array.isArray(item.options)) {
+          options = {
+            A: item.options[0] || "",
+            B: item.options[1] || "",
+            C: item.options[2] || "",
+            D: item.options[3] || "",
+          };
+        } else {
+          const raw = item.options || {};
+
+          options = {
+            A: raw.A || raw.a || "",
+            B: raw.B || raw.b || "",
+            C: raw.C || raw.c || "",
+            D: raw.D || raw.d || "",
+          };
+        }
+
+        let correctAnswer = String(
+          item.correctAnswer ||
+          item.correct_answer ||
+          item.answer ||
+          ""
+        ).trim();
+
+        const letterMatch = correctAnswer.match(
+          /\b([ABCD])\b/i
+        );
+
+        if (letterMatch) {
+          correctAnswer = letterMatch[1].toUpperCase();
+        } else {
+          const matchingOption = Object.keys(options).find(
+            (key) =>
+              options[key].toLowerCase() === correctAnswer.toLowerCase()
+          );
+
+          correctAnswer = matchingOption || "";
+        }
+
+        if (
+          !item.question ||
+          !options.A ||
+          !options.B ||
+          !options.C ||
+          !options.D ||
+          !["A", "B", "C", "D"].includes(correctAnswer)
+        ) {
+          throw new Error(
+            "The AI returned an incomplete question. Please generate again."
+          );
+        }
+
+        return {
+          question: item.question,
+          options,
+          correctAnswer,
+          explanation:
+            item.explanation || "Review your study material for this answer.",
+        };
+      });
+
+      if (validQuestions.length !== Number(questionCount)) {
+        throw new Error(
+          `The AI generated ${validQuestions.length} questions instead of ${questionCount}. Please try again.`
+        );
+      }
+
+      setQuestions(validQuestions);
+    } catch (err) {
+      setError(
+        err.message ||
+        "Unable to generate questions. Please try again."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Select answer
+  const selectAnswer = (questionIndex, option) => {
+    if (submitted) return;
+
+    setAnswers((previous) => ({
+      ...previous,
+      [questionIndex]: option,
+    }));
+  };
+
+  // Calculate results
+  const correctCount = questions.filter(
+    (question, index) =>
+      answers[index] === question.correctAnswer
+  ).length;
+
+  const wrongCount = questions.filter(
+    (question, index) =>
+      answers[index] &&
+      answers[index] !== question.correctAnswer
+  ).length;
+
+  const scorePercentage = questions.length
+    ? Math.round((correctCount / questions.length) * 100)
+    : 0;
+
+  // Submit exam
+  const submitQuiz = () => {
+    if (Object.keys(answers).length !== questions.length) {
+      setError("Please answer all questions before submitting.");
+      return;
+    }
+
+    setError("");
+    setSubmitted(true);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  // Retake same quiz
+  const retakeQuiz = () => {
+    setAnswers({});
+    setSubmitted(false);
+    setError("");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  // Generate a new quiz
+  const resetQuiz = () => {
+    setQuestions([]);
+    setAnswers({});
+    setSubmitted(false);
+    setError("");
+  };
+
+  // Download exam results as PDF
+  const downloadResultsPDF = () => {
+    if (!submitted || !questions.length) return;
+
+    try {
+      const doc = new jsPDF();
+
+      const pageWidth = doc.internal.pageSize.getWidth();
+      const pageHeight = doc.internal.pageSize.getHeight();
+      const margin = 18;
+      const maxWidth = pageWidth - margin * 2;
+
+      let y = 22;
+
+      const cleanText = (value) =>
+        String(value ?? "")
+          .replace(/\r\n/g, "\n")
+          .replace(/[^\x09\x0A\x20-\x7E]/g, "");
+
+      const addPageIfNeeded = (space = 7) => {
+        if (y + space > pageHeight - 20) {
+          doc.addPage();
+          y = 20;
+        }
+      };
+
+      // PDF heading
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(20);
+      doc.setTextColor(30, 80, 180);
+      doc.text("AI Study Assistant", margin, y);
+
+      y += 12;
+
+      doc.setFontSize(15);
+      doc.setTextColor(30, 30, 30);
+      doc.text("MCQ Examination Report", margin, y);
+
+      y += 12;
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(10);
+      doc.text(`Difficulty: ${difficulty}`, margin, y);
+
+      y += 7;
+
+      doc.text(`Language: ${language}`, margin, y);
+
+      y += 7;
+
+      doc.text(
+        `Date: ${new Date().toLocaleDateString()}`,
+        margin,
+        y
+      );
+
+      y += 10;
+
+      doc.setDrawColor(180, 180, 180);
+      doc.line(margin, y, pageWidth - margin, y);
+
+      y += 10;
+
+      // Score summary
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(14);
+      doc.setTextColor(30, 120, 70);
+      doc.text(
+        `Final Score: ${correctCount} / ${questions.length}`,
+        margin,
+        y
+      );
+
+      y += 8;
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(10);
+      doc.setTextColor(40, 40, 40);
+
+      doc.text(
+        `Percentage: ${scorePercentage}%`,
+        margin,
+        y
+      );
+
+      y += 7;
+
+      doc.text(
+        `Correct: ${correctCount}    Wrong: ${wrongCount}`,
+        margin,
+        y
+      );
+
+      y += 12;
+
+      // Question report
+      questions.forEach((question, index) => {
+        addPageIfNeeded(22);
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(11);
+        doc.setTextColor(35, 75, 150);
+
+        const questionLines = doc.splitTextToSize(
+          `Q${index + 1}. ${cleanText(question.question)}`,
+          maxWidth
+        );
+
+        questionLines.forEach((line) => {
+          addPageIfNeeded();
+          doc.text(line, margin, y);
+          y += 6;
+        });
+
+        y += 2;
+
+        ["A", "B", "C", "D"].forEach((option) => {
+          const optionText = `${option}. ${cleanText(question.options[option])}`;
+
+          const optionLines = doc.splitTextToSize(
+            optionText,
+            maxWidth
+          );
+
+          optionLines.forEach((line) => {
+            addPageIfNeeded();
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(9);
+            doc.setTextColor(40, 40, 40);
+            doc.text(line, margin + 3, y);
+            y += 5;
+          });
+        });
+
+        addPageIfNeeded(15);
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(9);
+        doc.setTextColor(20, 130, 80);
+
+        doc.text(
+          `Correct Answer: ${question.correctAnswer}`,
+          margin + 3,
+          y
+        );
+
+        y += 6;
+
+        doc.setFont("helvetica", "normal");
+        doc.setTextColor(50, 50, 50);
+
+        const explanationLines = doc.splitTextToSize(
+          `Explanation: ${cleanText(question.explanation)}`,
+          maxWidth
+        );
+
+        explanationLines.forEach((line) => {
+          addPageIfNeeded();
+          doc.text(line, margin + 3, y);
+          y += 5;
+        });
+
+        y += 7;
+      });
+
+      // Page numbers
+      const totalPages = doc.internal.getNumberOfPages();
+
+      for (let page = 1; page <= totalPages; page++) {
+        doc.setPage(page);
+        doc.setFontSize(8);
+        doc.setTextColor(120, 120, 120);
+
+        doc.text(
+          `AI Study Assistant | Page ${page} of ${totalPages}`,
+          pageWidth - margin,
+          pageHeight - 10,
+          { align: "right" }
+        );
+      }
+
+      doc.save("AI-MCQ-Exam-Results.pdf");
+    } catch {
+      setError("Unable to create the exam PDF. Please try again.");
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gray-950 text-white tool-page tool-page-mcq">
+      <Navbar />
+
+      <main className="max-w-6xl mx-auto px-6 py-12">
+
+        {/* Page heading */}
+        <section className="text-center mb-10">
+          <div className="text-5xl mb-4">üéØ</div>
+
+          <h1 className="text-4xl font-extrabold mb-4">
+            AI MCQ Generator
+          </h1>
+
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Turn your study materials into interactive practice
+            examinations and test your knowledge with AI.
+          </p>
+        </section>
+
+        {/* Input area */}
+        {!questions.length && (
+          <section className="rounded-2xl border border-gray-800 bg-gray-900 p-6 md:p-8">
+
+            <h2 className="text-2xl font-bold mb-5">
+              Create Your Practice Exam
+            </h2>
+
+            <label className="block text-sm text-gray-300 mb-2">
+              Paste your study material
+            </label>
+
+            <textarea
+              value={notes}
+              onChange={(event) => { setNotes(event.target.value); saveStudySource(event.target.value); }}
+              placeholder="Paste your textbook content, lecture notes or important study topics here..."
+              className="w-full min-h-64 bg-gray-800 border border-gray-700 rounded-xl p-5 text-white outline-none focus:border-blue-500 resize-y"
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-6">
+
+              <div>
+                <label className="block text-sm text-gray-300 mb-2">
+                  Number of Questions
+                </label>
+
+                <select
+                  value={questionCount}
+                  onChange={(event) =>
+                    setQuestionCount(event.target.value)
+                  }
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white"
+                >
+                  <option value="5">5 Questions</option>
+                  <option value="10">10 Questions</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm text-gray-300 mb-2">
+                  Difficulty
+                </label>
+
+                <select
+                  value={difficulty}
+                  onChange={(event) =>
+                    setDifficulty(event.target.value)
+                  }
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white"
+                >
+                  <option value="Easy">Easy</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Hard">Hard</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm text-gray-300 mb-2">
+                  Language
+                </label>
+
+                <select
+                  value={language}
+                  onChange={(event) =>
+                    setLanguage(event.target.value)
+                  }
+                  className="w-full bg-gray-800 border border-gray-700 rounded-lg p-3 text-white"
+                >
+                  {LANGUAGES.map((item) => (
+                    <option key={item} value={item}>
+                      {item}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+            </div>
+
+            <button
+              onClick={generateMCQs}
+              disabled={loading || !notes.trim()}
+              className="w-full mt-7 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 rounded-xl p-4 font-bold transition"
+            >
+              {loading
+                ? "Generating Your Exam..."
+                : "‚ú® Generate My MCQ Exam"}
+            </button>
+
+            {loading && (
+              <p className="text-center text-blue-300 mt-4">
+                Your AI is preparing your examination. Please wait...
+              </p>
+            )}
+
+          </section>
+        )}
+
+        {/* Error message */}
+        {error && (
+          <div className="mt-6 p-4 rounded-xl bg-red-900/30 border border-red-800 text-red-300">
+            {error}
+          </div>
+        )}
+
+        {/* Generated examination */}
+        {questions.length > 0 && (
+          <section className="mt-8">
+
+            {!submitted && (
+              <div className="rounded-2xl border border-gray-800 bg-gray-900 p-5 mb-6">
+                <div className="flex flex-wrap justify-between items-center gap-3">
+                  <div>
+                    <h2 className="text-2xl font-bold">
+                      Your Practice Examination
+                    </h2>
+
+                    <p className="text-gray-400 text-sm mt-2">
+                      {difficulty} Level ¬∑ {language} ¬∑ {questions.length} Questions
+                    </p>
+                  </div>
+
+                  <div className="text-blue-400 font-bold">
+                    {Object.keys(answers).length}/{questions.length} Answered
+                  </div>
+                </div>
+
+                <div className="w-full h-2 bg-gray-800 rounded-full mt-5 overflow-hidden">
+                  <div
+                    className="h-full bg-blue-500 rounded-full transition-all"
+                    style={{
+                      width: `${
+                        (Object.keys(answers).length / questions.length) * 100
+                      }%`,
+                    }}
+                  />
+                </div>
+              </div>
+            )}
+
+            {submitted && (
+              <div className="rounded-2xl border border-blue-800 bg-gradient-to-br from-blue-950 to-gray-900 p-8 mb-8 text-center">
+
+                <div className="text-5xl mb-4">
+                  {scorePercentage >= 80
+                    ? "üèÜ"
+                    : scorePercentage >= 50
+                      ? "üëè"
+                      : "üí™"}
+                </div>
+
+                <p className="text-blue-300 font-semibold mb-2">
+                  EXAM COMPLETED
+                </p>
+
+                <h2 className="text-3xl font-extrabold mb-3">
+                  Your Exam Results
+                </h2>
+
+                <div className="text-6xl text-blue-400 font-extrabold my-6">
+                  {scorePercentage}%
+                </div>
+
+                <p className="text-xl text-white mb-7">
+                  {correctCount} out of {questions.length} correct answers
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+
+                  <div className="bg-gray-900 rounded-xl p-5">
+                    <p className="text-gray-400 text-sm">Total Questions</p>
+                    <p className="text-3xl font-bold mt-2">
+                      {questions.length}
+                    </p>
+                  </div>
+
+                  <div className="bg-gray-900 rounded-xl p-5">
+                    <p className="text-gray-400 text-sm">Correct Answers</p>
+                    <p className="text-3xl font-bold text-green-400 mt-2">
+                      {correctCount}
+                    </p>
+                  </div>
+
+                  <div className="bg-gray-900 rounded-xl p-5">
+                    <p className="text-gray-400 text-sm">Wrong Answers</p>
+                    <p className="text-3xl font-bold text-red-400 mt-2">
+                      {wrongCount}
+                    </p>
+                  </div>
+
+                </div>
+
+                <p className="text-gray-300 mt-7">
+                  {scorePercentage === 100
+                    ? "Excellent! You got every question correct!"
+                    : scorePercentage >= 80
+                      ? "Great work! You have a strong understanding."
+                      : scorePercentage >= 50
+                        ? "Good effort! Keep practising to improve."
+                        : "Keep learning! Review your notes and try again."}
+                </p>
+
+              </div>
+            )}
+
+            {/* Questions */}
+            <div className="space-y-6">
+
+              {questions.map((question, index) => (
+                <div
+                  key={index}
+                  className="rounded-2xl border border-gray-800 bg-gray-900 p-6"
+                >
+
+                  <div className="flex justify-between items-start gap-3 mb-5">
+
+                    <h3 className="text-lg font-bold leading-7">
+                      <span className="text-blue-400">
+                        Q{index + 1}.
+                      </span>{" "}
+                      {question.question}
+                    </h3>
+
+                    {submitted && (
+                      <span
+                        className={`text-xs font-bold px-3 py-2 rounded-full ${
+                          answers[index] === question.correctAnswer
+                            ? "bg-green-900/40 text-green-400"
+                            : "bg-red-900/40 text-red-400"
+                        }`}
+                      >
+                        {answers[index] === question.correctAnswer
+                          ? "Correct"
+                          : "Incorrect"}
+                      </span>
+                    )}
+
+                  </div>
+
+                  <div className="space-y-3">
+
+                    {["A", "B", "C", "D"].map((option) => {
+
+                      const selected = answers[index] === option;
+                      const correct = question.correctAnswer === option;
+
+                      let style =
+                        "border-gray-700 bg-gray-800 hover:border-blue-500";
+
+                      if (!submitted && selected) {
+                        style = "border-blue-500 bg-blue-900/30";
+                      }
+
+                      if (submitted && correct) {
+                        style = "border-green-500 bg-green-900/30";
+                      } else if (
+                        submitted &&
+                        selected &&
+                        !correct
+                      ) {
+                        style = "border-red-500 bg-red-900/30";
+                      }
+
+                      return (
+                        <button
+                          type="button"
+                          key={option}
+                          disabled={submitted}
+                          onClick={() => selectAnswer(index, option)}
+                          className={`w-full flex items-center gap-4 text-left rounded-xl border p-4 transition ${style}`}
+                        >
+
+                          <span className="w-9 h-9 shrink-0 rounded-full bg-gray-700 flex items-center justify-center font-bold">
+                            {option}
+                          </span>
+
+                          <span className="flex-1 text-sm">
+                            {question.options[option]}
+                          </span>
+
+                          {submitted && correct && (
+                            <span className="text-green-400 font-bold">
+                              ‚úì
+                            </span>
+                          )}
+
+                          {submitted && selected && !correct && (
+                            <span className="text-red-400 font-bold">
+                              ‚úï
+                            </span>
+                          )}
+
+                        </button>
+                      );
+                    })}
+
+                  </div>
+
+                  {submitted && (
+                    <div className="mt-5 rounded-xl bg-gray-800 p-4">
+
+                      <p className="text-green-400 font-bold text-sm mb-2">
+                        Correct Answer: {question.correctAnswer}
+                      </p>
+
+                      <p className="text-gray-300 text-sm leading-7">
+                        {question.explanation}
+                      </p>
+
+                    </div>
+                  )}
+
+                </div>
+              ))}
+
+            </div>
+
+            {/* Exam actions */}
+            {!submitted ? (
+              <button
+                onClick={submitQuiz}
+                className="w-full mt-8 bg-green-600 hover:bg-green-700 p-4 rounded-xl font-bold transition"
+              >
+                Submit My Examination
+              </button>
+            ) : (
+              <div className="flex flex-wrap gap-4 mt-8">
+
+                <button
+                  onClick={downloadResultsPDF}
+                  className="flex-1 min-w-48 bg-blue-600 hover:bg-blue-700 p-4 rounded-xl font-bold transition"
+                >
+                  ‚Üì Download Exam Results PDF
+                </button>
+
+                <button
+                  onClick={retakeQuiz}
+                  className="flex-1 min-w-48 bg-green-600 hover:bg-green-700 p-4 rounded-xl font-bold transition"
+                >
+                  ‚Üª Retake Examination
+                </button>
+
+                <button
+                  onClick={resetQuiz}
+                  className="flex-1 min-w-48 bg-gray-700 hover:bg-gray-600 p-4 rounded-xl font-bold transition"
+                >
+                  + Create New Exam
+                </button>
+
+              </div>
+            )}
+
+          </section>
+        )}
+
+      </main>
+
+      <footer className="border-t border-gray-800 py-6 text-center text-gray-500 text-sm">
+        ¬© 2026 AI Study Assistant. Learn smarter, every day.
+      </footer>
+    </div>
+  );
+}
+
+export default MCQ;
