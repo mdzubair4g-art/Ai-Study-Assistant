@@ -7,6 +7,7 @@ import { readStudySource, saveStudySource } from "../studyWorkflow";
 const STORAGE_KEY = "ai-study-flashcards";
 
 function Flashcards() {
+  const [now] = useState(() => Date.now());
   const [notes, setNotes] = useState(() => readStudySource());
   const [cards, setCards] = useState(() => {
     try {
@@ -27,8 +28,8 @@ function Flashcards() {
   useEffect(() => {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(cards));
-    } catch {
-      setError("Unable to save flashcards in browser storage.");
+    } catch (error) {
+      console.warn("Unable to save flashcards in browser storage.", error);
     }
   }, [cards]);
 
@@ -255,7 +256,7 @@ ${notes}
   ).length;
 
   const dueCount = cards.filter(
-    (card) => !card.dueAt || card.dueAt <= Date.now()
+    (card) => !card.dueAt || card.dueAt <= now
   ).length;
 
   const progress = cards.length
@@ -292,7 +293,12 @@ ${notes}
       const cleanText = (value) =>
         String(value ?? "")
           .replace(/\r\n/g, "\n")
-          .replace(/[^\x09\x0A\x20-\x7E]/g, "");
+          .split("")
+          .filter((character) => {
+            const code = character.charCodeAt(0);
+            return code === 9 || code === 10 || (code >= 32 && code <= 126);
+          })
+          .join("");
 
       const addPageIfNeeded = (space = 7) => {
         if (y + space > pageHeight - 18) {
