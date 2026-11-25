@@ -4522,3 +4522,100 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
     will-change: auto;
   }
 }
+
+
+/* SUBTLE HERO COLOUR TUNING — homepage hero illustration only.
+   Keeps all animation timing and movement unchanged. */
+.home-page .hero-art::before {
+  background:
+    radial-gradient(ellipse at 24% 30%, rgba(255, 160, 119, .20), transparent 37%),
+    radial-gradient(ellipse at 76% 65%, rgba(145, 121, 235, .20), transparent 42%),
+    radial-gradient(ellipse at 52% 48%, rgba(111, 204, 183, .10), transparent 55%);
+}
+
+@keyframes heroAuraPulse {
+  0%, 100% { opacity: .48; transform: scale(.94) rotate(-3deg); }
+  50% { opacity: .78; transform: scale(1.04) rotate(3deg); }
+}
+
+.home-page .workspace-window {
+  background: linear-gradient(145deg, #fffefa 0%, #fffaf8 48%, #faf8ff 100%);
+  box-shadow:
+    0 28px 66px rgba(75, 54, 92, .18),
+    0 0 0 6px rgba(255, 255, 255, .36),
+    0 0 28px rgba(151, 125, 225, .11);
+}
+
+.home-page .workspace-topbar {
+  background: linear-gradient(100deg, #fff7f0 0%, #fffdfb 48%, #f6f3ff 100%);
+}
+
+.home-page .workspace-brand span {
+  text-shadow: 0 0 8px rgba(237, 128, 94, .22);
+}
+
+.home-page .sidebar-mark.active {
+  background: linear-gradient(140deg, #9687d8, #7968bd);
+  box-shadow: 0 4px 11px rgba(117, 91, 211, .20);
+}
+
+@keyframes heroIconGlow {
+  0%, 100% { box-shadow: 0 4px 11px rgba(117, 91, 211, .16); }
+  50% { box-shadow: 0 6px 16px rgba(117, 91, 211, .28); }
+}
+
+.home-page .document-lines i {
+  background: linear-gradient(90deg, #eee9f7, #f7eeea);
+}
+
+.home-page .document-callout {
+  border-color: rgba(150, 128, 223, .18);
+  color: #5b5077;
+  background: linear-gradient(110deg, #f5f1fc 0%, #fff6f0 100%);
+}
+
+.home-page .document-callout > span {
+  background: linear-gradient(145deg, #9d8edb, #8070c5);
+  box-shadow: 0 4px 10px rgba(117, 91, 213, .16);
+}
+
+.home-page .status-pulse {
+  box-shadow: 0 0 0 3px rgba(53, 189, 145, .11), 0 0 10px rgba(53, 189, 145, .34);
+}
+
+@keyframes heroStatusPulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(53, 189, 145, .10), 0 0 8px rgba(53, 189, 145, .25); }
+  50% { box-shadow: 0 0 0 6px rgba(53, 189, 145, .06), 0 0 13px rgba(53, 189, 145, .42); }
+}
+
+.home-page .floating-note {
+  box-shadow:
+    0 14px 30px rgba(79, 55, 83, .12),
+    0 0 0 3px rgba(255,255,255,.18);
+}
+
+.home-page .note-left {
+  background: linear-gradient(120deg, rgba(250,247,255,.98), rgba(242,238,252,.96));
+}
+
+.home-page .note-right {
+  background: linear-gradient(120deg, rgba(255,251,246,.98), rgba(251,239,232,.96));
+}
+
+.home-page .mini-note-icon {
+  background: linear-gradient(145deg, #9d90dc, #8171c5);
+  box-shadow: 0 4px 10px rgba(115, 91, 211, .19);
+}
+
+.home-page .flash-icon {
+  background: linear-gradient(145deg, #e9aa86, #d98775);
+  box-shadow: 0 4px 10px rgba(205, 126, 105, .17);
+}
+
+.home-page .note-left small {
+  color: #85799e;
+}
+
+.home-page .note-right small {
+  color: #a27e72;
+}
