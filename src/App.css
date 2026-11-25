@@ -3684,3 +3684,123 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
   .home-page .hero-heading { font-size: clamp(36px, 10vw, 42px); }
   .home-page .hero-art { min-height: 225px; }
 }
+
+
+/* MOBILE HERO COMPRESSION — prevent the artwork area creating a tall empty gap.
+   Applies last in the stylesheet so earlier phone breakpoints cannot restore it. */
+@media (max-width: 768px) {
+  .home-page .home-main {
+    min-height: 0 !important;
+    padding-top: 12px !important;
+    padding-bottom: 34px !important;
+  }
+
+  .home-page .creative-hero {
+    min-height: 0 !important;
+    height: auto !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: auto auto auto !important;
+    grid-auto-rows: min-content;
+    align-content: start;
+    align-items: start;
+    gap: 10px !important;
+    padding: 21px 18px 16px !important;
+  }
+
+  .home-page .hero-content {
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .home-page .hero-art {
+    display: grid !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    height: clamp(210px, 58vw, 240px) !important;
+    max-height: 240px;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-self: start;
+    overflow: visible;
+  }
+
+  .home-page .workspace-window {
+    width: min(82%, 340px);
+    max-width: 340px;
+    padding-bottom: 8px;
+  }
+
+  .home-page .workspace-topbar {
+    min-height: 37px;
+    padding-inline: 13px;
+  }
+
+  .home-page .workspace-content {
+    gap: 10px;
+    padding: 11px 13px 6px;
+  }
+
+  .home-page .workspace-document h3 {
+    margin-top: 7px;
+    font-size: 21px;
+  }
+
+  .home-page .document-intro { margin-bottom: 9px; }
+  .home-page .document-callout { margin-top: 10px; padding: 8px; }
+  .home-page .document-bottom { margin-top: 10px; }
+
+  .home-page .workspace-status {
+    margin: 8px 14px 0 49px;
+    padding-top: 7px;
+  }
+
+  .home-page .floating-note {
+    max-width: 45%;
+    padding: 7px 9px;
+    gap: 7px;
+  }
+
+  .home-page .note-left { top: 16%; }
+  .home-page .note-right { bottom: 16%; }
+  .home-page .sunburst { font-size: 39px; }
+  .home-page .art-caption { bottom: 0; }
+
+  .home-page .quick-start-section { margin-top: 26px; }
+  .home-page .developer-section,
+  .home-page .flow-section,
+  .home-page .capabilities-section { padding-top: 52px !important; }
+}
+
+@media (max-width: 420px) {
+  .home-page .creative-hero {
+    gap: 9px !important;
+    padding: 19px 14px 14px !important;
+  }
+
+  .home-page .hero-heading {
+    font-size: clamp(35px, 9.8vw, 42px) !important;
+    line-height: 1.02;
+  }
+
+  .home-page .hero-art {
+    height: 215px !important;
+    max-height: 215px;
+  }
+
+  .home-page .workspace-window { width: 80%; }
+  .home-page .floating-note { max-width: 43%; padding: 6px 7px; }
+  .home-page .floating-note strong { font-size: 8px; }
+  .home-page .floating-note small { font-size: 7px; }
+  .home-page .hero-art-label { font-size: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .hero-art,
+  .home-page .workspace-window,
+  .home-page .floating-note {
+    animation: none !important;
+    transform: none !important;
+  }
+}
