@@ -4215,3 +4215,25 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
     will-change: auto;
   }
 }
+
+
+/* RESTORE HERO MOTION — animate the complete mobile artwork gently without
+   changing its grid layout or the collision-free positions of its children. */
+@keyframes heroArtworkFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -6px, 0); }
+}
+
+@media (max-width: 768px) {
+  .home-page .hero-art {
+    animation: heroArtworkFloat 8s ease-in-out infinite !important;
+    will-change: transform;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .hero-art {
+    animation: none !important;
+    will-change: auto;
+  }
+}
