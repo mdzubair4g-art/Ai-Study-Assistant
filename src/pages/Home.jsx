@@ -1,3 +1,4 @@
+import { useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import QuickStart from "../components/QuickStart";
@@ -24,6 +25,13 @@ const workflow = [
 ];
 
 function Home() {
+  useLayoutEffect(() => {
+    // Avoid reopening the landing page midway down after browser scroll restoration.
+    if (!window.location.hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-950 text-white home-page">
       <Navbar />
