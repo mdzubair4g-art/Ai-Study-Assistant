@@ -4237,3 +4237,68 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
     will-change: auto;
   }
 }
+
+
+/* ENHANCED HERO MOTION — more noticeable movement while preserving the
+   separated mobile layout and collision-free positioning. */
+@keyframes heroArtworkFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -13px, 0); }
+}
+
+@keyframes heroWorkspaceFloat {
+  0%, 100% { transform: translate(-50%, -50%); }
+  50% { transform: translate(-50%, calc(-50% - 9px)); }
+}
+
+@keyframes heroWorkspaceFloatStacked {
+  0%, 100% { transform: rotate(-1deg) translateY(0); }
+  50% { transform: rotate(-1deg) translateY(-9px); }
+}
+
+@keyframes heroNoteFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 768px) {
+  .home-page .hero-art {
+    animation: heroArtworkFloat 5.5s ease-in-out infinite !important;
+  }
+
+  .home-page .workspace-window {
+    animation: heroWorkspaceFloatStacked 5s ease-in-out infinite !important;
+  }
+
+  .home-page .floating-note {
+    animation: heroNoteFloat 3.8s ease-in-out infinite !important;
+  }
+
+  .home-page .note-right {
+    animation-delay: -1.9s !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .home-page .workspace-window {
+    animation: heroWorkspaceFloat 5s ease-in-out infinite !important;
+  }
+
+  .home-page .floating-note {
+    animation: heroNoteFloat 3.8s ease-in-out infinite !important;
+  }
+
+  .home-page .note-right {
+    animation-delay: -1.9s !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .hero-art,
+  .home-page .workspace-window,
+  .home-page .floating-note {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto;
+  }
+}
