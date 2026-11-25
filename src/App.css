@@ -3648,3 +3648,39 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
     padding-top: 8px;
   }
 }
+
+
+/* Homepage spacing repair: remove inherited desktop hero height on compact screens. */
+@media (max-width: 768px) {
+  .home-page .home-main { min-height: 0; padding-top: 18px !important; }
+  .home-page .creative-hero {
+    display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: auto auto auto;
+    align-content: start; align-items: start; gap: 14px; width: 100%; min-width: 0;
+    min-height: 0; height: auto; padding: 24px 20px 18px;
+  }
+  .home-page .hero-content {
+    position: relative; width: 100%; max-width: none; min-width: 0; min-height: 0;
+    margin: 0; padding: 0; align-self: start;
+  }
+  .home-page .hero-eyebrow { margin: 16px 0 0; }
+  .home-page .hero-heading {
+    margin: 12px 0 0; font-size: clamp(38px, 9vw, 54px);
+    line-height: 1.02; overflow-wrap: anywhere;
+  }
+  .home-page .hero-description { margin: 13px 0 0; line-height: 1.65; }
+  .home-page .hero-actions {
+    display: grid; grid-template-columns: minmax(0, 1fr); gap: 9px; margin-top: 17px;
+  }
+  .home-page .hero-actions > a { width: 100%; min-width: 0; justify-content: center; }
+  .home-page .hero-proof { margin-top: 13px; }
+  .home-page .hero-art {
+    width: 100%; min-width: 0; min-height: clamp(220px, 62vw, 320px);
+    height: auto; margin: 0; align-self: start;
+  }
+  .home-page .hero-bottom-line { margin-top: 0; align-self: start; }
+}
+@media (max-width: 380px) {
+  .home-page .creative-hero { gap: 12px; padding: 21px 15px 16px; }
+  .home-page .hero-heading { font-size: clamp(36px, 10vw, 42px); }
+  .home-page .hero-art { min-height: 225px; }
+}
