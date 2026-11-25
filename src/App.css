@@ -4012,3 +4012,206 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
     will-change: auto;
   }
 }
+
+
+/* MOBILE HERO FINAL LAYOUT — keep copy, workspace and notifications in separate flow rows. */
+@media (max-width: 768px) {
+  .home-page .creative-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 18px !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+
+  .home-page .hero-content {
+    position: relative !important;
+    z-index: 3 !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    flex: 0 0 auto !important;
+  }
+
+  .home-page .hero-proof {
+    position: relative !important;
+    z-index: 4 !important;
+    display: flex !important;
+    align-items: center !important;
+    margin: 20px 0 0 !important;
+    line-height: 1.45 !important;
+  }
+
+  .home-page .hero-art {
+    position: relative !important;
+    z-index: 1 !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: auto auto auto auto !important;
+    align-items: stretch !important;
+    justify-items: stretch !important;
+    gap: 12px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    margin: 8px 0 0 !important;
+    padding: 12px 0 4px !important;
+    overflow: visible !important;
+    animation: none !important;
+  }
+
+  .home-page .hero-art-label {
+    position: relative !important;
+    inset: auto !important;
+    grid-column: 1 / -1 !important;
+    grid-row: 1 !important;
+    display: block !important;
+    margin: 0 0 2px !important;
+    text-align: center !important;
+    font-size: 7px !important;
+  }
+
+  .home-page .art-orbit,
+  .home-page .sunburst {
+    display: none !important;
+  }
+
+  .home-page .workspace-window {
+    position: relative !important;
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    justify-self: center !important;
+    width: min(100%, 430px) !important;
+    max-width: 430px !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    transform: rotate(-1deg) !important;
+    animation: heroWorkspaceFloatStacked 7s ease-in-out infinite !important;
+    will-change: transform;
+  }
+
+  .home-page .floating-note {
+    position: relative !important;
+    inset: auto !important;
+    grid-row: 3 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-self: stretch !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 66px !important;
+    margin: 0 !important;
+    padding: 9px 8px !important;
+    gap: 7px !important;
+    transform: none !important;
+    white-space: normal !important;
+    animation: heroNoteFloat 6s ease-in-out infinite !important;
+    box-sizing: border-box !important;
+  }
+
+  .home-page .note-left {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+  }
+
+  .home-page .note-right {
+    grid-column: 2 !important;
+    grid-row: 3 !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    animation-delay: -2.5s !important;
+  }
+
+  .home-page .floating-note > span:last-child {
+    display: block !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+
+  .home-page .floating-note strong,
+  .home-page .floating-note small {
+    display: block !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    line-height: 1.3 !important;
+  }
+
+  .home-page .floating-note strong {
+    font-size: clamp(8px, 2.4vw, 10px) !important;
+  }
+
+  .home-page .floating-note small {
+    margin-top: 3px !important;
+    font-size: clamp(7px, 2vw, 8px) !important;
+  }
+
+  .home-page .mini-note-icon,
+  .home-page .flash-icon {
+    width: 27px !important;
+    height: 27px !important;
+    flex: 0 0 27px !important;
+  }
+
+  .home-page .art-caption {
+    position: relative !important;
+    inset: auto !important;
+    grid-column: 1 / -1 !important;
+    grid-row: 4 !important;
+    display: block !important;
+    margin: 1px 0 0 !important;
+    text-align: center !important;
+    font-size: 8px !important;
+  }
+
+  .home-page .hero-bottom-line {
+    position: relative !important;
+    z-index: 2 !important;
+    margin: 2px 0 0 !important;
+  }
+}
+
+@keyframes heroWorkspaceFloatStacked {
+  0%, 100% { transform: rotate(-1deg) translateY(0); }
+  50% { transform: rotate(-1deg) translateY(-4px); }
+}
+
+@media (max-width: 380px) {
+  .home-page .creative-hero { gap: 15px !important; }
+  .home-page .hero-art { column-gap: 8px !important; row-gap: 10px !important; }
+  .home-page .floating-note { padding: 8px 6px !important; min-height: 62px !important; }
+  .home-page .mini-note-icon,
+  .home-page .flash-icon {
+    width: 23px !important;
+    height: 23px !important;
+    flex-basis: 23px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .workspace-window,
+  .home-page .floating-note {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto;
+  }
+}
