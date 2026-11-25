@@ -4302,3 +4302,223 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
     will-change: auto;
   }
 }
+
+
+/* HERO VISUAL POLISH — richer colour, layered glow and more expressive motion.
+   Scoped to the homepage hero illustration only; layout and feature sections stay intact. */
+.home-page .hero-art {
+  isolation: isolate;
+  overflow: visible;
+}
+
+.home-page .hero-art::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 8% 7%;
+  border-radius: 48%;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 24% 30%, rgba(255, 160, 119, .28), transparent 37%),
+    radial-gradient(ellipse at 76% 65%, rgba(145, 121, 235, .28), transparent 42%),
+    radial-gradient(ellipse at 52% 48%, rgba(111, 204, 183, .14), transparent 55%);
+  filter: blur(20px);
+  animation: heroAuraPulse 6.5s ease-in-out infinite;
+}
+
+.home-page .workspace-window {
+  border-color: rgba(255, 255, 255, .98);
+  background: linear-gradient(145deg, #fffefa 0%, #fff9f6 48%, #f7f3ff 100%);
+  box-shadow:
+    0 30px 72px rgba(75, 54, 92, .22),
+    0 0 0 7px rgba(255, 255, 255, .44),
+    0 0 34px rgba(151, 125, 225, .16);
+}
+
+.home-page .workspace-topbar {
+  background: linear-gradient(100deg, #fff4e9 0%, #fffdf9 48%, #f1edff 100%);
+}
+
+.home-page .workspace-brand span {
+  color: #ed805e;
+  text-shadow: 0 0 12px rgba(237, 128, 94, .35);
+}
+
+.home-page .sidebar-mark.active {
+  color: #fff;
+  background: linear-gradient(140deg, #9a82ee, #7058cf);
+  box-shadow: 0 5px 14px rgba(117, 91, 211, .28);
+  animation: heroIconGlow 3.2s ease-in-out infinite;
+}
+
+.home-page .document-label {
+  color: #9276d8;
+}
+
+.home-page .document-lines i {
+  background: linear-gradient(90deg, #e9e2fa, #f7e7e0);
+}
+
+.home-page .document-callout {
+  border-color: rgba(150, 128, 223, .24);
+  color: #51417f;
+  background: linear-gradient(110deg, #f0eaff 0%, #fff0e8 100%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+.home-page .document-callout > span {
+  background: linear-gradient(145deg, #a18aef, #755bd5);
+  box-shadow: 0 5px 13px rgba(117, 91, 213, .24);
+}
+
+.home-page .document-bottom span:first-child {
+  color: #279b7c;
+}
+
+.home-page .status-pulse {
+  background: #35bd91;
+  box-shadow: 0 0 0 4px rgba(53, 189, 145, .15), 0 0 14px rgba(53, 189, 145, .55);
+  animation: heroStatusPulse 2s ease-in-out infinite;
+}
+
+.home-page .floating-note {
+  border: 1px solid rgba(255,255,255,.92);
+  box-shadow:
+    0 17px 36px rgba(79, 55, 83, .16),
+    0 0 0 4px rgba(255,255,255,.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.home-page .note-left {
+  background: linear-gradient(120deg, rgba(249,244,255,.98), rgba(235,228,255,.96));
+}
+
+.home-page .note-right {
+  background: linear-gradient(120deg, rgba(255,248,239,.98), rgba(255,231,220,.96));
+}
+
+.home-page .mini-note-icon {
+  color: #fff;
+  background: linear-gradient(145deg, #a28bee, #735bd3);
+  box-shadow: 0 5px 13px rgba(115, 91, 211, .28);
+}
+
+.home-page .flash-icon {
+  color: #fff;
+  background: linear-gradient(145deg, #ffad79, #ed755f);
+  box-shadow: 0 5px 13px rgba(237, 117, 95, .25);
+}
+
+.home-page .floating-note strong {
+  color: #403552;
+}
+
+.home-page .note-left small {
+  color: #796b9c;
+}
+
+.home-page .note-right small {
+  color: #a06d5f;
+}
+
+.home-page .hero-art-label span,
+.home-page .art-caption {
+  text-shadow: 0 2px 12px rgba(255,255,255,.7);
+}
+
+@keyframes heroAuraPulse {
+  0%, 100% { opacity: .62; transform: scale(.94) rotate(-3deg); }
+  50% { opacity: 1; transform: scale(1.06) rotate(3deg); }
+}
+
+@keyframes heroIconGlow {
+  0%, 100% { box-shadow: 0 5px 14px rgba(117, 91, 211, .22); }
+  50% { box-shadow: 0 7px 21px rgba(117, 91, 211, .42); }
+}
+
+@keyframes heroStatusPulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(53, 189, 145, .13), 0 0 9px rgba(53, 189, 145, .32); }
+  50% { box-shadow: 0 0 0 7px rgba(53, 189, 145, .07), 0 0 17px rgba(53, 189, 145, .65); }
+}
+
+@keyframes heroArtworkFloat {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -17px, 0); }
+}
+
+@keyframes heroWorkspaceFloat {
+  0%, 100% { transform: translate(-50%, -50%) rotate(-2deg); }
+  50% { transform: translate(-50%, calc(-50% - 11px)) rotate(0deg); }
+}
+
+@keyframes heroWorkspaceFloatStacked {
+  0%, 100% { transform: rotate(-1.5deg) translateY(0); }
+  50% { transform: rotate(.5deg) translateY(-11px); }
+}
+
+@keyframes heroNoteLeftFloat {
+  0%, 100% { transform: translateY(0) rotate(-1.5deg) scale(1); }
+  50% { transform: translateY(-10px) rotate(1deg) scale(1.025); }
+}
+
+@keyframes heroNoteRightFloat {
+  0%, 100% { transform: translateY(0) rotate(1.5deg) scale(1); }
+  50% { transform: translateY(-12px) rotate(-1deg) scale(1.025); }
+}
+
+@media (max-width: 768px) {
+  .home-page .hero-art {
+    animation: heroArtworkFloat 5s ease-in-out infinite !important;
+  }
+
+  .home-page .workspace-window {
+    animation: heroWorkspaceFloatStacked 4.8s ease-in-out infinite !important;
+  }
+
+  .home-page .note-left {
+    animation: heroNoteLeftFloat 3.7s ease-in-out infinite !important;
+  }
+
+  .home-page .note-right {
+    animation: heroNoteRightFloat 4.1s ease-in-out infinite !important;
+    animation-delay: -2s !important;
+  }
+
+  .home-page .hero-art::before {
+    inset: 3% 2%;
+    filter: blur(16px);
+  }
+}
+
+@media (min-width: 769px) {
+  .home-page .hero-art {
+    animation: heroArtworkFloat 5.2s ease-in-out infinite !important;
+  }
+
+  .home-page .workspace-window {
+    animation: heroWorkspaceFloat 4.8s ease-in-out infinite !important;
+  }
+
+  .home-page .note-left {
+    animation: heroNoteLeftFloat 3.7s ease-in-out infinite !important;
+  }
+
+  .home-page .note-right {
+    animation: heroNoteRightFloat 4.1s ease-in-out infinite !important;
+    animation-delay: -2s !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .hero-art,
+  .home-page .hero-art::before,
+  .home-page .workspace-window,
+  .home-page .floating-note,
+  .home-page .sidebar-mark.active,
+  .home-page .status-pulse {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto;
+  }
+}
