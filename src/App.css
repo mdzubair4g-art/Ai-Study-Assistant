@@ -3839,3 +3839,176 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
     transform: translateY(0);
   }
 }
+
+
+/* HERO ILLUSTRATION REPAIR — isolate the artwork layers so they never collide. */
+.home-page .hero-art {
+  position: relative;
+  isolation: isolate;
+  min-height: 550px;
+  overflow: hidden;
+  animation: none !important;
+}
+
+.home-page .workspace-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(82%, 410px);
+  max-width: 410px;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  animation: heroWorkspaceFloat 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+.home-page .floating-note {
+  z-index: 5;
+  width: max-content;
+  max-width: 38%;
+  min-width: 0;
+  white-space: normal;
+  animation: heroNoteFloat 5.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.home-page .floating-note > span:last-child {
+  min-width: 0;
+}
+
+.home-page .floating-note strong,
+.home-page .floating-note small {
+  white-space: normal;
+  line-height: 1.35;
+}
+
+.home-page .note-left {
+  top: 34px;
+  bottom: auto;
+  left: 5%;
+  right: auto;
+}
+
+.home-page .note-right {
+  top: auto;
+  bottom: 34px;
+  right: 5%;
+  left: auto;
+  animation-delay: -2.6s;
+}
+
+.home-page .workspace-document h3 {
+  line-height: 1.15;
+}
+
+.home-page .document-intro,
+.home-page .document-callout small,
+.home-page .workspace-status {
+  line-height: 1.4;
+}
+
+@keyframes heroWorkspaceFloat {
+  0%, 100% { transform: translate(-50%, -50%); }
+  50% { transform: translate(-50%, calc(-50% - 5px)); }
+}
+
+@keyframes heroNoteFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@media (max-width: 768px) {
+  .home-page .hero-art {
+    min-height: 390px !important;
+    height: 390px !important;
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+
+  .home-page .hero-art-label {
+    top: 7px;
+    right: 7px;
+    font-size: 6px;
+  }
+
+  .home-page .workspace-window {
+    top: 55px;
+    left: 50%;
+    width: 96%;
+    max-width: 440px;
+    transform: translateX(-50%);
+    animation: heroWorkspaceFloatMobile 7s ease-in-out infinite;
+  }
+
+  .home-page .floating-note {
+    max-width: 47%;
+    padding: 7px 8px;
+    gap: 6px;
+  }
+
+  .home-page .floating-note strong {
+    font-size: 8px;
+  }
+
+  .home-page .floating-note small {
+    font-size: 7px;
+  }
+
+  .home-page .note-left {
+    top: 8px;
+    left: 0;
+  }
+
+  .home-page .note-right {
+    right: 0;
+    bottom: 8px;
+  }
+
+  .home-page .mini-note-icon,
+  .home-page .flash-icon {
+    width: 25px;
+    height: 25px;
+    flex: 0 0 25px;
+  }
+
+  .home-page .sunburst,
+  .home-page .art-caption,
+  .home-page .art-orbit {
+    display: none !important;
+  }
+}
+
+@keyframes heroWorkspaceFloatMobile {
+  0%, 100% { transform: translateX(-50%); }
+  50% { transform: translate(-50%, -4px); }
+}
+
+@media (max-width: 380px) {
+  .home-page .hero-art {
+    height: 370px !important;
+    min-height: 370px !important;
+  }
+
+  .home-page .workspace-window {
+    top: 58px;
+    width: 98%;
+  }
+
+  .home-page .floating-note {
+    max-width: 48%;
+    padding: 6px;
+    gap: 5px;
+  }
+
+  .home-page .floating-note strong { font-size: 7px; }
+  .home-page .floating-note small { font-size: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .hero-art,
+  .home-page .workspace-window,
+  .home-page .floating-note {
+    animation: none !important;
+    will-change: auto;
+  }
+}
