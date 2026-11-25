@@ -3804,3 +3804,38 @@ button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
     transform: none !important;
   }
 }
+
+
+/* FIX: a closed mobile nav was visually hidden but retained its max-height,
+   pushing the homepage content hundreds of pixels down on phone screens. */
+@media (max-width: 820px) {
+  .developer-nav .nav-mobile-menu:not(.open) {
+    display: grid;
+    height: 0 !important;
+    max-height: 0 !important;
+    min-height: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none;
+    transform: translateY(-8px);
+  }
+
+  .developer-nav .nav-mobile-menu.open {
+    height: auto !important;
+    max-height: min(78svh, 620px) !important;
+    min-height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: max(18px, env(safe-area-inset-bottom)) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+}
